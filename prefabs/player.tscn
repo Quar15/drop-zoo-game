@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://ce85mafpjhxmt"]
+
+[ext_resource type="Texture2D" uid="uid://dsd67a4e6lyod" path="res://assets/kenney/shape_characters/blue_body_squircle.png" id="1_r66lb"]
+[ext_resource type="Texture2D" uid="uid://ch3otrbi47skx" path="res://assets/kenney/shape_characters/face_a.png" id="2_1txc5"]
+[ext_resource type="Texture2D" uid="uid://d1wtmtpdkdo0q" path="res://assets/kenney/shape_characters/blue_hand_open.png" id="3_ht1c8"]
+
+[node name="Player" type="Node2D" unique_id=1186796138]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1819302372]
+texture = ExtResource("1_r66lb")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D" unique_id=1042007738]
+texture = ExtResource("2_1txc5")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1107342019]
+position = Vector2(-49, 56)
+rotation = 3.1415927
+texture = ExtResource("3_ht1c8")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=977673293]
+position = Vector2(50, 56)
+rotation = 3.1415927
+scale = Vector2(-1, 1)
+texture = ExtResource("3_ht1c8")

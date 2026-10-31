@@ -1,0 +1,9 @@
+[gd_resource type="Theme" format=3 uid="uid://qnmlbkfmpc3i"]
+
+[ext_resource type="FontFile" uid="uid://8snqmjmd8cgg" path="res://assets/fonts/scabber/Scabber.otf" id="1_qjbne"]
+
+[resource]
+default_font_size = 28
+RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
+RichTextLabel/fonts/bold_font = ExtResource("1_qjbne")
+RichTextLabel/fonts/normal_font = ExtResource("1_qjbne")

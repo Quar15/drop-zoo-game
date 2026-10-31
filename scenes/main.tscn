@@ -1,0 +1,397 @@
+[gd_scene format=3 uid="uid://2q2b43vuuvvg"]
+
+[ext_resource type="Shader" uid="uid://c4atekomphdwr" path="res://resources/animated_pattern_background.gdshader" id="1_0wfyh"]
+[ext_resource type="Texture2D" uid="uid://ban2vju0nl824" path="res://assets/kenney/animals_remastered/chick.png" id="1_o5qli"]
+[ext_resource type="Texture2D" uid="uid://b6q728muupf52" path="res://assets/kenney/pattern_extra/pattern_040.png" id="2_sugp2"]
+[ext_resource type="Theme" uid="uid://qnmlbkfmpc3i" path="res://resources/gui_theme.tres" id="4_jkv2x"]
+[ext_resource type="Script" uid="uid://dnl62nvfwrjjl" path="res://scripts/GUI/circle_container.gd" id="4_jyhfs"]
+[ext_resource type="Texture2D" uid="uid://det6bjfdyx1bb" path="res://assets/kenney/shape_characters/tile_half_center.png" id="4_yc10j"]
+[ext_resource type="Texture2D" uid="uid://bo0mtei2q26dh" path="res://assets/kenney/input_prompts/flair_arrow_3_rotated.png" id="5_0ld40"]
+[ext_resource type="Texture2D" uid="uid://cud8t8472oacc" path="res://assets/kenney/animals_remastered/snake.png" id="5_a8y0u"]
+[ext_resource type="Texture2D" uid="uid://b80r1iwernbwm" path="res://assets/kenney/shape_characters/tile_ramp_right.png" id="5_yc10j"]
+[ext_resource type="Texture2D" uid="uid://bsxga5v1qg86s" path="res://assets/kenney/animals_remastered/parrot.png" id="6_jkv2x"]
+[ext_resource type="Texture2D" uid="uid://c7m71vkdy3tn2" path="res://assets/kenney/shape_characters/tile_half_left.png" id="6_jscy8"]
+[ext_resource type="Texture2D" uid="uid://c6hmwgex1tqu7" path="res://assets/kenney/shape_characters/tile_half_right.png" id="6_pm3ni"]
+[ext_resource type="Texture2D" uid="uid://b25vsdhijvoxh" path="res://assets/kenney/animals_remastered/penguin.png" id="7_jbj1t"]
+[ext_resource type="PackedScene" uid="uid://ce85mafpjhxmt" path="res://prefabs/player.tscn" id="7_y6deb"]
+[ext_resource type="Texture2D" uid="uid://ctm0f4upw3rqe" path="res://assets/kenney/animals_remastered/pig.png" id="8_muem4"]
+[ext_resource type="Texture2D" uid="uid://cnrchmeuc20t6" path="res://assets/kenney/animals_remastered/panda.png" id="9_dp3eg"]
+[ext_resource type="Texture2D" uid="uid://bftoo6pb5vtej" path="res://assets/kenney/animals_remastered/cow.png" id="10_0ld40"]
+[ext_resource type="Texture2D" uid="uid://b3oennhmbpywx" path="res://assets/kenney/animals_remastered/bear.png" id="11_gqmmt"]
+[ext_resource type="Texture2D" uid="uid://dmfku7fp7b2qp" path="res://assets/kenney/animals_remastered/hippo.png" id="12_yc10j"]
+[ext_resource type="Texture2D" uid="uid://dy1yqij7w0717" path="res://assets/kenney/animals_remastered/rhino.png" id="13_jscy8"]
+[ext_resource type="Texture2D" uid="uid://gubg4qnvxwid" path="res://assets/kenney/animals_remastered/whale.png" id="14_pm3ni"]
+[ext_resource type="Texture2D" uid="uid://ww4l0xcbuq5d" path="res://assets/kenney/input_prompts/xbox/xbox_stick_l_horizontal.png" id="16_dp3eg"]
+[ext_resource type="Texture2D" uid="uid://jxapeg8eokwy" path="res://assets/kenney/input_prompts/xbox/xbox_button_a.png" id="17_0ld40"]
+[ext_resource type="Texture2D" uid="uid://xl666uju27lu" path="res://assets/kenney/input_prompts/xbox/xbox_button_menu.png" id="18_gqmmt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sugp2"]
+shader = ExtResource("1_0wfyh")
+shader_parameter/pattern = ExtResource("2_sugp2")
+shader_parameter/pattern_color = Color(0.9648127, 0.83927673, 0.65900666, 1)
+shader_parameter/tiling = 128.0
+shader_parameter/speed = Vector2(0.03, -0.03)
+shader_parameter/rotation = -0.00018518358264962
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ld40"]
+size = Vector2(800, 40)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gqmmt"]
+texture = ExtResource("5_0ld40")
+
+[node name="Game" type="Node" unique_id=587129324]
+
+[node name="BackgroundLayer" type="CanvasLayer" parent="." unique_id=261849312]
+layer = -999
+follow_viewport_enabled = true
+
+[node name="ColorRect" type="ColorRect" parent="BackgroundLayer" unique_id=2144382732]
+material = SubResource("ShaderMaterial_sugp2")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.9510698, 0.7894333, 0.55515563, 1)
+
+[node name="World2D" type="Node2D" parent="." unique_id=718276347]
+
+[node name="Zone" type="Node2D" parent="World2D" unique_id=410175536]
+position = Vector2(960, 939)
+
+[node name="Line2D" type="Line2D" parent="World2D/Zone" unique_id=1109519404]
+points = PackedVector2Array(-400, -750, 400, -750)
+default_color = Color(0.6, 0, 0, 0.5019608)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="World2D/Zone" unique_id=1048631301]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World2D/Zone/StaticBody2D" unique_id=1896265813]
+shape = SubResource("RectangleShape2D_0ld40")
+
+[node name="Sprite2D" type="Sprite2D" parent="World2D/Zone/StaticBody2D" unique_id=1885391638]
+scale = Vector2(10, 1)
+texture = ExtResource("4_yc10j")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="World2D/Zone" unique_id=183012824]
+position = Vector2(-400, -400)
+rotation = 1.5707964
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World2D/Zone/StaticBody2D2" unique_id=517491102]
+shape = SubResource("RectangleShape2D_0ld40")
+
+[node name="Sprite2D" type="Sprite2D" parent="World2D/Zone/StaticBody2D2" unique_id=2024567445]
+scale = Vector2(10, 1)
+texture = ExtResource("4_yc10j")
+
+[node name="TileHalfLeft" type="Sprite2D" parent="World2D/Zone/StaticBody2D2" unique_id=1560277231]
+position = Vector2(-380, 0)
+texture = ExtResource("6_jscy8")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="World2D/Zone" unique_id=749601351]
+position = Vector2(400, -400)
+rotation = -1.5707964
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World2D/Zone/StaticBody2D3" unique_id=1867379049]
+shape = SubResource("RectangleShape2D_0ld40")
+
+[node name="Sprite2D" type="Sprite2D" parent="World2D/Zone/StaticBody2D3" unique_id=1639080348]
+scale = Vector2(10, 1)
+texture = ExtResource("4_yc10j")
+
+[node name="TileHalfLeft2" type="Sprite2D" parent="World2D/Zone/StaticBody2D3" unique_id=1867344490]
+position = Vector2(380, 0)
+texture = ExtResource("6_pm3ni")
+
+[node name="Sprite2D" type="Sprite2D" parent="World2D/Zone" unique_id=1479044378]
+position = Vector2(-390, -12)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("5_yc10j")
+
+[node name="Sprite2D2" type="Sprite2D" parent="World2D/Zone" unique_id=581787419]
+position = Vector2(390, -10)
+scale = Vector2(-0.7, 0.7)
+texture = ExtResource("5_yc10j")
+
+[node name="Player" parent="World2D" unique_id=1186796138 instance=ExtResource("7_y6deb")]
+position = Vector2(960, 80)
+
+[node name="Sprite2D" type="Sprite2D" parent="World2D" unique_id=135026176]
+position = Vector2(960, 540)
+texture = ExtResource("1_o5qli")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=278432615]
+anchor_mode = 0
+
+[node name="GUICanvasLayer" type="CanvasLayer" parent="." unique_id=1099795593]
+follow_viewport_enabled = true
+
+[node name="GUI" type="Control" parent="GUICanvasLayer" unique_id=1219682589]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_jkv2x")
+
+[node name="MarginContainer" type="MarginContainer" parent="GUICanvasLayer/GUI" unique_id=1588437384]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/margin_right = 64
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GUICanvasLayer/GUI/MarginContainer" unique_id=1770119638]
+custom_minimum_size = Vector2(376, 0)
+layout_mode = 2
+theme_override_constants/separation = 128
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GUICanvasLayer/GUI/MarginContainer/VBoxContainer" unique_id=963045522]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GUICanvasLayer/GUI/MarginContainer/VBoxContainer/VBoxContainer" unique_id=1151640579]
+layout_mode = 2
+bbcode_enabled = true
+text = "Next:"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="GUICanvasLayer/GUI/MarginContainer/VBoxContainer/VBoxContainer" unique_id=101165217]
+layout_mode = 2
+texture = ExtResource("1_o5qli")
+stretch_mode = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="GUICanvasLayer/GUI/MarginContainer/VBoxContainer" unique_id=1523063755]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_gqmmt")
+
+[node name="MarginContainer" type="MarginContainer" parent="GUICanvasLayer/GUI/MarginContainer/VBoxContainer/PanelContainer" unique_id=1494120108]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="EvolutionChart" type="Control" parent="GUICanvasLayer/GUI/MarginContainer/VBoxContainer/PanelContainer/MarginContainer" unique_id=441823760 node_paths=PackedStringArray("elements")]
+custom_minimum_size = Vector2(376, 376)
+layout_mode = 2
+script = ExtResource("4_jyhfs")
+radius = 156.0
+elements = [NodePath("EmptyRect"), NodePath("TextureRect"), NodePath("TextureRect2"), NodePath("TextureRect3"), NodePath("TextureRect4"), NodePath("TextureRect5"), NodePath("TextureRect6"), NodePath("TextureRect7"), NodePath("TextureRect8"), NodePath("TextureRect9"), NodePath("TextureRect10"), NodePath("TextureRect11")]
+metadata/_custom_type_script = "uid://dnl62nvfwrjjl"
+
+[node name="EmptyRect" type="TextureRect" parent="GUICanvasLayer/GUI/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/EvolutionChart" unique_id=680210680]
+layout_mode = 0
+offset_right = 146.0
+offset_bottom = 162.0
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="GUICanvasLayer/GUI/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/EvolutionChart" unique_id=1550549855]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_o5qli")
+
+[node name="TextureRect2" type="TextureRect" parent="GUICanvasLayer/GUI/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/EvolutionChart" unique_id=505475579]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("5_a8y0u")
+
+[node name="TextureRect3" type="TextureRect" parent="GUICanvasLayer/GUI/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/EvolutionChart" unique_id=1070181688]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("6_jkv2x")
+
+[node name="TextureRect4" type="TextureRect" parent="GUICanvasLayer/GUI/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/EvolutionChart" unique_id=1514483168]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("7_jbj1t")
+
+[node name="TextureRect5" type="TextureRect" parent="GUICanvasLayer/GUI/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/EvolutionChart" unique_id=787647756]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("8_muem4")
+
+[node name="TextureRect6" type="TextureRect" parent="GUICanvasLayer/GUI/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/EvolutionChart" unique_id=956790087]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("9_dp3eg")
+
+[node name="TextureRect7" type="TextureRect" parent="GUICanvasLayer/GUI/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/EvolutionChart" unique_id=2042290660]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("10_0ld40")
+
+[node name="TextureRect8" type="TextureRect" parent="GUICanvasLayer/GUI/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/EvolutionChart" unique_id=999378395]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("11_gqmmt")
+
+[node name="TextureRect9" type="TextureRect" parent="GUICanvasLayer/GUI/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/EvolutionChart" unique_id=1623381115]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("12_yc10j")
+
+[node name="TextureRect10" type="TextureRect" parent="GUICanvasLayer/GUI/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/EvolutionChart" unique_id=790816969]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("13_jscy8")
+
+[node name="TextureRect11" type="TextureRect" parent="GUICanvasLayer/GUI/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/EvolutionChart" unique_id=1424527027]
+layout_mode = 0
+offset_right = 146.0
+offset_bottom = 162.0
+texture = ExtResource("14_pm3ni")
+
+[node name="EmptyRect2" type="TextureRect" parent="GUICanvasLayer/GUI/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/EvolutionChart" unique_id=797693398]
+layout_mode = 0
+offset_right = 146.0
+offset_bottom = 162.0
+expand_mode = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="GUICanvasLayer/GUI" unique_id=102129760]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 20.0
+grow_vertical = 2
+theme_override_constants/margin_left = 64
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="GUICanvasLayer/GUI/MarginContainer2" unique_id=1476845492]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GUICanvasLayer/GUI/MarginContainer2/VBoxContainer2" unique_id=825662572]
+custom_minimum_size = Vector2(376, 0)
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GUICanvasLayer/GUI/MarginContainer2/VBoxContainer2/VBoxContainer" unique_id=961483690]
+layout_mode = 2
+text = "Score:"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="GUICanvasLayer/GUI/MarginContainer2/VBoxContainer2/VBoxContainer" unique_id=1936555503]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 48
+text = "999999"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="GUICanvasLayer/GUI/MarginContainer2/VBoxContainer2" unique_id=70026547]
+custom_minimum_size = Vector2(376, 0)
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GUICanvasLayer/GUI/MarginContainer2/VBoxContainer2/VBoxContainer2" unique_id=1423672624]
+layout_mode = 2
+text = "High Score:"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="GUICanvasLayer/GUI/MarginContainer2/VBoxContainer2/VBoxContainer2" unique_id=730742899]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 48
+text = "999999"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="GUICanvasLayer/GUI" unique_id=1762615488]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_bottom = 32
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GUICanvasLayer/GUI/MarginContainer3" unique_id=1410360073]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GUICanvasLayer/GUI/MarginContainer3/HBoxContainer" unique_id=102152326]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TextureRect" type="TextureRect" parent="GUICanvasLayer/GUI/MarginContainer3/HBoxContainer/HBoxContainer" unique_id=39803329]
+self_modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("16_dp3eg")
+expand_mode = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GUICanvasLayer/GUI/MarginContainer3/HBoxContainer/HBoxContainer" unique_id=1769241073]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "Move"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="GUICanvasLayer/GUI/MarginContainer3/HBoxContainer" unique_id=53701278]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="GUICanvasLayer/GUI/MarginContainer3/HBoxContainer/HBoxContainer2" unique_id=616042762]
+self_modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("17_0ld40")
+expand_mode = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GUICanvasLayer/GUI/MarginContainer3/HBoxContainer/HBoxContainer2" unique_id=1027096972]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "Drop"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="GUICanvasLayer/GUI/MarginContainer3/HBoxContainer" unique_id=54457998]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="GUICanvasLayer/GUI/MarginContainer3/HBoxContainer/HBoxContainer3" unique_id=1370797449]
+self_modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("18_gqmmt")
+expand_mode = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GUICanvasLayer/GUI/MarginContainer3/HBoxContainer/HBoxContainer3" unique_id=240061789]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "Menu"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
