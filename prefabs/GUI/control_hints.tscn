@@ -1,0 +1,149 @@
+[gd_scene format=3 uid="uid://d0wqj0vefvggy"]
+
+[ext_resource type="Script" uid="uid://b1kakvpt5vvvg" path="res://scripts/GUI/control_hints.gd" id="1_2dh3j"]
+[ext_resource type="Texture2D" uid="uid://ww4l0xcbuq5d" path="res://assets/kenney/input_prompts/xbox/xbox_stick_l_horizontal.png" id="1_sdkbs"]
+[ext_resource type="Texture2D" uid="uid://jxapeg8eokwy" path="res://assets/kenney/input_prompts/xbox/xbox_button_a.png" id="2_2dh3j"]
+[ext_resource type="Texture2D" uid="uid://xl666uju27lu" path="res://assets/kenney/input_prompts/xbox/xbox_button_menu.png" id="3_qwork"]
+[ext_resource type="Texture2D" uid="uid://b0502ylvp81il" path="res://assets/kenney/input_prompts/keyboard/keyboard_arrows_horizontal_outline.png" id="5_3axcs"]
+[ext_resource type="Texture2D" uid="uid://dfi5elady3ua" path="res://assets/kenney/input_prompts/keyboard/keyboard_space_icon.png" id="6_68vkp"]
+[ext_resource type="Texture2D" uid="uid://clw3tk7aeeqjv" path="res://assets/kenney/input_prompts/keyboard/keyboard_escape.png" id="7_aoc6h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2dh3j"]
+
+[node name="ControlHints" type="PanelContainer" unique_id=1308114495 node_paths=PackedStringArray("keyboard_hints_parent", "controller_hints_parent")]
+offset_right = 369.0
+offset_bottom = 34.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_2dh3j")
+script = ExtResource("1_2dh3j")
+keyboard_hints_parent = NodePath("KeyboardControlHints")
+controller_hints_parent = NodePath("ControllerControlHints")
+
+[node name="KeyboardControlHints" type="HBoxContainer" parent="." unique_id=13424769]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="HBoxContainer" type="HBoxContainer" parent="KeyboardControlHints" unique_id=873688338]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="MarginContainer" type="MarginContainer" parent="KeyboardControlHints/HBoxContainer" unique_id=105471300]
+layout_mode = 2
+theme_override_constants/margin_bottom = 4
+
+[node name="TextureRect" type="TextureRect" parent="KeyboardControlHints/HBoxContainer/MarginContainer" unique_id=170326354]
+self_modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("5_3axcs")
+expand_mode = 3
+stretch_mode = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="KeyboardControlHints/HBoxContainer" unique_id=1886702724]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "Move"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="KeyboardControlHints" unique_id=42593031]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="KeyboardControlHints/HBoxContainer2" unique_id=1615466788]
+self_modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("6_68vkp")
+expand_mode = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="KeyboardControlHints/HBoxContainer2" unique_id=306944136]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "Drop"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="KeyboardControlHints" unique_id=1976150655]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="KeyboardControlHints/HBoxContainer3" unique_id=1872663866]
+self_modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("7_aoc6h")
+expand_mode = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="KeyboardControlHints/HBoxContainer3" unique_id=523403190]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "Menu"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="ControllerControlHints" type="HBoxContainer" parent="." unique_id=1146028198]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ControllerControlHints" unique_id=95314151]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TextureRect" type="TextureRect" parent="ControllerControlHints/HBoxContainer" unique_id=145196492]
+self_modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("1_sdkbs")
+expand_mode = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ControllerControlHints/HBoxContainer" unique_id=188224098]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "Move"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ControllerControlHints" unique_id=726007467]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ControllerControlHints/HBoxContainer2" unique_id=1403004737]
+self_modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("2_2dh3j")
+expand_mode = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ControllerControlHints/HBoxContainer2" unique_id=695150235]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "Drop"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="ControllerControlHints" unique_id=779170764]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ControllerControlHints/HBoxContainer3" unique_id=78390932]
+self_modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("3_qwork")
+expand_mode = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ControllerControlHints/HBoxContainer3" unique_id=699031734]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "Menu"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1

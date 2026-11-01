@@ -21,9 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://dmfku7fp7b2qp" path="res://assets/kenney/animals_remastered/hippo.png" id="12_yc10j"]
 [ext_resource type="Texture2D" uid="uid://dy1yqij7w0717" path="res://assets/kenney/animals_remastered/rhino.png" id="13_jscy8"]
 [ext_resource type="Texture2D" uid="uid://gubg4qnvxwid" path="res://assets/kenney/animals_remastered/whale.png" id="14_pm3ni"]
-[ext_resource type="Texture2D" uid="uid://ww4l0xcbuq5d" path="res://assets/kenney/input_prompts/xbox/xbox_stick_l_horizontal.png" id="16_dp3eg"]
-[ext_resource type="Texture2D" uid="uid://jxapeg8eokwy" path="res://assets/kenney/input_prompts/xbox/xbox_button_a.png" id="17_0ld40"]
-[ext_resource type="Texture2D" uid="uid://xl666uju27lu" path="res://assets/kenney/input_prompts/xbox/xbox_button_menu.png" id="18_gqmmt"]
+[ext_resource type="PackedScene" uid="uid://d0wqj0vefvggy" path="res://prefabs/GUI/control_hints.tscn" id="22_jscy8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sugp2"]
 shader = ExtResource("1_0wfyh")
@@ -334,64 +332,5 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/margin_bottom = 32
 
-[node name="HBoxContainer" type="HBoxContainer" parent="GUICanvasLayer/GUI/MarginContainer3" unique_id=1410360073]
+[node name="ControlHints" parent="GUICanvasLayer/GUI/MarginContainer3" unique_id=1146028198 instance=ExtResource("22_jscy8")]
 layout_mode = 2
-theme_override_constants/separation = 32
-
-[node name="HBoxContainer" type="HBoxContainer" parent="GUICanvasLayer/GUI/MarginContainer3/HBoxContainer" unique_id=102152326]
-layout_mode = 2
-theme_override_constants/separation = 8
-
-[node name="TextureRect" type="TextureRect" parent="GUICanvasLayer/GUI/MarginContainer3/HBoxContainer/HBoxContainer" unique_id=39803329]
-self_modulate = Color(0, 0, 0, 1)
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-texture = ExtResource("16_dp3eg")
-expand_mode = 3
-
-[node name="RichTextLabel" type="RichTextLabel" parent="GUICanvasLayer/GUI/MarginContainer3/HBoxContainer/HBoxContainer" unique_id=1769241073]
-layout_mode = 2
-theme_override_font_sizes/normal_font_size = 24
-bbcode_enabled = true
-text = "Move"
-fit_content = true
-autowrap_mode = 0
-vertical_alignment = 1
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="GUICanvasLayer/GUI/MarginContainer3/HBoxContainer" unique_id=53701278]
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="GUICanvasLayer/GUI/MarginContainer3/HBoxContainer/HBoxContainer2" unique_id=616042762]
-self_modulate = Color(0, 0, 0, 1)
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-texture = ExtResource("17_0ld40")
-expand_mode = 3
-
-[node name="RichTextLabel" type="RichTextLabel" parent="GUICanvasLayer/GUI/MarginContainer3/HBoxContainer/HBoxContainer2" unique_id=1027096972]
-layout_mode = 2
-theme_override_font_sizes/normal_font_size = 24
-bbcode_enabled = true
-text = "Drop"
-fit_content = true
-autowrap_mode = 0
-vertical_alignment = 1
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="GUICanvasLayer/GUI/MarginContainer3/HBoxContainer" unique_id=54457998]
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="GUICanvasLayer/GUI/MarginContainer3/HBoxContainer/HBoxContainer3" unique_id=1370797449]
-self_modulate = Color(0, 0, 0, 1)
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-texture = ExtResource("18_gqmmt")
-expand_mode = 3
-
-[node name="RichTextLabel" type="RichTextLabel" parent="GUICanvasLayer/GUI/MarginContainer3/HBoxContainer/HBoxContainer3" unique_id=240061789]
-layout_mode = 2
-theme_override_font_sizes/normal_font_size = 24
-bbcode_enabled = true
-text = "Menu"
-fit_content = true
-autowrap_mode = 0
-vertical_alignment = 1
