@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://gubg4qnvxwid" path="res://assets/kenney/animals_remastered/whale.png" id="14_pm3ni"]
 [ext_resource type="PackedScene" uid="uid://d0wqj0vefvggy" path="res://prefabs/GUI/control_hints.tscn" id="22_jscy8"]
 [ext_resource type="PackedScene" uid="uid://leu5vjwsnwoe" path="res://prefabs/GUI/score_gui.tscn" id="22_pm3ni"]
+[ext_resource type="AudioStream" uid="uid://blqcr1rq08s6d" path="res://assets/sfx/chill_lofi_background/chilllofir-loop.ogg" id="27_vxglm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sugp2"]
 shader = ExtResource("1_0wfyh")
@@ -311,3 +312,10 @@ theme_override_constants/margin_bottom = 32
 
 [node name="ControlHints" parent="GUICanvasLayer/GUI/MarginContainer3" unique_id=1146028198 instance=ExtResource("22_jscy8")]
 layout_mode = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=646039094]
+stream = ExtResource("27_vxglm")
+volume_db = -23.0
+autoplay = true
+bus = &"Music"
+parameters/looping = true
