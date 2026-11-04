@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://cyov0cu38quwl"]
+
+[ext_resource type="Script" uid="uid://djijtspjttbyg" path="res://scripts/fake_animals_rain.gd" id="1_lmwo4"]
+[ext_resource type="PackedScene" uid="uid://dkf5r5kqsxa48" path="res://prefabs/fake_animal.tscn" id="2_qkk0i"]
+[ext_resource type="Theme" uid="uid://qnmlbkfmpc3i" path="res://resources/gui_theme.tres" id="3_47nhc"]
+[ext_resource type="Texture2D" uid="uid://ban2vju0nl824" path="res://assets/kenney/animals_remastered/chick.png" id="3_mgxyb"]
+[ext_resource type="Script" uid="uid://bcw20ulwfpfw3" path="res://scripts/GUI/main_menu_gui.gd" id="4_hf8dy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lmwo4"]
+size = Vector2(4000, 100)
+
+[node name="MainMenuWorld" type="Node2D" unique_id=475629287]
+
+[node name="FakeAnimalsRain" type="Node2D" parent="." unique_id=2049099536 node_paths=PackedStringArray("timer")]
+position = Vector2(0, -512)
+script = ExtResource("1_lmwo4")
+timer = NodePath("Timer")
+fake_animal_prefab = ExtResource("2_qkk0i")
+max_animals = 10
+
+[node name="Area2D" type="Area2D" parent="FakeAnimalsRain" unique_id=1894114222]
+position = Vector2(960, 2500)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FakeAnimalsRain/Area2D" unique_id=71304421]
+shape = SubResource("RectangleShape2D_lmwo4")
+
+[node name="Timer" type="Timer" parent="FakeAnimalsRain" unique_id=1036701486]
+autostart = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1186826464]
+layer = 999
+
+[node name="MainMenuGUI" type="Control" parent="CanvasLayer" unique_id=1714735843]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_47nhc")
+script = ExtResource("4_hf8dy")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MainMenuGUI" unique_id=1860694941]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/MainMenuGUI/VBoxContainer" unique_id=1247290915]
+layout_mode = 2
+texture = ExtResource("3_mgxyb")
+stretch_mode = 3
+
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/MainMenuGUI/VBoxContainer" unique_id=2132504745]
+layout_mode = 2
+theme_override_constants/separation = 128
+
+[node name="Button" type="Button" parent="CanvasLayer/MainMenuGUI/VBoxContainer" unique_id=1735696637]
+layout_mode = 2
+text = "Play"
+
+[node name="Button2" type="Button" parent="CanvasLayer/MainMenuGUI/VBoxContainer" unique_id=1690782401]
+layout_mode = 2
+text = "Options"
+
+[node name="Button4" type="Button" parent="CanvasLayer/MainMenuGUI/VBoxContainer" unique_id=900201459]
+layout_mode = 2
+text = "Credits"
+
+[node name="Button3" type="Button" parent="CanvasLayer/MainMenuGUI/VBoxContainer" unique_id=2059465810]
+layout_mode = 2
+text = "Exit"
+
+[connection signal="body_entered" from="FakeAnimalsRain/Area2D" to="FakeAnimalsRain" method="_on_deadzone_body_entered"]
