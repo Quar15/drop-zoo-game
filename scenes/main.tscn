@@ -10,7 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://bo0mtei2q26dh" path="res://assets/kenney/input_prompts/flair_arrow_3_rotated.png" id="5_0ld40"]
 [ext_resource type="Texture2D" uid="uid://cud8t8472oacc" path="res://assets/kenney/animals_remastered/snake.png" id="5_a8y0u"]
 [ext_resource type="Texture2D" uid="uid://bsxga5v1qg86s" path="res://assets/kenney/animals_remastered/parrot.png" id="6_jkv2x"]
+[ext_resource type="Script" uid="uid://du7lb5m2gn1bb" path="res://scripts/animal.gd" id="7_2wyq8"]
 [ext_resource type="Texture2D" uid="uid://b25vsdhijvoxh" path="res://assets/kenney/animals_remastered/penguin.png" id="7_jbj1t"]
+[ext_resource type="Script" uid="uid://brknqea72xuf3" path="res://scripts/sprite_hit_flash_module.gd" id="7_og1vs"]
 [ext_resource type="PackedScene" uid="uid://ce85mafpjhxmt" path="res://prefabs/player.tscn" id="7_y6deb"]
 [ext_resource type="Texture2D" uid="uid://ctm0f4upw3rqe" path="res://assets/kenney/animals_remastered/pig.png" id="8_muem4"]
 [ext_resource type="Texture2D" uid="uid://cnrchmeuc20t6" path="res://assets/kenney/animals_remastered/panda.png" id="9_dp3eg"]
@@ -164,9 +166,18 @@ antialiased = true
 z_index = 9
 position = Vector2(960, 80)
 
-[node name="Sprite2D" type="Sprite2D" parent="GameWorld/World2D" unique_id=135026176]
+[node name="Sprite2D" type="Sprite2D" parent="GameWorld/World2D" unique_id=135026176 node_paths=PackedStringArray("hit_flash")]
 position = Vector2(960, 540)
 texture = ExtResource("1_o5qli")
+script = ExtResource("7_2wyq8")
+hit_flash = NodePath("SpriteHitFlashModule")
+
+[node name="SpriteHitFlashModule" type="Node" parent="GameWorld/World2D/Sprite2D" unique_id=963397225]
+script = ExtResource("7_og1vs")
+ease_type = 1
+trans_type = 4
+target_color = null
+metadata/_custom_type_script = "uid://brknqea72xuf3"
 
 [node name="GUICanvasLayer" type="CanvasLayer" parent="GameWorld" unique_id=1099795593]
 follow_viewport_enabled = true
