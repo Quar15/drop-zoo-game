@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="AnimalResource" format=3 uid="uid://csmctxdy5qaoy"]
+
+[ext_resource type="Script" uid="uid://b5jvdf62v6g5c" path="res://scripts/animal_resource.gd" id="1_ssi6u"]
+[ext_resource type="Texture2D" uid="uid://b3oennhmbpywx" path="res://assets/kenney/animals_remastered/bear.png" id="2_ssi6u"]
+
+[resource]
+script = ExtResource("1_ssi6u")
+name = "BEAR"
+texture = ExtResource("2_ssi6u")
+size = 2.4
+type = 7
+score = 360
+metadata/_custom_type_script = "uid://b5jvdf62v6g5c"

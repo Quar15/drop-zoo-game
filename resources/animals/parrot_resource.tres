@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="AnimalResource" format=3 uid="uid://b6whh2378rfv5"]
+
+[ext_resource type="Script" uid="uid://b5jvdf62v6g5c" path="res://scripts/animal_resource.gd" id="1_uriha"]
+[ext_resource type="Texture2D" uid="uid://bsxga5v1qg86s" path="res://assets/kenney/animals_remastered/parrot.png" id="2_uriha"]
+
+[resource]
+script = ExtResource("1_uriha")
+name = "PARROT"
+texture = ExtResource("2_uriha")
+size = 0.9
+type = 2
+score = 60
+metadata/_custom_type_script = "uid://b5jvdf62v6g5c"

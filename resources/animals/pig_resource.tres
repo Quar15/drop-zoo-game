@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="AnimalResource" format=3 uid="uid://fw25om7b7a4n"]
+
+[ext_resource type="Script" uid="uid://b5jvdf62v6g5c" path="res://scripts/animal_resource.gd" id="1_m44xd"]
+[ext_resource type="Texture2D" uid="uid://ctm0f4upw3rqe" path="res://assets/kenney/animals_remastered/pig.png" id="2_m44xd"]
+
+[resource]
+script = ExtResource("1_m44xd")
+name = "PIG"
+texture = ExtResource("2_m44xd")
+size = 1.5
+type = 4
+score = 150
+metadata/_custom_type_script = "uid://b5jvdf62v6g5c"

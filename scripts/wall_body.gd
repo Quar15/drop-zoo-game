@@ -1,0 +1,2 @@
+class_name WallBody
+extends StaticBody2D

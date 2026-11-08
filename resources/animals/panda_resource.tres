@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="AnimalResource" format=3 uid="uid://bo8uh0okxtuxy"]
+
+[ext_resource type="Script" uid="uid://b5jvdf62v6g5c" path="res://scripts/animal_resource.gd" id="1_7obih"]
+[ext_resource type="Texture2D" uid="uid://cnrchmeuc20t6" path="res://assets/kenney/animals_remastered/panda.png" id="2_7obih"]
+
+[resource]
+script = ExtResource("1_7obih")
+name = "PANDA"
+texture = ExtResource("2_7obih")
+size = 1.8
+type = 5
+score = 210
+metadata/_custom_type_script = "uid://b5jvdf62v6g5c"

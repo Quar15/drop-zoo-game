@@ -1,16 +1,37 @@
 [gd_scene format=3 uid="uid://ce85mafpjhxmt"]
 
 [ext_resource type="Texture2D" uid="uid://dsd67a4e6lyod" path="res://assets/kenney/shape_characters/blue_body_squircle.png" id="1_r66lb"]
+[ext_resource type="Script" uid="uid://3q6yqrfroonh" path="res://scripts/player.gd" id="1_u51tk"]
 [ext_resource type="Texture2D" uid="uid://ch3otrbi47skx" path="res://assets/kenney/shape_characters/face_a.png" id="2_1txc5"]
+[ext_resource type="Script" uid="uid://b5jvdf62v6g5c" path="res://scripts/animal_resource.gd" id="2_kbsxf"]
+[ext_resource type="PackedScene" uid="uid://bnh2i1utnknmn" path="res://prefabs/animal.tscn" id="2_rgeog"]
 [ext_resource type="Texture2D" uid="uid://d1wtmtpdkdo0q" path="res://assets/kenney/shape_characters/blue_hand_open.png" id="3_ht1c8"]
+[ext_resource type="Resource" uid="uid://2hxr67giinsj" path="res://resources/animals/duck_resource.tres" id="3_rgeog"]
+[ext_resource type="Resource" uid="uid://ts6equ8j7kte" path="res://resources/animals/snake_resource.tres" id="4_opo22"]
+[ext_resource type="Resource" uid="uid://b6whh2378rfv5" path="res://resources/animals/parrot_resource.tres" id="6_8rb0w"]
+[ext_resource type="Resource" uid="uid://q7lv718d7vk3" path="res://resources/animals/penguin_resource.tres" id="7_sd3sa"]
+[ext_resource type="Texture2D" uid="uid://ban2vju0nl824" path="res://assets/kenney/animals_remastered/chick.png" id="8_rgeog"]
 
-[node name="Player" type="Node2D" unique_id=1186796138]
+[node name="Player" type="Node2D" unique_id=1186796138 node_paths=PackedStringArray("spawn_point", "animal_sprite", "animals_parent", "spawn_timer")]
+script = ExtResource("1_u51tk")
+spawn_point = NodePath("Marker2D")
+animal_sprite = NodePath("Marker2D/AnimalSprite")
+animal_prefab = ExtResource("2_rgeog")
+animals_parent = NodePath(".")
+spawn_timer = NodePath("Timer")
+spawnable_animal_resources = Array[ExtResource("2_kbsxf")]([ExtResource("3_rgeog"), ExtResource("4_opo22"), ExtResource("6_8rb0w"), ExtResource("7_sd3sa")])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1819302372]
 texture = ExtResource("1_r66lb")
 
 [node name="Sprite2D" type="Sprite2D" parent="Sprite2D" unique_id=1042007738]
 texture = ExtResource("2_1txc5")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1113182898]
+position = Vector2(0, 60)
+
+[node name="AnimalSprite" type="Sprite2D" parent="Marker2D" unique_id=1524868879]
+texture = ExtResource("8_rgeog")
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1107342019]
 position = Vector2(-49, 56)
@@ -22,3 +43,7 @@ position = Vector2(50, 56)
 rotation = 3.1415927
 scale = Vector2(-1, 1)
 texture = ExtResource("3_ht1c8")
+
+[node name="Timer" type="Timer" parent="." unique_id=754590001]
+wait_time = 0.5
+one_shot = true

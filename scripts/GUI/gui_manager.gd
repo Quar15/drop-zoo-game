@@ -2,6 +2,7 @@ class_name GUIManager
 extends Node
 
 @export var score_gui: ScoreGUI
+@export var next_animal_gui: NextAnimalGUI
 
 
 func setup(high_score: int) -> void:

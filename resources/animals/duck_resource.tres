@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="AnimalResource" format=3 uid="uid://2hxr67giinsj"]
+
+[ext_resource type="Script" uid="uid://b5jvdf62v6g5c" path="res://scripts/animal_resource.gd" id="1_jclva"]
+[ext_resource type="Texture2D" uid="uid://ban2vju0nl824" path="res://assets/kenney/animals_remastered/chick.png" id="2_1e4ra"]
+
+[resource]
+script = ExtResource("1_jclva")
+name = "DUCK"
+texture = ExtResource("2_1e4ra")
+size = 0.3
+score = 10
+metadata/_custom_type_script = "uid://b5jvdf62v6g5c"

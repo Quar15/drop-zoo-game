@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="AnimalResource" format=3 uid="uid://q7lv718d7vk3"]
+
+[ext_resource type="Script" uid="uid://b5jvdf62v6g5c" path="res://scripts/animal_resource.gd" id="1_tbssr"]
+[ext_resource type="Texture2D" uid="uid://b25vsdhijvoxh" path="res://assets/kenney/animals_remastered/penguin.png" id="2_tbssr"]
+
+[resource]
+script = ExtResource("1_tbssr")
+name = "PENGUIN"
+texture = ExtResource("2_tbssr")
+size = 1.2
+type = 3
+score = 100
+metadata/_custom_type_script = "uid://b5jvdf62v6g5c"

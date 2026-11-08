@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="AnimalResource" format=3 uid="uid://dnjyeqvqaob8p"]
+
+[ext_resource type="Script" uid="uid://b5jvdf62v6g5c" path="res://scripts/animal_resource.gd" id="1_nu21h"]
+[ext_resource type="Texture2D" uid="uid://gubg4qnvxwid" path="res://assets/kenney/animals_remastered/whale.png" id="2_nu21h"]
+
+[resource]
+script = ExtResource("1_nu21h")
+name = "ORCA"
+texture = ExtResource("2_nu21h")
+size = 3.3
+type = 10
+score = 660
+metadata/_custom_type_script = "uid://b5jvdf62v6g5c"

@@ -7,19 +7,35 @@
 [ext_resource type="Script" uid="uid://dqnv6ce64nb77" path="res://scripts/score_manager.gd" id="2_vxglm"]
 [ext_resource type="Theme" uid="uid://qnmlbkfmpc3i" path="res://resources/gui_theme.tres" id="4_jkv2x"]
 [ext_resource type="Script" uid="uid://dnl62nvfwrjjl" path="res://scripts/GUI/circle_container.gd" id="4_jyhfs"]
+[ext_resource type="Script" uid="uid://b5jvdf62v6g5c" path="res://scripts/animal_resource.gd" id="4_kmb1v"]
 [ext_resource type="Texture2D" uid="uid://bo0mtei2q26dh" path="res://assets/kenney/input_prompts/flair_arrow_3_rotated.png" id="5_0ld40"]
 [ext_resource type="Texture2D" uid="uid://cud8t8472oacc" path="res://assets/kenney/animals_remastered/snake.png" id="5_a8y0u"]
+[ext_resource type="Resource" uid="uid://2hxr67giinsj" path="res://resources/animals/duck_resource.tres" id="5_fuf3a"]
 [ext_resource type="Texture2D" uid="uid://bsxga5v1qg86s" path="res://assets/kenney/animals_remastered/parrot.png" id="6_jkv2x"]
+[ext_resource type="Resource" uid="uid://ts6equ8j7kte" path="res://resources/animals/snake_resource.tres" id="6_pibwh"]
+[ext_resource type="Resource" uid="uid://b6whh2378rfv5" path="res://resources/animals/parrot_resource.tres" id="7_c6pm6"]
 [ext_resource type="Texture2D" uid="uid://b25vsdhijvoxh" path="res://assets/kenney/animals_remastered/penguin.png" id="7_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://ce85mafpjhxmt" path="res://prefabs/player.tscn" id="7_y6deb"]
+[ext_resource type="Resource" uid="uid://q7lv718d7vk3" path="res://resources/animals/penguin_resource.tres" id="8_5he1u"]
 [ext_resource type="Texture2D" uid="uid://ctm0f4upw3rqe" path="res://assets/kenney/animals_remastered/pig.png" id="8_muem4"]
+[ext_resource type="Resource" uid="uid://fw25om7b7a4n" path="res://resources/animals/pig_resource.tres" id="9_5poiv"]
 [ext_resource type="Texture2D" uid="uid://cnrchmeuc20t6" path="res://assets/kenney/animals_remastered/panda.png" id="9_dp3eg"]
 [ext_resource type="Texture2D" uid="uid://bftoo6pb5vtej" path="res://assets/kenney/animals_remastered/cow.png" id="10_0ld40"]
+[ext_resource type="Resource" uid="uid://bo8uh0okxtuxy" path="res://resources/animals/panda_resource.tres" id="10_2cjbq"]
+[ext_resource type="Resource" uid="uid://b0ps1je5v46t5" path="res://resources/animals/cow_resource.tres" id="11_chjal"]
 [ext_resource type="Texture2D" uid="uid://b3oennhmbpywx" path="res://assets/kenney/animals_remastered/bear.png" id="11_gqmmt"]
-[ext_resource type="Script" uid="uid://ce1a5csed45ke" path="res://scripts/gui_manager.gd" id="12_2f3dj"]
+[ext_resource type="Script" uid="uid://ce1a5csed45ke" path="res://scripts/GUI/gui_manager.gd" id="12_2f3dj"]
+[ext_resource type="Resource" uid="uid://csmctxdy5qaoy" path="res://resources/animals/bear_resource.tres" id="12_cjqg0"]
 [ext_resource type="Texture2D" uid="uid://dmfku7fp7b2qp" path="res://assets/kenney/animals_remastered/hippo.png" id="12_yc10j"]
 [ext_resource type="Texture2D" uid="uid://dy1yqij7w0717" path="res://assets/kenney/animals_remastered/rhino.png" id="13_jscy8"]
+[ext_resource type="Resource" uid="uid://bh2cytcxqsh8f" path="res://resources/animals/hippo_resource.tres" id="13_vchkt"]
 [ext_resource type="Texture2D" uid="uid://gubg4qnvxwid" path="res://assets/kenney/animals_remastered/whale.png" id="14_pm3ni"]
+[ext_resource type="Resource" uid="uid://dk1j2u2oi2vbf" path="res://resources/animals/rhino_resource.tres" id="14_txyw0"]
+[ext_resource type="Resource" uid="uid://dnjyeqvqaob8p" path="res://resources/animals/orca_resource.tres" id="15_vc5cj"]
+[ext_resource type="Script" uid="uid://bms46ub6oa27l" path="res://scripts/ground_body.gd" id="17_pibwh"]
+[ext_resource type="Script" uid="uid://c8smg1nbyg07o" path="res://scripts/wall_body.gd" id="18_c6pm6"]
+[ext_resource type="PackedScene" uid="uid://ckprvxwr73n6l" path="res://prefabs/death_area.tscn" id="18_fuf3a"]
+[ext_resource type="PackedScene" uid="uid://dj8nxj3ii5utt" path="res://prefabs/GUI/next_animal_gui.tscn" id="21_fuf3a"]
 [ext_resource type="PackedScene" uid="uid://d0wqj0vefvggy" path="res://prefabs/GUI/control_hints.tscn" id="22_jscy8"]
 [ext_resource type="PackedScene" uid="uid://leu5vjwsnwoe" path="res://prefabs/GUI/score_gui.tscn" id="22_pm3ni"]
 [ext_resource type="AudioStream" uid="uid://blqcr1rq08s6d" path="res://assets/sfx/chill_lofi_background/chilllofir-loop.ogg" id="27_vxglm"]
@@ -55,10 +71,13 @@ color = Color(0.9510698, 0.7894333, 0.55515563, 1)
 
 [node name="GameWorld" type="Node2D" parent="." unique_id=529226086]
 
-[node name="GameManager" type="Node" parent="GameWorld" unique_id=672225042 node_paths=PackedStringArray("score_manager", "gui_manager")]
+[node name="GameManager" type="Node" parent="GameWorld" unique_id=672225042 node_paths=PackedStringArray("score_manager", "gui_manager", "player", "death_area")]
 script = ExtResource("1_2wyq8")
 score_manager = NodePath("../ScoreManager")
 gui_manager = NodePath("../GUICanvasLayer/GUI")
+animal_resources = Array[ExtResource("4_kmb1v")]([ExtResource("5_fuf3a"), ExtResource("6_pibwh"), ExtResource("7_c6pm6"), ExtResource("8_5he1u"), ExtResource("9_5poiv"), ExtResource("10_2cjbq"), ExtResource("11_chjal"), ExtResource("12_cjqg0"), ExtResource("13_vchkt"), ExtResource("14_txyw0"), ExtResource("15_vc5cj")])
+player = NodePath("../World2D/Player")
+death_area = NodePath("../World2D/DeathArea")
 metadata/_custom_type_script = "uid://dpvglgebqmyia"
 
 [node name="ScoreManager" type="Node" parent="GameWorld" unique_id=613934626]
@@ -70,14 +89,16 @@ metadata/_custom_type_script = "uid://dqnv6ce64nb77"
 [node name="Zone" type="Node2D" parent="GameWorld/World2D" unique_id=410175536]
 position = Vector2(960, 939)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="GameWorld/World2D/Zone" unique_id=1048631301]
+[node name="GroundBody" type="StaticBody2D" parent="GameWorld/World2D/Zone" unique_id=1048631301]
+script = ExtResource("17_pibwh")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GameWorld/World2D/Zone/StaticBody2D" unique_id=1896265813]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameWorld/World2D/Zone/GroundBody" unique_id=1896265813]
 shape = SubResource("RectangleShape2D_0ld40")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="GameWorld/World2D/Zone" unique_id=183012824]
 position = Vector2(-400, -400)
 rotation = 1.5707964
+script = ExtResource("18_c6pm6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GameWorld/World2D/Zone/StaticBody2D2" unique_id=517491102]
 shape = SubResource("RectangleShape2D_0ld40")
@@ -85,6 +106,7 @@ shape = SubResource("RectangleShape2D_0ld40")
 [node name="StaticBody2D3" type="StaticBody2D" parent="GameWorld/World2D/Zone" unique_id=749601351]
 position = Vector2(400, -400)
 rotation = -1.5707964
+script = ExtResource("18_c6pm6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GameWorld/World2D/Zone/StaticBody2D3" unique_id=1867379049]
 shape = SubResource("RectangleShape2D_0ld40")
@@ -160,18 +182,29 @@ end_cap_mode = 2
 round_precision = 32
 antialiased = true
 
-[node name="Player" parent="GameWorld/World2D" unique_id=1186796138 instance=ExtResource("7_y6deb")]
+[node name="LimiterLeft" type="Marker2D" parent="GameWorld/World2D/Zone" unique_id=2085296078]
+position = Vector2(-370, -800)
+
+[node name="LimiterRight" type="Marker2D" parent="GameWorld/World2D/Zone" unique_id=395546685]
+position = Vector2(370, -800)
+
+[node name="Player" parent="GameWorld/World2D" unique_id=1186796138 node_paths=PackedStringArray("animals_parent", "limiter_left", "limiter_right") instance=ExtResource("7_y6deb")]
 z_index = 9
 position = Vector2(960, 80)
+animals_parent = NodePath("../AnimalsParent")
+limiter_left = NodePath("../Zone/LimiterLeft")
+limiter_right = NodePath("../Zone/LimiterRight")
 
-[node name="Sprite2D" type="Sprite2D" parent="GameWorld/World2D" unique_id=135026176]
-position = Vector2(960, 540)
-texture = ExtResource("1_o5qli")
+[node name="AnimalsParent" type="Node2D" parent="GameWorld/World2D" unique_id=424820968]
+position = Vector2(-10000, -10000)
+
+[node name="DeathArea" parent="GameWorld/World2D" unique_id=1909163175 instance=ExtResource("18_fuf3a")]
+position = Vector2(960, 160)
 
 [node name="GUICanvasLayer" type="CanvasLayer" parent="GameWorld" unique_id=1099795593]
 follow_viewport_enabled = true
 
-[node name="GUI" type="Control" parent="GameWorld/GUICanvasLayer" unique_id=1219682589 node_paths=PackedStringArray("score_gui")]
+[node name="GUI" type="Control" parent="GameWorld/GUICanvasLayer" unique_id=1219682589 node_paths=PackedStringArray("score_gui", "next_animal_gui")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -181,6 +214,7 @@ grow_vertical = 2
 theme = ExtResource("4_jkv2x")
 script = ExtResource("12_2f3dj")
 score_gui = NodePath("MarginContainer2/ScoreGUI")
+next_animal_gui = NodePath("MarginContainer/VBoxContainer/NextAnimalGUI")
 
 [node name="MarginContainer" type="MarginContainer" parent="GameWorld/GUICanvasLayer/GUI" unique_id=1588437384]
 layout_mode = 1
@@ -201,22 +235,8 @@ custom_minimum_size = Vector2(376, 0)
 layout_mode = 2
 theme_override_constants/separation = 128
 
-[node name="VBoxContainer" type="VBoxContainer" parent="GameWorld/GUICanvasLayer/GUI/MarginContainer/VBoxContainer" unique_id=963045522]
+[node name="NextAnimalGUI" parent="GameWorld/GUICanvasLayer/GUI/MarginContainer/VBoxContainer" unique_id=1016991445 instance=ExtResource("21_fuf3a")]
 layout_mode = 2
-theme_override_constants/separation = 16
-
-[node name="RichTextLabel" type="RichTextLabel" parent="GameWorld/GUICanvasLayer/GUI/MarginContainer/VBoxContainer/VBoxContainer" unique_id=1151640579]
-layout_mode = 2
-bbcode_enabled = true
-text = "Next:"
-fit_content = true
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="GameWorld/GUICanvasLayer/GUI/MarginContainer/VBoxContainer/VBoxContainer" unique_id=101165217]
-layout_mode = 2
-texture = ExtResource("1_o5qli")
-stretch_mode = 3
 
 [node name="PanelContainer" type="PanelContainer" parent="GameWorld/GUICanvasLayer/GUI/MarginContainer/VBoxContainer" unique_id=1523063755]
 layout_mode = 2

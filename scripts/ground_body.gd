@@ -1,0 +1,2 @@
+class_name GroundBody
+extends StaticBody2D
