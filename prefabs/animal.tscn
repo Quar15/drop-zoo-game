@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b7iaop7v1kpcv" path="res://scripts/animal.gd" id="1_fscie"]
 [ext_resource type="Texture2D" uid="uid://ban2vju0nl824" path="res://assets/kenney/animals_remastered/chick.png" id="1_vscn2"]
 [ext_resource type="Resource" uid="uid://2hxr67giinsj" path="res://resources/animals/duck_resource.tres" id="2_23gd7"]
+[ext_resource type="Script" uid="uid://brknqea72xuf3" path="res://scripts/sprite_hit_flash_module.gd" id="4_0gj3i"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vuyvy"]
 friction = 0.95
@@ -13,17 +14,22 @@ radius = 68.18358
 [sub_resource type="CircleShape2D" id="CircleShape2D_0ck6d"]
 radius = 71.25307
 
-[node name="Animal" type="RigidBody2D" unique_id=1032783958 node_paths=PackedStringArray("sprite", "rb_shape", "hitbox")]
+[node name="Animal" type="RigidBody2D" unique_id=1032783958 node_paths=PackedStringArray("sprite", "rb_shape", "hitbox", "hit_flash")]
 physics_material_override = SubResource("PhysicsMaterial_vuyvy")
 script = ExtResource("1_fscie")
 sprite = NodePath("Sprite2D")
 rb_shape = NodePath("RigidbodyShape")
 hitbox = NodePath("RigidbodyShape/Area2D")
+hit_flash = NodePath("Sprite2D/SpriteHitFlashModule")
 data = ExtResource("2_23gd7")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2103736567]
 z_index = 9
 texture = ExtResource("1_vscn2")
+
+[node name="SpriteHitFlashModule" type="Node" parent="Sprite2D" unique_id=1654559415]
+script = ExtResource("4_0gj3i")
+metadata/_custom_type_script = "uid://brknqea72xuf3"
 
 [node name="RigidbodyShape" type="CollisionShape2D" parent="." unique_id=433910404]
 shape = SubResource("CircleShape2D_ubckg")

@@ -8,6 +8,7 @@ signal animal_touched_ground()
 @export var sprite: Sprite2D
 @export var rb_shape: CollisionShape2D
 @export var hitbox: Area2D
+@export var hit_flash: SpriteHitFlashModule
 @export var data: AnimalResource
 
 var is_dirty: bool = false

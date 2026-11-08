@@ -39,6 +39,7 @@ func on_animal_merging(a: Animal, b: Animal) -> void:
 	score_manager.add_score(b.data.score)
 	printt("@DEBUG: Score added:", b.data.score)
 	b.setup(animal_resources[int(b.data.type) + 1])
+	b.hit_flash.play_hit_flash()
 	a.queue_free()
 	b.retrigger_check()
 	death_area.retrigger_check()
