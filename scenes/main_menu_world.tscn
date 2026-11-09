@@ -25,7 +25,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -37,7 +37,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -49,7 +49,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -61,7 +61,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -97,7 +97,7 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -109,7 +109,7 @@ tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
@@ -121,7 +121,7 @@ tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
@@ -133,7 +133,7 @@ tracks/9/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_regp5"]
@@ -334,28 +334,134 @@ layout_mode = 2
 theme_override_constants/separation = 64
 
 [node name="PlayButton" type="Button" parent="CanvasLayer/MainMenuGUI/VBoxContainer" unique_id=1735696637]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 2
-disabled = true
 text = "Play"
 
 [node name="OptionsButton" type="Button" parent="CanvasLayer/MainMenuGUI/VBoxContainer" unique_id=1690782401]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 2
-disabled = true
 text = "Options"
 
 [node name="CreditsButton" type="Button" parent="CanvasLayer/MainMenuGUI/VBoxContainer" unique_id=900201459]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 2
-disabled = true
 text = "Credits"
 
 [node name="QuitButton" type="Button" parent="CanvasLayer/MainMenuGUI/VBoxContainer" unique_id=2059465810]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 2
-disabled = true
 text = "Exit"
+
+[node name="CreditsContainer" type="PanelContainer" parent="CanvasLayer/MainMenuGUI" unique_id=182705878]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -197.0
+offset_top = -101.5
+offset_right = 197.0
+offset_bottom = 101.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/MainMenuGUI/CreditsContainer" unique_id=650927383]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MainMenuGUI/CreditsContainer/MarginContainer" unique_id=548367337]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/MainMenuGUI/CreditsContainer/MarginContainer/VBoxContainer" unique_id=1022928512]
+layout_mode = 2
+text = "DEVELOPED BY:"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/MainMenuGUI/CreditsContainer/MarginContainer/VBoxContainer" unique_id=233814485]
+layout_mode = 2
+bbcode_enabled = true
+text = "[url=https://quar15.itch.io/][u]Quar15[/u][/url] and [url=https://itch.io/profile/dotmrugacz][u].mrugacz[/u][/url]"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/MainMenuGUI/CreditsContainer/MarginContainer/VBoxContainer" unique_id=1798940350]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="CanvasLayer/MainMenuGUI/CreditsContainer/MarginContainer/VBoxContainer" unique_id=1883621730]
+layout_mode = 2
+bbcode_enabled = true
+text = "ASSETS:"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="CanvasLayer/MainMenuGUI/CreditsContainer/MarginContainer/VBoxContainer" unique_id=2025675590]
+layout_mode = 2
+bbcode_enabled = true
+text = "Various - [url=https://kenney.nl/]Kenney[/url]"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="CanvasLayer/MainMenuGUI/CreditsContainer/MarginContainer/VBoxContainer" unique_id=1461466200]
+layout_mode = 2
+bbcode_enabled = true
+text = "SFX - [url=https://cyrex-studios.itch.io/universal-ui-soundpack]Nathan Gibson[/url]"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="CanvasLayer/MainMenuGUI/CreditsContainer/MarginContainer/VBoxContainer" unique_id=928306607]
+layout_mode = 2
+bbcode_enabled = true
+text = "Music - [url=https://opengameart.org/users/omfgdude]omfgdude[/url]"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel7" type="RichTextLabel" parent="CanvasLayer/MainMenuGUI/CreditsContainer/MarginContainer/VBoxContainer" unique_id=902444172]
+layout_mode = 2
+bbcode_enabled = true
+text = "Font - [url=https://ggbot.itch.io/scabber-font]ggbot[/url]"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel8" type="RichTextLabel" parent="CanvasLayer/MainMenuGUI/CreditsContainer/MarginContainer/VBoxContainer" unique_id=919493563]
+layout_mode = 2
+bbcode_enabled = true
+text = "Logo Font - [url=https://fonts.google.com/specimen/Modak]Ek Type[/url] (Google Fonts)"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="CanvasLayer/MainMenuGUI/CreditsContainer/MarginContainer/VBoxContainer" unique_id=609690220]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="RichTextLabel9" type="RichTextLabel" parent="CanvasLayer/MainMenuGUI/CreditsContainer/MarginContainer/VBoxContainer" unique_id=402401418]
+layout_mode = 2
+bbcode_enabled = true
+text = "[url=https://github.com/Quar15/drop-zoo-game][u]Game Source Code[/u][/url]"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1130758155]
 deterministic = true
