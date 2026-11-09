@@ -6,6 +6,7 @@ extends Resource
 enum SOUND_EFFECT_TYPE {
 UI_CLICK,
 ANIMAL_MERGE,
+POINTS_UP,
 }
 
 @export_range(0, 10) var limit: int = 5  ## Maximum number of this SoundEffect to play simultaneously before culled.

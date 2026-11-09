@@ -216,6 +216,14 @@ script = ExtResource("12_2f3dj")
 score_gui = NodePath("MarginContainer2/ScoreGUI")
 next_animal_gui = NodePath("MarginContainer/VBoxContainer/NextAnimalGUI")
 
+[node name="FlyingPointsParent" type="Control" parent="GameWorld/GUICanvasLayer/GUI" unique_id=1499219002]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="MarginContainer" type="MarginContainer" parent="GameWorld/GUICanvasLayer/GUI" unique_id=1588437384]
 layout_mode = 1
 anchors_preset = 6
@@ -369,8 +377,9 @@ offset_bottom = 20.0
 grow_vertical = 2
 theme_override_constants/margin_left = 64
 
-[node name="ScoreGUI" parent="GameWorld/GUICanvasLayer/GUI/MarginContainer2" unique_id=1917382408 instance=ExtResource("22_pm3ni")]
+[node name="ScoreGUI" parent="GameWorld/GUICanvasLayer/GUI/MarginContainer2" unique_id=1917382408 node_paths=PackedStringArray("flying_points_parent") instance=ExtResource("22_pm3ni")]
 layout_mode = 2
+flying_points_parent = NodePath("../../FlyingPointsParent")
 
 [node name="MarginContainer3" type="MarginContainer" parent="GameWorld/GUICanvasLayer/GUI" unique_id=1762615488]
 layout_mode = 1

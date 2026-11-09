@@ -1,12 +1,17 @@
 [gd_scene format=3 uid="uid://leu5vjwsnwoe"]
 
 [ext_resource type="Script" uid="uid://bquujya0phvlv" path="res://scripts/GUI/score_gui.gd" id="1_elhta"]
+[ext_resource type="Theme" uid="uid://qnmlbkfmpc3i" path="res://resources/gui_theme.tres" id="1_xpn7m"]
+[ext_resource type="PackedScene" uid="uid://jv3df7rso5br" path="res://prefabs/GUI/flying_points.tscn" id="3_cpdid"]
 
-[node name="ScoreGUI" type="VBoxContainer" unique_id=1917382408 node_paths=PackedStringArray("score_label", "high_score_label")]
+[node name="ScoreGUI" type="VBoxContainer" unique_id=1917382408 node_paths=PackedStringArray("score_label", "high_score_label", "flying_points_parent")]
+theme = ExtResource("1_xpn7m")
 theme_override_constants/separation = 32
 script = ExtResource("1_elhta")
 score_label = NodePath("VBoxContainer/ScoreLabel")
 high_score_label = NodePath("VBoxContainer2/HighScoreLabel")
+flying_points_prefab = ExtResource("3_cpdid")
+flying_points_parent = NodePath(".")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=760346977]
 custom_minimum_size = Vector2(376, 0)
