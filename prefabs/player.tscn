@@ -21,6 +21,10 @@ animals_parent = NodePath(".")
 spawn_timer = NodePath("Timer")
 spawnable_animal_resources = Array[ExtResource("2_kbsxf")]([ExtResource("3_rgeog"), ExtResource("4_opo22"), ExtResource("6_8rb0w"), ExtResource("7_sd3sa")])
 
+[node name="Line2D" type="Line2D" parent="." unique_id=1492661200]
+points = PackedVector2Array(0, 0, 0, 850)
+default_color = Color(1, 1, 1, 0.22745098)
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1819302372]
 texture = ExtResource("1_r66lb")
 

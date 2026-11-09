@@ -72,6 +72,7 @@ func on_hitbox_entered(body: Node2D) -> void:
 	body.is_dirty = true
 
 	animal_is_merging.emit(self, body)
+	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.ANIMAL_MERGE)
 
 	printt(self.name, "touched", body.name)
 

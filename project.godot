@@ -20,7 +20,7 @@ config/icon="uid://ban2vju0nl824"
 [autoload]
 
 Global="*uid://boxnkk7621syh"
-AudioManager="*uid://xqu0f7axbxow"
+AudioManager="*uid://cj1q5e14o2psi"
 InputManager="*uid://b51swomofbkvr"
 
 [display]
