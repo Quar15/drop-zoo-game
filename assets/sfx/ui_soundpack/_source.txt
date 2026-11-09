@@ -1,6 +1,6 @@
 
 
-# LICENCE:
+# LICENSE:
 Universal UI Soundpack
 
 Created and distributed by Nathan Gibson (https://nathangibson.myportfolio.com)

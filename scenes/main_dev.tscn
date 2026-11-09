@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://2q2b43vuuvvg"]
+
+[ext_resource type="Shader" uid="uid://c4atekomphdwr" path="res://resources/animated_pattern_background.gdshader" id="1_to36i"]
+[ext_resource type="Texture2D" uid="uid://b6q728muupf52" path="res://assets/kenney/pattern_extra/pattern_040.png" id="2_yfbgp"]
+[ext_resource type="PackedScene" uid="uid://384qb3wcvp3c" path="res://scenes/game_world.tscn" id="3_q8twa"]
+[ext_resource type="AudioStream" uid="uid://blqcr1rq08s6d" path="res://assets/sfx/chill_lofi_background/chilllofir-loop.ogg" id="4_56u01"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sugp2"]
+shader = ExtResource("1_to36i")
+shader_parameter/pattern = ExtResource("2_yfbgp")
+shader_parameter/pattern_color = Color(0.9648127, 0.83927673, 0.65900666, 1)
+shader_parameter/tiling = 128.0
+shader_parameter/speed = Vector2(0.03, -0.03)
+shader_parameter/rotation = -0.00018518358264962
+
+[node name="Game" type="Node" unique_id=587129324]
+
+[node name="BackgroundLayer" type="CanvasLayer" parent="." unique_id=261849312]
+layer = -999
+follow_viewport_enabled = true
+
+[node name="ColorRect" type="ColorRect" parent="BackgroundLayer" unique_id=2144382732]
+material = SubResource("ShaderMaterial_sugp2")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.9510698, 0.7894333, 0.55515563, 1)
+
+[node name="GameWorld" parent="." unique_id=113656295 instance=ExtResource("3_q8twa")]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=278432615]
+anchor_mode = 0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=646039094]
+stream = ExtResource("4_56u01")
+volume_db = -23.0
+autoplay = true
+bus = &"Music"
+parameters/looping = true

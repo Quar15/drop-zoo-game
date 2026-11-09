@@ -1,0 +1,373 @@
+[gd_scene format=3 uid="uid://384qb3wcvp3c"]
+
+[ext_resource type="Script" uid="uid://dpvglgebqmyia" path="res://scripts/game_manager.gd" id="1_2lekn"]
+[ext_resource type="Script" uid="uid://b5jvdf62v6g5c" path="res://scripts/animal_resource.gd" id="2_vu5a2"]
+[ext_resource type="Resource" uid="uid://2hxr67giinsj" path="res://resources/animals/duck_resource.tres" id="3_4tgb6"]
+[ext_resource type="Resource" uid="uid://ts6equ8j7kte" path="res://resources/animals/snake_resource.tres" id="4_48nki"]
+[ext_resource type="Resource" uid="uid://b6whh2378rfv5" path="res://resources/animals/parrot_resource.tres" id="5_7hmdv"]
+[ext_resource type="Resource" uid="uid://q7lv718d7vk3" path="res://resources/animals/penguin_resource.tres" id="6_y3o1a"]
+[ext_resource type="Resource" uid="uid://fw25om7b7a4n" path="res://resources/animals/pig_resource.tres" id="7_3qra0"]
+[ext_resource type="Resource" uid="uid://bo8uh0okxtuxy" path="res://resources/animals/panda_resource.tres" id="8_cgx8r"]
+[ext_resource type="Resource" uid="uid://b0ps1je5v46t5" path="res://resources/animals/cow_resource.tres" id="9_1pscj"]
+[ext_resource type="Resource" uid="uid://csmctxdy5qaoy" path="res://resources/animals/bear_resource.tres" id="10_bcmmk"]
+[ext_resource type="Resource" uid="uid://bh2cytcxqsh8f" path="res://resources/animals/hippo_resource.tres" id="11_jkjo7"]
+[ext_resource type="Resource" uid="uid://dk1j2u2oi2vbf" path="res://resources/animals/rhino_resource.tres" id="12_u24xq"]
+[ext_resource type="Resource" uid="uid://dnjyeqvqaob8p" path="res://resources/animals/orca_resource.tres" id="13_l0200"]
+[ext_resource type="Script" uid="uid://dqnv6ce64nb77" path="res://scripts/score_manager.gd" id="14_bccc0"]
+[ext_resource type="Script" uid="uid://bms46ub6oa27l" path="res://scripts/ground_body.gd" id="15_51h7g"]
+[ext_resource type="Script" uid="uid://c8smg1nbyg07o" path="res://scripts/wall_body.gd" id="16_585ia"]
+[ext_resource type="PackedScene" uid="uid://ce85mafpjhxmt" path="res://prefabs/player.tscn" id="17_3bybq"]
+[ext_resource type="PackedScene" uid="uid://ckprvxwr73n6l" path="res://prefabs/death_area.tscn" id="18_4gen8"]
+[ext_resource type="Theme" uid="uid://qnmlbkfmpc3i" path="res://resources/gui_theme.tres" id="19_3mpf8"]
+[ext_resource type="Script" uid="uid://ce1a5csed45ke" path="res://scripts/GUI/gui_manager.gd" id="20_ub8lf"]
+[ext_resource type="PackedScene" uid="uid://dj8nxj3ii5utt" path="res://prefabs/GUI/next_animal_gui.tscn" id="21_n52h7"]
+[ext_resource type="Texture2D" uid="uid://cdc8io60culw2" path="res://assets/kenney/input_prompts/flair_arrow_3_rotated_512.png" id="22_kt70w"]
+[ext_resource type="Script" uid="uid://dnl62nvfwrjjl" path="res://scripts/GUI/circle_container.gd" id="23_ek1ik"]
+[ext_resource type="Texture2D" uid="uid://b56duxqxvxsfi" path="res://assets/kenney/animals_remastered/icons/chick.png" id="24_0b282"]
+[ext_resource type="Texture2D" uid="uid://b1nwidkyuxwx0" path="res://assets/kenney/animals_remastered/icons/snake.png" id="25_aptyq"]
+[ext_resource type="Texture2D" uid="uid://c5l4q1juq7bex" path="res://assets/kenney/animals_remastered/icons/parrot.png" id="26_a3lmt"]
+[ext_resource type="Texture2D" uid="uid://csyya1f3iibnx" path="res://assets/kenney/animals_remastered/icons/penguin.png" id="27_f8yiv"]
+[ext_resource type="Texture2D" uid="uid://dw65bf26gv88g" path="res://assets/kenney/animals_remastered/icons/pig.png" id="28_ana62"]
+[ext_resource type="Texture2D" uid="uid://bvmf5ep2ywg2w" path="res://assets/kenney/animals_remastered/icons/panda.png" id="29_25ju8"]
+[ext_resource type="Texture2D" uid="uid://ck20o1qk27ymn" path="res://assets/kenney/animals_remastered/icons/cow.png" id="30_klm1b"]
+[ext_resource type="Texture2D" uid="uid://gertrg30ao3t" path="res://assets/kenney/animals_remastered/icons/bear.png" id="31_qp5ie"]
+[ext_resource type="Texture2D" uid="uid://pq3bhbnqorfa" path="res://assets/kenney/animals_remastered/icons/hippo.png" id="32_a66b1"]
+[ext_resource type="Texture2D" uid="uid://blowlu7xrnweq" path="res://assets/kenney/animals_remastered/icons/rhino.png" id="33_2pcqm"]
+[ext_resource type="Texture2D" uid="uid://b64ygjnqyskmj" path="res://assets/kenney/animals_remastered/icons/whale.png" id="34_t7dhd"]
+[ext_resource type="PackedScene" uid="uid://leu5vjwsnwoe" path="res://prefabs/GUI/score_gui.tscn" id="35_thaxu"]
+[ext_resource type="PackedScene" uid="uid://d0wqj0vefvggy" path="res://prefabs/GUI/control_hints.tscn" id="36_ba7d3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ld40"]
+size = Vector2(800, 20)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gqmmt"]
+texture = ExtResource("22_kt70w")
+
+[node name="GameWorld" type="Node2D" unique_id=113656295]
+
+[node name="GameManager" type="Node" parent="." unique_id=1704987374 node_paths=PackedStringArray("score_manager", "gui_manager", "player", "death_area")]
+script = ExtResource("1_2lekn")
+score_manager = NodePath("../ScoreManager")
+gui_manager = NodePath("../GUICanvasLayer/GUI")
+animal_resources = Array[ExtResource("2_vu5a2")]([ExtResource("3_4tgb6"), ExtResource("4_48nki"), ExtResource("5_7hmdv"), ExtResource("6_y3o1a"), ExtResource("7_3qra0"), ExtResource("8_cgx8r"), ExtResource("9_1pscj"), ExtResource("10_bcmmk"), ExtResource("11_jkjo7"), ExtResource("12_u24xq"), ExtResource("13_l0200")])
+player = NodePath("../World2D/Player")
+death_area = NodePath("../World2D/DeathArea")
+metadata/_custom_type_script = "uid://dpvglgebqmyia"
+
+[node name="ScoreManager" type="Node" parent="." unique_id=35912469]
+script = ExtResource("14_bccc0")
+metadata/_custom_type_script = "uid://dqnv6ce64nb77"
+
+[node name="World2D" type="Node2D" parent="." unique_id=222382600]
+
+[node name="Zone" type="Node2D" parent="World2D" unique_id=1105392809]
+position = Vector2(960, 939)
+
+[node name="GroundBody" type="StaticBody2D" parent="World2D/Zone" unique_id=904774061]
+script = ExtResource("15_51h7g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World2D/Zone/GroundBody" unique_id=1933373060]
+shape = SubResource("RectangleShape2D_0ld40")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="World2D/Zone" unique_id=2046826664]
+position = Vector2(-400, -400)
+rotation = 1.5707964
+script = ExtResource("16_585ia")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World2D/Zone/StaticBody2D2" unique_id=198183876]
+shape = SubResource("RectangleShape2D_0ld40")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="World2D/Zone" unique_id=323966854]
+position = Vector2(400, -400)
+rotation = -1.5707964
+script = ExtResource("16_585ia")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World2D/Zone/StaticBody2D3" unique_id=557589542]
+shape = SubResource("RectangleShape2D_0ld40")
+
+[node name="Line2DBgBack" type="Line2D" parent="World2D/Zone" unique_id=1564897553]
+points = PackedVector2Array(-375, -50, -375, -820, 375, -820, 375, -50)
+width = 20.0
+default_color = Color(0.82985455, 0.6261955, 0.3105743, 1)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+round_precision = 32
+antialiased = true
+
+[node name="Line2DBgBottom" type="Line2D" parent="World2D/Zone" unique_id=1804338307]
+points = PackedVector2Array(-375, -50, -400, 0, 400, 0, 375, -50)
+closed = true
+width = 20.0
+default_color = Color(0.82985455, 0.6261955, 0.3105743, 1)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+round_precision = 32
+antialiased = true
+
+[node name="Polygon2D2" type="Polygon2D" parent="World2D/Zone/Line2DBgBottom" unique_id=613602998]
+color = Color(0.9030694, 0.7033119, 0.4032847, 1)
+antialiased = true
+polygon = PackedVector2Array(-375, -50, -375, -820, 375, -820, 375, -50)
+
+[node name="Polygon2D" type="Polygon2D" parent="World2D/Zone/Line2DBgBottom" unique_id=1889831588]
+color = Color(0.6888647, 0.5083895, 0.22189063, 1)
+antialiased = true
+polygon = PackedVector2Array(-375, -50, -400, 0, 400, 0, 375, -50)
+
+[node name="Polygon2D3" type="Polygon2D" parent="World2D/Zone/Line2DBgBottom" unique_id=1268920472]
+z_index = 1
+color = Color(0.8163486, 0.6139574, 0.2991383, 1)
+antialiased = true
+polygon = PackedVector2Array(-365, -50, -400, 10, -400, -720, -365, -820)
+
+[node name="Polygon2D4" type="Polygon2D" parent="World2D/Zone/Line2DBgBottom" unique_id=976034109]
+z_index = 1
+color = Color(0.8163486, 0.6139574, 0.2991383, 1)
+antialiased = true
+polygon = PackedVector2Array(365, -50, 400, 10, 400, -720, 365, -820)
+
+[node name="Line2D" type="Line2D" parent="World2D/Zone" unique_id=966276409]
+z_index = 1
+points = PackedVector2Array(-400, -690, 400, -690)
+default_color = Color(0.6, 0, 0, 0.5019608)
+
+[node name="Line2DBottom" type="Line2D" parent="World2D/Zone" unique_id=1455724138]
+z_index = 2
+points = PackedVector2Array(-400, -720, -400, 0, 400, 0, 400, -720)
+width = 20.0
+default_color = Color(0.74573773, 0.5547358, 0.25290453, 1)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+round_precision = 32
+antialiased = true
+
+[node name="Line2DTop" type="Line2D" parent="World2D/Zone" unique_id=1411892876]
+z_index = 2
+points = PackedVector2Array(-400, -720, -375, -820, 375, -820, 400, -720)
+closed = true
+width = 20.0
+default_color = Color(0.74573773, 0.5547358, 0.25290453, 1)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+round_precision = 32
+antialiased = true
+
+[node name="LimiterLeft" type="Marker2D" parent="World2D/Zone" unique_id=1821243423]
+position = Vector2(-370, -800)
+
+[node name="LimiterRight" type="Marker2D" parent="World2D/Zone" unique_id=424227206]
+position = Vector2(370, -800)
+
+[node name="Player" parent="World2D" unique_id=1186796138 node_paths=PackedStringArray("animals_parent", "limiter_left", "limiter_right") instance=ExtResource("17_3bybq")]
+z_index = 9
+position = Vector2(960, 80)
+animals_parent = NodePath("../AnimalsParent")
+limiter_left = NodePath("../Zone/LimiterLeft")
+limiter_right = NodePath("../Zone/LimiterRight")
+
+[node name="AnimalsParent" type="Node2D" parent="World2D" unique_id=1193157513]
+position = Vector2(-10000, -10000)
+
+[node name="DeathArea" parent="World2D" unique_id=1909163175 instance=ExtResource("18_4gen8")]
+position = Vector2(960, 160)
+
+[node name="GUICanvasLayer" type="CanvasLayer" parent="." unique_id=1891716643]
+follow_viewport_enabled = true
+
+[node name="GUI" type="Control" parent="GUICanvasLayer" unique_id=1695481976 node_paths=PackedStringArray("score_gui", "next_animal_gui")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("19_3mpf8")
+script = ExtResource("20_ub8lf")
+score_gui = NodePath("MarginContainer2/ScoreGUI")
+next_animal_gui = NodePath("MarginContainer/VBoxContainer/NextAnimalGUI")
+
+[node name="FlyingPointsParent" type="Control" parent="GUICanvasLayer/GUI" unique_id=1443576806]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="GUICanvasLayer/GUI" unique_id=862495155]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/margin_right = 64
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GUICanvasLayer/GUI/MarginContainer" unique_id=1560821960]
+custom_minimum_size = Vector2(376, 0)
+layout_mode = 2
+theme_override_constants/separation = 96
+
+[node name="NextAnimalGUI" parent="GUICanvasLayer/GUI/MarginContainer/VBoxContainer" unique_id=1016991445 instance=ExtResource("21_n52h7")]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GUICanvasLayer/GUI/MarginContainer/VBoxContainer" unique_id=273288934]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GUICanvasLayer/GUI/MarginContainer/VBoxContainer/VBoxContainer" unique_id=294259667]
+layout_mode = 2
+text = "Chart of Evolution:"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="GUICanvasLayer/GUI/MarginContainer/VBoxContainer/VBoxContainer" unique_id=1150118266]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_gqmmt")
+
+[node name="MarginContainer" type="MarginContainer" parent="GUICanvasLayer/GUI/MarginContainer/VBoxContainer/VBoxContainer/PanelContainer" unique_id=796609239]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="EvolutionChart" type="Control" parent="GUICanvasLayer/GUI/MarginContainer/VBoxContainer/VBoxContainer/PanelContainer/MarginContainer" unique_id=101295812 node_paths=PackedStringArray("elements")]
+custom_minimum_size = Vector2(376, 376)
+layout_mode = 2
+script = ExtResource("23_ek1ik")
+radius = 156.0
+element_size = Vector2(80, 80)
+elements = [NodePath("EmptyRect"), NodePath("TextureRect"), NodePath("TextureRect2"), NodePath("TextureRect3"), NodePath("TextureRect4"), NodePath("TextureRect5"), NodePath("TextureRect6"), NodePath("TextureRect7"), NodePath("TextureRect8"), NodePath("TextureRect9"), NodePath("TextureRect10"), NodePath("TextureRect11")]
+metadata/_custom_type_script = "uid://dnl62nvfwrjjl"
+
+[node name="EmptyRect" type="TextureRect" parent="GUICanvasLayer/GUI/MarginContainer/VBoxContainer/VBoxContainer/PanelContainer/MarginContainer/EvolutionChart" unique_id=1135742617]
+layout_mode = 0
+offset_right = 146.0
+offset_bottom = 162.0
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="GUICanvasLayer/GUI/MarginContainer/VBoxContainer/VBoxContainer/PanelContainer/MarginContainer/EvolutionChart" unique_id=1658363016]
+custom_maximum_size = Vector2(256, 256)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("24_0b282")
+
+[node name="TextureRect2" type="TextureRect" parent="GUICanvasLayer/GUI/MarginContainer/VBoxContainer/VBoxContainer/PanelContainer/MarginContainer/EvolutionChart" unique_id=1590911991]
+custom_maximum_size = Vector2(256, 256)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("25_aptyq")
+
+[node name="TextureRect3" type="TextureRect" parent="GUICanvasLayer/GUI/MarginContainer/VBoxContainer/VBoxContainer/PanelContainer/MarginContainer/EvolutionChart" unique_id=19206853]
+custom_maximum_size = Vector2(256, 256)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("26_a3lmt")
+
+[node name="TextureRect4" type="TextureRect" parent="GUICanvasLayer/GUI/MarginContainer/VBoxContainer/VBoxContainer/PanelContainer/MarginContainer/EvolutionChart" unique_id=1715793889]
+custom_maximum_size = Vector2(256, 256)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("27_f8yiv")
+
+[node name="TextureRect5" type="TextureRect" parent="GUICanvasLayer/GUI/MarginContainer/VBoxContainer/VBoxContainer/PanelContainer/MarginContainer/EvolutionChart" unique_id=1985739704]
+custom_maximum_size = Vector2(256, 256)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("28_ana62")
+
+[node name="TextureRect6" type="TextureRect" parent="GUICanvasLayer/GUI/MarginContainer/VBoxContainer/VBoxContainer/PanelContainer/MarginContainer/EvolutionChart" unique_id=540979193]
+custom_maximum_size = Vector2(256, 256)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("29_25ju8")
+
+[node name="TextureRect7" type="TextureRect" parent="GUICanvasLayer/GUI/MarginContainer/VBoxContainer/VBoxContainer/PanelContainer/MarginContainer/EvolutionChart" unique_id=1715776424]
+custom_maximum_size = Vector2(256, 256)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("30_klm1b")
+
+[node name="TextureRect8" type="TextureRect" parent="GUICanvasLayer/GUI/MarginContainer/VBoxContainer/VBoxContainer/PanelContainer/MarginContainer/EvolutionChart" unique_id=671094465]
+custom_maximum_size = Vector2(256, 256)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("31_qp5ie")
+
+[node name="TextureRect9" type="TextureRect" parent="GUICanvasLayer/GUI/MarginContainer/VBoxContainer/VBoxContainer/PanelContainer/MarginContainer/EvolutionChart" unique_id=521133888]
+custom_maximum_size = Vector2(256, 256)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("32_a66b1")
+
+[node name="TextureRect10" type="TextureRect" parent="GUICanvasLayer/GUI/MarginContainer/VBoxContainer/VBoxContainer/PanelContainer/MarginContainer/EvolutionChart" unique_id=1331240236]
+custom_maximum_size = Vector2(256, 256)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("33_2pcqm")
+
+[node name="TextureRect11" type="TextureRect" parent="GUICanvasLayer/GUI/MarginContainer/VBoxContainer/VBoxContainer/PanelContainer/MarginContainer/EvolutionChart" unique_id=175996966]
+custom_maximum_size = Vector2(256, 256)
+layout_mode = 0
+offset_right = 146.0
+offset_bottom = 162.0
+texture = ExtResource("34_t7dhd")
+
+[node name="EmptyRect2" type="TextureRect" parent="GUICanvasLayer/GUI/MarginContainer/VBoxContainer/VBoxContainer/PanelContainer/MarginContainer/EvolutionChart" unique_id=548251977]
+layout_mode = 0
+offset_right = 146.0
+offset_bottom = 162.0
+expand_mode = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="GUICanvasLayer/GUI" unique_id=633360316]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 20.0
+grow_vertical = 2
+theme_override_constants/margin_left = 64
+
+[node name="ScoreGUI" parent="GUICanvasLayer/GUI/MarginContainer2" unique_id=1917382408 node_paths=PackedStringArray("flying_points_parent") instance=ExtResource("35_thaxu")]
+layout_mode = 2
+flying_points_parent = NodePath("../../FlyingPointsParent")
+
+[node name="MarginContainer3" type="MarginContainer" parent="GUICanvasLayer/GUI" unique_id=110458866]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_bottom = 32
+
+[node name="ControlHints" parent="GUICanvasLayer/GUI/MarginContainer3" unique_id=1308114495 instance=ExtResource("36_ba7d3")]
+layout_mode = 2

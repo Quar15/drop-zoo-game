@@ -3,11 +3,15 @@
 [ext_resource type="Script" uid="uid://djijtspjttbyg" path="res://scripts/fake_animals_rain.gd" id="1_lmwo4"]
 [ext_resource type="PackedScene" uid="uid://dkf5r5kqsxa48" path="res://prefabs/fake_animal.tscn" id="2_qkk0i"]
 [ext_resource type="Theme" uid="uid://qnmlbkfmpc3i" path="res://resources/gui_theme.tres" id="3_47nhc"]
-[ext_resource type="Texture2D" uid="uid://ban2vju0nl824" path="res://assets/kenney/animals_remastered/original/chick.png" id="3_mgxyb"]
 [ext_resource type="Script" uid="uid://bcw20ulwfpfw3" path="res://scripts/GUI/main_menu_gui.gd" id="4_hf8dy"]
+[ext_resource type="Texture2D" uid="uid://chh2wkrdq7nhn" path="res://assets/logo/drop_zoo_logo_motion_lines.png" id="5_7akwi"]
+[ext_resource type="Texture2D" uid="uid://bx74j7ml4ewej" path="res://assets/logo/drop_zoo_logo.png" id="5_hf8dy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lmwo4"]
 size = Vector2(4000, 100)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mp4gh"]
+texture = ExtResource("5_7akwi")
 
 [node name="MainMenuWorld" type="Node2D" unique_id=475629287]
 
@@ -57,14 +61,23 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 16
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/MainMenuGUI/VBoxContainer" unique_id=1247290915]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/MainMenuGUI/VBoxContainer" unique_id=97878800]
 layout_mode = 2
-texture = ExtResource("3_mgxyb")
+theme_override_constants/margin_top = -256
+theme_override_constants/margin_bottom = -256
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/MainMenuGUI/VBoxContainer/MarginContainer" unique_id=143854038]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_mp4gh")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/MainMenuGUI/VBoxContainer/MarginContainer/PanelContainer" unique_id=1247290915]
+layout_mode = 2
+texture = ExtResource("5_hf8dy")
 stretch_mode = 3
 
 [node name="HSeparator" type="HSeparator" parent="CanvasLayer/MainMenuGUI/VBoxContainer" unique_id=2132504745]
 layout_mode = 2
-theme_override_constants/separation = 128
+theme_override_constants/separation = 64
 
 [node name="Button" type="Button" parent="CanvasLayer/MainMenuGUI/VBoxContainer" unique_id=1735696637]
 layout_mode = 2
