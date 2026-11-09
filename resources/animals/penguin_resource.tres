@@ -1,13 +1,15 @@
 [gd_resource type="Resource" script_class="AnimalResource" format=3 uid="uid://q7lv718d7vk3"]
 
 [ext_resource type="Script" uid="uid://b5jvdf62v6g5c" path="res://scripts/animal_resource.gd" id="1_tbssr"]
-[ext_resource type="Texture2D" uid="uid://b25vsdhijvoxh" path="res://assets/kenney/animals_remastered/penguin.png" id="2_tbssr"]
+[ext_resource type="Texture2D" uid="uid://csyya1f3iibnx" path="res://assets/kenney/animals_remastered/icons/penguin.png" id="1_xktk4"]
+[ext_resource type="Texture2D" uid="uid://debvdmmmjlon0" path="res://assets/kenney/animals_remastered/upscaled/penguin.png" id="2_tbssr"]
 
 [resource]
 script = ExtResource("1_tbssr")
 name = "PENGUIN"
 texture = ExtResource("2_tbssr")
-size = 1.2
+icon_texture = ExtResource("1_xktk4")
+size = 0.12
 type = 3
 score = 100
 metadata/_custom_type_script = "uid://b5jvdf62v6g5c"

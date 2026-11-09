@@ -10,7 +10,7 @@
 [ext_resource type="Resource" uid="uid://ts6equ8j7kte" path="res://resources/animals/snake_resource.tres" id="4_opo22"]
 [ext_resource type="Resource" uid="uid://b6whh2378rfv5" path="res://resources/animals/parrot_resource.tres" id="6_8rb0w"]
 [ext_resource type="Resource" uid="uid://q7lv718d7vk3" path="res://resources/animals/penguin_resource.tres" id="7_sd3sa"]
-[ext_resource type="Texture2D" uid="uid://ban2vju0nl824" path="res://assets/kenney/animals_remastered/chick.png" id="8_rgeog"]
+[ext_resource type="Texture2D" uid="uid://ban2vju0nl824" path="res://assets/kenney/animals_remastered/original/chick.png" id="8_rgeog"]
 
 [node name="Player" type="Node2D" unique_id=1186796138 node_paths=PackedStringArray("spawn_point", "animal_sprite", "animals_parent", "spawn_timer")]
 script = ExtResource("1_u51tk")

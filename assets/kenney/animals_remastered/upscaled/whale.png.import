@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bftoo6pb5vtej"
-path="res://.godot/imported/cow.png-cb7eb93ce2ae7f1c161e6c60deb70ebf.ctex"
+uid="uid://doyni7g7jhn6g"
+path="res://.godot/imported/whale.png-e2444c97b50bbca1a38fa4a3cdeb44b3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/kenney/animals_remastered/cow.png"
-dest_files=["res://.godot/imported/cow.png-cb7eb93ce2ae7f1c161e6c60deb70ebf.ctex"]
+source_file="res://assets/kenney/animals_remastered/upscaled/whale.png"
+dest_files=["res://.godot/imported/whale.png-e2444c97b50bbca1a38fa4a3cdeb44b3.ctex"]
 
 [params]
 

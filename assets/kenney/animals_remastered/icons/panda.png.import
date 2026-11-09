@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsxga5v1qg86s"
-path="res://.godot/imported/parrot.png-62cb19c8bfadb8e1556cfc79ee87f951.ctex"
+uid="uid://bvmf5ep2ywg2w"
+path="res://.godot/imported/panda.png-1d482d29013a69994c674788166aa032.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/kenney/animals_remastered/parrot.png"
-dest_files=["res://.godot/imported/parrot.png-62cb19c8bfadb8e1556cfc79ee87f951.ctex"]
+source_file="res://assets/kenney/animals_remastered/icons/panda.png"
+dest_files=["res://.godot/imported/panda.png-1d482d29013a69994c674788166aa032.ctex"]
 
 [params]
 

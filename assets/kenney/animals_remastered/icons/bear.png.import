@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmfku7fp7b2qp"
-path="res://.godot/imported/hippo.png-0babda485d535b64de1944b49c20caa4.ctex"
+uid="uid://gertrg30ao3t"
+path="res://.godot/imported/bear.png-b655b3b4677567b62604597dafffb60b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/kenney/animals_remastered/hippo.png"
-dest_files=["res://.godot/imported/hippo.png-0babda485d535b64de1944b49c20caa4.ctex"]
+source_file="res://assets/kenney/animals_remastered/icons/bear.png"
+dest_files=["res://.godot/imported/bear.png-b655b3b4677567b62604597dafffb60b.ctex"]
 
 [params]
 

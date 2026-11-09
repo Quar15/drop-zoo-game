@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b25vsdhijvoxh"
-path="res://.godot/imported/penguin.png-be42f6a427121955943dfe0afc85d931.ctex"
+uid="uid://cud8t8472oacc"
+path="res://.godot/imported/snake.png-5ea91fee17dcb78f8e3f9e049f45b9f7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/kenney/animals_remastered/penguin.png"
-dest_files=["res://.godot/imported/penguin.png-be42f6a427121955943dfe0afc85d931.ctex"]
+source_file="res://assets/kenney/animals_remastered/original/snake.png"
+dest_files=["res://.godot/imported/snake.png-5ea91fee17dcb78f8e3f9e049f45b9f7.ctex"]
 
 [params]
 

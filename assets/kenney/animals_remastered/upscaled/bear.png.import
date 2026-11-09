@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dy1yqij7w0717"
-path="res://.godot/imported/rhino.png-88e9737f56b0af426d1625ccc1039d59.ctex"
+uid="uid://t0hxn1qit55b"
+path="res://.godot/imported/bear.png-7be3417191e7fe1d68342077aef31d0b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/kenney/animals_remastered/rhino.png"
-dest_files=["res://.godot/imported/rhino.png-88e9737f56b0af426d1625ccc1039d59.ctex"]
+source_file="res://assets/kenney/animals_remastered/upscaled/bear.png"
+dest_files=["res://.godot/imported/bear.png-7be3417191e7fe1d68342077aef31d0b.ctex"]
 
 [params]
 

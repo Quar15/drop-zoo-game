@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ban2vju0nl824"
-path="res://.godot/imported/chick.png-685e7534db6a307d60da8166391a1a39.ctex"
+uid="uid://e60c3jtvd2hu"
+path="res://.godot/imported/pig.png-766763099da1e2083fd31c5649397aa6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/kenney/animals_remastered/chick.png"
-dest_files=["res://.godot/imported/chick.png-685e7534db6a307d60da8166391a1a39.ctex"]
+source_file="res://assets/kenney/animals_remastered/upscaled/pig.png"
+dest_files=["res://.godot/imported/pig.png-766763099da1e2083fd31c5649397aa6.ctex"]
 
 [params]
 

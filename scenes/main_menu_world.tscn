@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://djijtspjttbyg" path="res://scripts/fake_animals_rain.gd" id="1_lmwo4"]
 [ext_resource type="PackedScene" uid="uid://dkf5r5kqsxa48" path="res://prefabs/fake_animal.tscn" id="2_qkk0i"]
 [ext_resource type="Theme" uid="uid://qnmlbkfmpc3i" path="res://resources/gui_theme.tres" id="3_47nhc"]
-[ext_resource type="Texture2D" uid="uid://ban2vju0nl824" path="res://assets/kenney/animals_remastered/chick.png" id="3_mgxyb"]
+[ext_resource type="Texture2D" uid="uid://ban2vju0nl824" path="res://assets/kenney/animals_remastered/original/chick.png" id="3_mgxyb"]
 [ext_resource type="Script" uid="uid://bcw20ulwfpfw3" path="res://scripts/GUI/main_menu_gui.gd" id="4_hf8dy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lmwo4"]

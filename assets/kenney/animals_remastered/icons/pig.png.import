@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3oennhmbpywx"
-path="res://.godot/imported/bear.png-1d125e7e312585dcf426cd05252ed98d.ctex"
+uid="uid://dw65bf26gv88g"
+path="res://.godot/imported/pig.png-b783c6aea13914eeccaa623beb6521d1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/kenney/animals_remastered/bear.png"
-dest_files=["res://.godot/imported/bear.png-1d125e7e312585dcf426cd05252ed98d.ctex"]
+source_file="res://assets/kenney/animals_remastered/icons/pig.png"
+dest_files=["res://.godot/imported/pig.png-b783c6aea13914eeccaa623beb6521d1.ctex"]
 
 [params]
 

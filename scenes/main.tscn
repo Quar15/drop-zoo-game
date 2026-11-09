@@ -2,34 +2,22 @@
 
 [ext_resource type="Shader" uid="uid://c4atekomphdwr" path="res://resources/animated_pattern_background.gdshader" id="1_0wfyh"]
 [ext_resource type="Script" uid="uid://dpvglgebqmyia" path="res://scripts/game_manager.gd" id="1_2wyq8"]
-[ext_resource type="Texture2D" uid="uid://ban2vju0nl824" path="res://assets/kenney/animals_remastered/chick.png" id="1_o5qli"]
 [ext_resource type="Texture2D" uid="uid://b6q728muupf52" path="res://assets/kenney/pattern_extra/pattern_040.png" id="2_sugp2"]
 [ext_resource type="Script" uid="uid://dqnv6ce64nb77" path="res://scripts/score_manager.gd" id="2_vxglm"]
 [ext_resource type="Theme" uid="uid://qnmlbkfmpc3i" path="res://resources/gui_theme.tres" id="4_jkv2x"]
 [ext_resource type="Script" uid="uid://dnl62nvfwrjjl" path="res://scripts/GUI/circle_container.gd" id="4_jyhfs"]
 [ext_resource type="Script" uid="uid://b5jvdf62v6g5c" path="res://scripts/animal_resource.gd" id="4_kmb1v"]
-[ext_resource type="Texture2D" uid="uid://bo0mtei2q26dh" path="res://assets/kenney/input_prompts/flair_arrow_3_rotated.png" id="5_0ld40"]
-[ext_resource type="Texture2D" uid="uid://cud8t8472oacc" path="res://assets/kenney/animals_remastered/snake.png" id="5_a8y0u"]
 [ext_resource type="Resource" uid="uid://2hxr67giinsj" path="res://resources/animals/duck_resource.tres" id="5_fuf3a"]
-[ext_resource type="Texture2D" uid="uid://bsxga5v1qg86s" path="res://assets/kenney/animals_remastered/parrot.png" id="6_jkv2x"]
 [ext_resource type="Resource" uid="uid://ts6equ8j7kte" path="res://resources/animals/snake_resource.tres" id="6_pibwh"]
 [ext_resource type="Resource" uid="uid://b6whh2378rfv5" path="res://resources/animals/parrot_resource.tres" id="7_c6pm6"]
-[ext_resource type="Texture2D" uid="uid://b25vsdhijvoxh" path="res://assets/kenney/animals_remastered/penguin.png" id="7_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://ce85mafpjhxmt" path="res://prefabs/player.tscn" id="7_y6deb"]
 [ext_resource type="Resource" uid="uid://q7lv718d7vk3" path="res://resources/animals/penguin_resource.tres" id="8_5he1u"]
-[ext_resource type="Texture2D" uid="uid://ctm0f4upw3rqe" path="res://assets/kenney/animals_remastered/pig.png" id="8_muem4"]
 [ext_resource type="Resource" uid="uid://fw25om7b7a4n" path="res://resources/animals/pig_resource.tres" id="9_5poiv"]
-[ext_resource type="Texture2D" uid="uid://cnrchmeuc20t6" path="res://assets/kenney/animals_remastered/panda.png" id="9_dp3eg"]
-[ext_resource type="Texture2D" uid="uid://bftoo6pb5vtej" path="res://assets/kenney/animals_remastered/cow.png" id="10_0ld40"]
 [ext_resource type="Resource" uid="uid://bo8uh0okxtuxy" path="res://resources/animals/panda_resource.tres" id="10_2cjbq"]
 [ext_resource type="Resource" uid="uid://b0ps1je5v46t5" path="res://resources/animals/cow_resource.tres" id="11_chjal"]
-[ext_resource type="Texture2D" uid="uid://b3oennhmbpywx" path="res://assets/kenney/animals_remastered/bear.png" id="11_gqmmt"]
 [ext_resource type="Script" uid="uid://ce1a5csed45ke" path="res://scripts/GUI/gui_manager.gd" id="12_2f3dj"]
 [ext_resource type="Resource" uid="uid://csmctxdy5qaoy" path="res://resources/animals/bear_resource.tres" id="12_cjqg0"]
-[ext_resource type="Texture2D" uid="uid://dmfku7fp7b2qp" path="res://assets/kenney/animals_remastered/hippo.png" id="12_yc10j"]
-[ext_resource type="Texture2D" uid="uid://dy1yqij7w0717" path="res://assets/kenney/animals_remastered/rhino.png" id="13_jscy8"]
 [ext_resource type="Resource" uid="uid://bh2cytcxqsh8f" path="res://resources/animals/hippo_resource.tres" id="13_vchkt"]
-[ext_resource type="Texture2D" uid="uid://gubg4qnvxwid" path="res://assets/kenney/animals_remastered/whale.png" id="14_pm3ni"]
 [ext_resource type="Resource" uid="uid://dk1j2u2oi2vbf" path="res://resources/animals/rhino_resource.tres" id="14_txyw0"]
 [ext_resource type="Resource" uid="uid://dnjyeqvqaob8p" path="res://resources/animals/orca_resource.tres" id="15_vc5cj"]
 [ext_resource type="Script" uid="uid://bms46ub6oa27l" path="res://scripts/ground_body.gd" id="17_pibwh"]
@@ -38,7 +26,19 @@
 [ext_resource type="PackedScene" uid="uid://dj8nxj3ii5utt" path="res://prefabs/GUI/next_animal_gui.tscn" id="21_fuf3a"]
 [ext_resource type="PackedScene" uid="uid://d0wqj0vefvggy" path="res://prefabs/GUI/control_hints.tscn" id="22_jscy8"]
 [ext_resource type="PackedScene" uid="uid://leu5vjwsnwoe" path="res://prefabs/GUI/score_gui.tscn" id="22_pm3ni"]
+[ext_resource type="Texture2D" uid="uid://cdc8io60culw2" path="res://assets/kenney/input_prompts/flair_arrow_3_rotated_512.png" id="24_c6pm6"]
+[ext_resource type="Texture2D" uid="uid://b56duxqxvxsfi" path="res://assets/kenney/animals_remastered/icons/chick.png" id="26_c6pm6"]
+[ext_resource type="Texture2D" uid="uid://b1nwidkyuxwx0" path="res://assets/kenney/animals_remastered/icons/snake.png" id="27_c6pm6"]
 [ext_resource type="AudioStream" uid="uid://blqcr1rq08s6d" path="res://assets/sfx/chill_lofi_background/chilllofir-loop.ogg" id="27_vxglm"]
+[ext_resource type="Texture2D" uid="uid://c5l4q1juq7bex" path="res://assets/kenney/animals_remastered/icons/parrot.png" id="28_c6pm6"]
+[ext_resource type="Texture2D" uid="uid://csyya1f3iibnx" path="res://assets/kenney/animals_remastered/icons/penguin.png" id="29_c6pm6"]
+[ext_resource type="Texture2D" uid="uid://dw65bf26gv88g" path="res://assets/kenney/animals_remastered/icons/pig.png" id="30_c6pm6"]
+[ext_resource type="Texture2D" uid="uid://bvmf5ep2ywg2w" path="res://assets/kenney/animals_remastered/icons/panda.png" id="31_c6pm6"]
+[ext_resource type="Texture2D" uid="uid://ck20o1qk27ymn" path="res://assets/kenney/animals_remastered/icons/cow.png" id="32_c6pm6"]
+[ext_resource type="Texture2D" uid="uid://gertrg30ao3t" path="res://assets/kenney/animals_remastered/icons/bear.png" id="33_c6pm6"]
+[ext_resource type="Texture2D" uid="uid://pq3bhbnqorfa" path="res://assets/kenney/animals_remastered/icons/hippo.png" id="34_c6pm6"]
+[ext_resource type="Texture2D" uid="uid://blowlu7xrnweq" path="res://assets/kenney/animals_remastered/icons/rhino.png" id="35_c6pm6"]
+[ext_resource type="Texture2D" uid="uid://b64ygjnqyskmj" path="res://assets/kenney/animals_remastered/icons/whale.png" id="36_c6pm6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sugp2"]
 shader = ExtResource("1_0wfyh")
@@ -52,7 +52,7 @@ shader_parameter/rotation = -0.00018518358264962
 size = Vector2(800, 20)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gqmmt"]
-texture = ExtResource("5_0ld40")
+texture = ExtResource("24_c6pm6")
 
 [node name="Game" type="Node" unique_id=587129324]
 
@@ -233,103 +233,126 @@ theme_override_constants/margin_right = 64
 [node name="VBoxContainer" type="VBoxContainer" parent="GameWorld/GUICanvasLayer/GUI/MarginContainer" unique_id=1770119638]
 custom_minimum_size = Vector2(376, 0)
 layout_mode = 2
-theme_override_constants/separation = 128
+theme_override_constants/separation = 96
 
 [node name="NextAnimalGUI" parent="GameWorld/GUICanvasLayer/GUI/MarginContainer/VBoxContainer" unique_id=1016991445 instance=ExtResource("21_fuf3a")]
 layout_mode = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="GameWorld/GUICanvasLayer/GUI/MarginContainer/VBoxContainer" unique_id=1523063755]
+[node name="VBoxContainer" type="VBoxContainer" parent="GameWorld/GUICanvasLayer/GUI/MarginContainer/VBoxContainer" unique_id=310151823]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GameWorld/GUICanvasLayer/GUI/MarginContainer/VBoxContainer/VBoxContainer" unique_id=529517398]
+layout_mode = 2
+text = "Chart of Evolution:"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="GameWorld/GUICanvasLayer/GUI/MarginContainer/VBoxContainer/VBoxContainer" unique_id=1523063755]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_gqmmt")
 
-[node name="MarginContainer" type="MarginContainer" parent="GameWorld/GUICanvasLayer/GUI/MarginContainer/VBoxContainer/PanelContainer" unique_id=1494120108]
+[node name="MarginContainer" type="MarginContainer" parent="GameWorld/GUICanvasLayer/GUI/MarginContainer/VBoxContainer/VBoxContainer/PanelContainer" unique_id=1494120108]
 layout_mode = 2
 theme_override_constants/margin_left = 24
 theme_override_constants/margin_top = 24
 theme_override_constants/margin_right = 24
 theme_override_constants/margin_bottom = 24
 
-[node name="EvolutionChart" type="Control" parent="GameWorld/GUICanvasLayer/GUI/MarginContainer/VBoxContainer/PanelContainer/MarginContainer" unique_id=441823760 node_paths=PackedStringArray("elements")]
+[node name="EvolutionChart" type="Control" parent="GameWorld/GUICanvasLayer/GUI/MarginContainer/VBoxContainer/VBoxContainer/PanelContainer/MarginContainer" unique_id=441823760 node_paths=PackedStringArray("elements")]
 custom_minimum_size = Vector2(376, 376)
 layout_mode = 2
 script = ExtResource("4_jyhfs")
 radius = 156.0
+element_size = Vector2(80, 80)
 elements = [NodePath("EmptyRect"), NodePath("TextureRect"), NodePath("TextureRect2"), NodePath("TextureRect3"), NodePath("TextureRect4"), NodePath("TextureRect5"), NodePath("TextureRect6"), NodePath("TextureRect7"), NodePath("TextureRect8"), NodePath("TextureRect9"), NodePath("TextureRect10"), NodePath("TextureRect11")]
 metadata/_custom_type_script = "uid://dnl62nvfwrjjl"
 
-[node name="EmptyRect" type="TextureRect" parent="GameWorld/GUICanvasLayer/GUI/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/EvolutionChart" unique_id=680210680]
+[node name="EmptyRect" type="TextureRect" parent="GameWorld/GUICanvasLayer/GUI/MarginContainer/VBoxContainer/VBoxContainer/PanelContainer/MarginContainer/EvolutionChart" unique_id=680210680]
 layout_mode = 0
 offset_right = 146.0
 offset_bottom = 162.0
 expand_mode = 1
 
-[node name="TextureRect" type="TextureRect" parent="GameWorld/GUICanvasLayer/GUI/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/EvolutionChart" unique_id=1550549855]
+[node name="TextureRect" type="TextureRect" parent="GameWorld/GUICanvasLayer/GUI/MarginContainer/VBoxContainer/VBoxContainer/PanelContainer/MarginContainer/EvolutionChart" unique_id=1550549855]
+custom_maximum_size = Vector2(256, 256)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("1_o5qli")
+texture = ExtResource("26_c6pm6")
 
-[node name="TextureRect2" type="TextureRect" parent="GameWorld/GUICanvasLayer/GUI/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/EvolutionChart" unique_id=505475579]
+[node name="TextureRect2" type="TextureRect" parent="GameWorld/GUICanvasLayer/GUI/MarginContainer/VBoxContainer/VBoxContainer/PanelContainer/MarginContainer/EvolutionChart" unique_id=505475579]
+custom_maximum_size = Vector2(256, 256)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("5_a8y0u")
+texture = ExtResource("27_c6pm6")
 
-[node name="TextureRect3" type="TextureRect" parent="GameWorld/GUICanvasLayer/GUI/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/EvolutionChart" unique_id=1070181688]
+[node name="TextureRect3" type="TextureRect" parent="GameWorld/GUICanvasLayer/GUI/MarginContainer/VBoxContainer/VBoxContainer/PanelContainer/MarginContainer/EvolutionChart" unique_id=1070181688]
+custom_maximum_size = Vector2(256, 256)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("6_jkv2x")
+texture = ExtResource("28_c6pm6")
 
-[node name="TextureRect4" type="TextureRect" parent="GameWorld/GUICanvasLayer/GUI/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/EvolutionChart" unique_id=1514483168]
+[node name="TextureRect4" type="TextureRect" parent="GameWorld/GUICanvasLayer/GUI/MarginContainer/VBoxContainer/VBoxContainer/PanelContainer/MarginContainer/EvolutionChart" unique_id=1514483168]
+custom_maximum_size = Vector2(256, 256)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("7_jbj1t")
+texture = ExtResource("29_c6pm6")
 
-[node name="TextureRect5" type="TextureRect" parent="GameWorld/GUICanvasLayer/GUI/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/EvolutionChart" unique_id=787647756]
+[node name="TextureRect5" type="TextureRect" parent="GameWorld/GUICanvasLayer/GUI/MarginContainer/VBoxContainer/VBoxContainer/PanelContainer/MarginContainer/EvolutionChart" unique_id=787647756]
+custom_maximum_size = Vector2(256, 256)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("8_muem4")
+texture = ExtResource("30_c6pm6")
 
-[node name="TextureRect6" type="TextureRect" parent="GameWorld/GUICanvasLayer/GUI/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/EvolutionChart" unique_id=956790087]
+[node name="TextureRect6" type="TextureRect" parent="GameWorld/GUICanvasLayer/GUI/MarginContainer/VBoxContainer/VBoxContainer/PanelContainer/MarginContainer/EvolutionChart" unique_id=956790087]
+custom_maximum_size = Vector2(256, 256)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("9_dp3eg")
+texture = ExtResource("31_c6pm6")
 
-[node name="TextureRect7" type="TextureRect" parent="GameWorld/GUICanvasLayer/GUI/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/EvolutionChart" unique_id=2042290660]
+[node name="TextureRect7" type="TextureRect" parent="GameWorld/GUICanvasLayer/GUI/MarginContainer/VBoxContainer/VBoxContainer/PanelContainer/MarginContainer/EvolutionChart" unique_id=2042290660]
+custom_maximum_size = Vector2(256, 256)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("10_0ld40")
+texture = ExtResource("32_c6pm6")
 
-[node name="TextureRect8" type="TextureRect" parent="GameWorld/GUICanvasLayer/GUI/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/EvolutionChart" unique_id=999378395]
+[node name="TextureRect8" type="TextureRect" parent="GameWorld/GUICanvasLayer/GUI/MarginContainer/VBoxContainer/VBoxContainer/PanelContainer/MarginContainer/EvolutionChart" unique_id=999378395]
+custom_maximum_size = Vector2(256, 256)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("11_gqmmt")
+texture = ExtResource("33_c6pm6")
 
-[node name="TextureRect9" type="TextureRect" parent="GameWorld/GUICanvasLayer/GUI/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/EvolutionChart" unique_id=1623381115]
+[node name="TextureRect9" type="TextureRect" parent="GameWorld/GUICanvasLayer/GUI/MarginContainer/VBoxContainer/VBoxContainer/PanelContainer/MarginContainer/EvolutionChart" unique_id=1623381115]
+custom_maximum_size = Vector2(256, 256)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("12_yc10j")
+texture = ExtResource("34_c6pm6")
 
-[node name="TextureRect10" type="TextureRect" parent="GameWorld/GUICanvasLayer/GUI/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/EvolutionChart" unique_id=790816969]
+[node name="TextureRect10" type="TextureRect" parent="GameWorld/GUICanvasLayer/GUI/MarginContainer/VBoxContainer/VBoxContainer/PanelContainer/MarginContainer/EvolutionChart" unique_id=790816969]
+custom_maximum_size = Vector2(256, 256)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("13_jscy8")
+texture = ExtResource("35_c6pm6")
 
-[node name="TextureRect11" type="TextureRect" parent="GameWorld/GUICanvasLayer/GUI/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/EvolutionChart" unique_id=1424527027]
+[node name="TextureRect11" type="TextureRect" parent="GameWorld/GUICanvasLayer/GUI/MarginContainer/VBoxContainer/VBoxContainer/PanelContainer/MarginContainer/EvolutionChart" unique_id=1424527027]
+custom_maximum_size = Vector2(256, 256)
 layout_mode = 0
 offset_right = 146.0
 offset_bottom = 162.0
-texture = ExtResource("14_pm3ni")
+texture = ExtResource("36_c6pm6")
 
-[node name="EmptyRect2" type="TextureRect" parent="GameWorld/GUICanvasLayer/GUI/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/EvolutionChart" unique_id=797693398]
+[node name="EmptyRect2" type="TextureRect" parent="GameWorld/GUICanvasLayer/GUI/MarginContainer/VBoxContainer/VBoxContainer/PanelContainer/MarginContainer/EvolutionChart" unique_id=797693398]
 layout_mode = 0
 offset_right = 146.0
 offset_bottom = 162.0

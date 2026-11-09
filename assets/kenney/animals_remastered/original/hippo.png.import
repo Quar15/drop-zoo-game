@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gubg4qnvxwid"
-path="res://.godot/imported/whale.png-e555fad73a555e9d60882ea27d34acd5.ctex"
+uid="uid://dmfku7fp7b2qp"
+path="res://.godot/imported/hippo.png-a350619a30579914ab6409e2458f35a7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/kenney/animals_remastered/whale.png"
-dest_files=["res://.godot/imported/whale.png-e555fad73a555e9d60882ea27d34acd5.ctex"]
+source_file="res://assets/kenney/animals_remastered/original/hippo.png"
+dest_files=["res://.godot/imported/hippo.png-a350619a30579914ab6409e2458f35a7.ctex"]
 
 [params]
 

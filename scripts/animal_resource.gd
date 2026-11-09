@@ -17,6 +17,7 @@ enum EAnimalType {
 
 @export var name: String
 @export var texture: Texture2D
+@export var icon_texture: Texture2D
 @export var size: float
 @export var type: EAnimalType
 @export var score: int

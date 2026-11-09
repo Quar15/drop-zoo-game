@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctm0f4upw3rqe"
-path="res://.godot/imported/pig.png-6a3976fd628f8461a9ea942662e5290e.ctex"
+uid="uid://csyya1f3iibnx"
+path="res://.godot/imported/penguin.png-b494e5e699d270910f4fca333bb3eeba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/kenney/animals_remastered/pig.png"
-dest_files=["res://.godot/imported/pig.png-6a3976fd628f8461a9ea942662e5290e.ctex"]
+source_file="res://assets/kenney/animals_remastered/icons/penguin.png"
+dest_files=["res://.godot/imported/penguin.png-b494e5e699d270910f4fca333bb3eeba.ctex"]
 
 [params]
 

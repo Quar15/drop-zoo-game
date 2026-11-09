@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cud8t8472oacc"
-path="res://.godot/imported/snake.png-73044ba43663b4a13ad13112d77a5dd3.ctex"
+uid="uid://c3c48wi1em2c8"
+path="res://.godot/imported/parrot.png-9d7c8f8e62f338533b2c0f34842cc19d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/kenney/animals_remastered/snake.png"
-dest_files=["res://.godot/imported/snake.png-73044ba43663b4a13ad13112d77a5dd3.ctex"]
+source_file="res://assets/kenney/animals_remastered/upscaled/parrot.png"
+dest_files=["res://.godot/imported/parrot.png-9d7c8f8e62f338533b2c0f34842cc19d.ctex"]
 
 [params]
 

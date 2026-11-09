@@ -1,12 +1,13 @@
 [gd_scene format=3 uid="uid://dj8nxj3ii5utt"]
 
-[ext_resource type="Texture2D" uid="uid://ban2vju0nl824" path="res://assets/kenney/animals_remastered/chick.png" id="1_p1u7j"]
 [ext_resource type="Script" uid="uid://dm4bhdgjwueha" path="res://scripts/GUI/next_animal_gui.gd" id="1_vyy35"]
+[ext_resource type="Texture2D" uid="uid://283pghaapde7" path="res://assets/kenney/animals_remastered/upscaled/chick.png" id="2_vyy35"]
 
 [node name="NextAnimalGUI" type="VBoxContainer" unique_id=1016991445 node_paths=PackedStringArray("texture_rect")]
+custom_minimum_size = Vector2(425, 0)
 theme_override_constants/separation = 16
 script = ExtResource("1_vyy35")
-texture_rect = NodePath("TextureRect")
+texture_rect = NodePath("MarginContainer/TextureRect")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1889283945]
 layout_mode = 2
@@ -16,7 +17,13 @@ fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=2084653126]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1242204637]
 layout_mode = 2
-texture = ExtResource("1_p1u7j")
-stretch_mode = 3
+theme_override_constants/margin_top = -24
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer" unique_id=2084653126]
+custom_maximum_size = Vector2(184, 184)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("2_vyy35")
+stretch_mode = 5

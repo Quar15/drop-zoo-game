@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnrchmeuc20t6"
-path="res://.godot/imported/panda.png-78d4df460ceb28b8962b5f3c37ba5055.ctex"
+uid="uid://d1tyhgbjbsb7i"
+path="res://.godot/imported/hippo.png-e8b6348869b0bba26304b7d8143e7265.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/kenney/animals_remastered/panda.png"
-dest_files=["res://.godot/imported/panda.png-78d4df460ceb28b8962b5f3c37ba5055.ctex"]
+source_file="res://assets/kenney/animals_remastered/upscaled/hippo.png"
+dest_files=["res://.godot/imported/hippo.png-e8b6348869b0bba26304b7d8143e7265.ctex"]
 
 [params]
 

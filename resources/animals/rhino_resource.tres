@@ -1,13 +1,15 @@
 [gd_resource type="Resource" script_class="AnimalResource" format=3 uid="uid://dk1j2u2oi2vbf"]
 
+[ext_resource type="Texture2D" uid="uid://blowlu7xrnweq" path="res://assets/kenney/animals_remastered/icons/rhino.png" id="1_lxibh"]
 [ext_resource type="Script" uid="uid://b5jvdf62v6g5c" path="res://scripts/animal_resource.gd" id="1_vkacy"]
-[ext_resource type="Texture2D" uid="uid://dy1yqij7w0717" path="res://assets/kenney/animals_remastered/rhino.png" id="2_vkacy"]
+[ext_resource type="Texture2D" uid="uid://loem8pcf8dk8" path="res://assets/kenney/animals_remastered/upscaled/rhino.png" id="2_vkacy"]
 
 [resource]
 script = ExtResource("1_vkacy")
 name = "RHINO"
 texture = ExtResource("2_vkacy")
-size = 3.0
+icon_texture = ExtResource("1_lxibh")
+size = 0.3
 type = 9
 score = 550
 metadata/_custom_type_script = "uid://b5jvdf62v6g5c"
