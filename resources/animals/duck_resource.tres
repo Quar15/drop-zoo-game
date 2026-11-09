@@ -9,6 +9,6 @@ script = ExtResource("1_jclva")
 name = "DUCK"
 texture = ExtResource("2_1e4ra")
 icon_texture = ExtResource("1_if7dj")
-size = 0.03
+size = 0.05
 score = 10
 metadata/_custom_type_script = "uid://b5jvdf62v6g5c"

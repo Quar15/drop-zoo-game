@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="AnimalResource" format=3 uid="uid://ts6equ8j7kte"]
 
-[ext_resource type="Texture2D" uid="uid://blowlu7xrnweq" path="res://assets/kenney/animals_remastered/icons/rhino.png" id="1_bfuev"]
+[ext_resource type="Texture2D" uid="uid://b1nwidkyuxwx0" path="res://assets/kenney/animals_remastered/icons/snake.png" id="1_bfuev"]
 [ext_resource type="Script" uid="uid://b5jvdf62v6g5c" path="res://scripts/animal_resource.gd" id="1_cemg3"]
 [ext_resource type="Texture2D" uid="uid://2rwrs5o3s42c" path="res://assets/kenney/animals_remastered/upscaled/snake.png" id="2_cemg3"]
 
@@ -9,7 +9,7 @@ script = ExtResource("1_cemg3")
 name = "SNAKE"
 texture = ExtResource("2_cemg3")
 icon_texture = ExtResource("1_bfuev")
-size = 0.06
+size = 0.1
 type = 1
 score = 30
 metadata/_custom_type_script = "uid://b5jvdf62v6g5c"
