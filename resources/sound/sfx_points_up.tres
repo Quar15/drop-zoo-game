@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_3e3ba")
-type = 2
+type = 3
 sound_effect = ExtResource("2_3e3ba")
 volume = -12.0
 pitch_randomness = 0.5

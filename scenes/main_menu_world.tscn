@@ -13,6 +13,259 @@ size = Vector2(4000, 100)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mp4gh"]
 texture = ExtResource("5_7akwi")
 
+[sub_resource type="Animation" id="Animation_7akwi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/MainMenuGUI/VBoxContainer/PlayButton:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/MainMenuGUI/VBoxContainer/OptionsButton:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/MainMenuGUI/VBoxContainer/CreditsButton:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/MainMenuGUI/VBoxContainer/QuitButton:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/MainMenuGUI/VBoxContainer/MarginContainer:theme_override_constants/margin_bottom")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [-256]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CanvasLayer/MainMenuGUI/VBoxContainer/MarginContainer:theme_override_constants/margin_top")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [-256]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CanvasLayer/MainMenuGUI/VBoxContainer/PlayButton:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("CanvasLayer/MainMenuGUI/VBoxContainer/OptionsButton:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("CanvasLayer/MainMenuGUI/VBoxContainer/CreditsButton:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("CanvasLayer/MainMenuGUI/VBoxContainer/QuitButton:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_regp5"]
+resource_name = "menu_entry"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/MainMenuGUI/VBoxContainer/PlayButton:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.099999994),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/MainMenuGUI/VBoxContainer/OptionsButton:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.099999994),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/MainMenuGUI/VBoxContainer/CreditsButton:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.099999994),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/MainMenuGUI/VBoxContainer/QuitButton:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.099999994),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/MainMenuGUI/VBoxContainer/MarginContainer:theme_override_constants/margin_bottom")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [512, -256, -212, -256]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CanvasLayer/MainMenuGUI/VBoxContainer/MarginContainer:theme_override_constants/margin_top")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [-1024, -256, -300, -256]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CanvasLayer/MainMenuGUI/VBoxContainer/PlayButton:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.099999994, 0.15),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("CanvasLayer/MainMenuGUI/VBoxContainer/OptionsButton:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.19999999),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("CanvasLayer/MainMenuGUI/VBoxContainer/CreditsButton:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.24999999),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("CanvasLayer/MainMenuGUI/VBoxContainer/QuitButton:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rm7ai"]
+_data = {
+&"RESET": SubResource("Animation_7akwi"),
+&"menu_entry": SubResource("Animation_regp5")
+}
+
 [node name="MainMenuWorld" type="Node2D" unique_id=475629287]
 
 [node name="FakeAnimalsRain" type="Node2D" parent="." unique_id=2049099536 node_paths=PackedStringArray("timer")]
@@ -36,7 +289,7 @@ autostart = true
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1186826464]
 layer = 999
 
-[node name="MainMenuGUI" type="Control" parent="CanvasLayer" unique_id=1714735843]
+[node name="MainMenuGUI" type="Control" parent="CanvasLayer" unique_id=1714735843 node_paths=PackedStringArray("main_menu_parent")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -45,6 +298,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_47nhc")
 script = ExtResource("4_hf8dy")
+main_menu_parent = NodePath("../..")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MainMenuGUI" unique_id=1860694941]
 layout_mode = 1
@@ -79,20 +333,46 @@ stretch_mode = 3
 layout_mode = 2
 theme_override_constants/separation = 64
 
-[node name="Button" type="Button" parent="CanvasLayer/MainMenuGUI/VBoxContainer" unique_id=1735696637]
+[node name="PlayButton" type="Button" parent="CanvasLayer/MainMenuGUI/VBoxContainer" unique_id=1735696637]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
+disabled = true
 text = "Play"
 
-[node name="Button2" type="Button" parent="CanvasLayer/MainMenuGUI/VBoxContainer" unique_id=1690782401]
+[node name="OptionsButton" type="Button" parent="CanvasLayer/MainMenuGUI/VBoxContainer" unique_id=1690782401]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
+disabled = true
 text = "Options"
 
-[node name="Button4" type="Button" parent="CanvasLayer/MainMenuGUI/VBoxContainer" unique_id=900201459]
+[node name="CreditsButton" type="Button" parent="CanvasLayer/MainMenuGUI/VBoxContainer" unique_id=900201459]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
+disabled = true
 text = "Credits"
 
-[node name="Button3" type="Button" parent="CanvasLayer/MainMenuGUI/VBoxContainer" unique_id=2059465810]
+[node name="QuitButton" type="Button" parent="CanvasLayer/MainMenuGUI/VBoxContainer" unique_id=2059465810]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
+disabled = true
 text = "Exit"
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1130758155]
+deterministic = true
+libraries/ = SubResource("AnimationLibrary_rm7ai")
+autoplay = &"menu_entry"
+speed_scale = 0.8
+
 [connection signal="body_entered" from="FakeAnimalsRain/Area2D" to="FakeAnimalsRain" method="_on_deadzone_body_entered"]
+[connection signal="mouse_entered" from="CanvasLayer/MainMenuGUI/VBoxContainer/PlayButton" to="CanvasLayer/MainMenuGUI" method="on_btn_hover"]
+[connection signal="pressed" from="CanvasLayer/MainMenuGUI/VBoxContainer/PlayButton" to="CanvasLayer/MainMenuGUI" method="on_play_btn_clicked"]
+[connection signal="pressed" from="CanvasLayer/MainMenuGUI/VBoxContainer/PlayButton" to="CanvasLayer/MainMenuGUI" method="on_btn_click"]
+[connection signal="mouse_entered" from="CanvasLayer/MainMenuGUI/VBoxContainer/OptionsButton" to="CanvasLayer/MainMenuGUI" method="on_btn_hover"]
+[connection signal="pressed" from="CanvasLayer/MainMenuGUI/VBoxContainer/OptionsButton" to="CanvasLayer/MainMenuGUI" method="on_options_btn_clicked"]
+[connection signal="pressed" from="CanvasLayer/MainMenuGUI/VBoxContainer/OptionsButton" to="CanvasLayer/MainMenuGUI" method="on_btn_click"]
+[connection signal="mouse_entered" from="CanvasLayer/MainMenuGUI/VBoxContainer/CreditsButton" to="CanvasLayer/MainMenuGUI" method="on_btn_hover"]
+[connection signal="pressed" from="CanvasLayer/MainMenuGUI/VBoxContainer/CreditsButton" to="CanvasLayer/MainMenuGUI" method="on_credits_btn_clicked"]
+[connection signal="pressed" from="CanvasLayer/MainMenuGUI/VBoxContainer/CreditsButton" to="CanvasLayer/MainMenuGUI" method="on_btn_click"]
+[connection signal="mouse_entered" from="CanvasLayer/MainMenuGUI/VBoxContainer/QuitButton" to="CanvasLayer/MainMenuGUI" method="on_btn_hover"]
+[connection signal="pressed" from="CanvasLayer/MainMenuGUI/VBoxContainer/QuitButton" to="CanvasLayer/MainMenuGUI" method="on_quit_btn_clicked"]
+[connection signal="pressed" from="CanvasLayer/MainMenuGUI/VBoxContainer/QuitButton" to="CanvasLayer/MainMenuGUI" method="on_btn_click"]

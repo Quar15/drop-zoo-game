@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Drop Zoo"
 config/version="v0.0.1"
-run/main_scene="uid://2q2b43vuuvvg"
+run/main_scene="uid://dild5k2252yf1"
 config/features=PackedStringArray("4.7", "Forward Plus")
 boot_splash/show_image=false
 config/icon="uid://ban2vju0nl824"

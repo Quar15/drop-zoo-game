@@ -4,7 +4,9 @@
 [ext_resource type="Script" uid="uid://bg8gbdrbdr7b3" path="res://scripts/globals/source_effect_resource.gd" id="2_6hqem"]
 [ext_resource type="Resource" uid="uid://ebcx7cwhn8si" path="res://resources/sound/sfx_animal_merge.tres" id="3_aymke"]
 [ext_resource type="Resource" uid="uid://bao2cbgrg8lkx" path="res://resources/sound/sfx_points_up.tres" id="4_6hqem"]
+[ext_resource type="Resource" uid="uid://cyfd3rkanmuxm" path="res://resources/sound/sfx_ui_click.tres" id="5_r3nto"]
+[ext_resource type="Resource" uid="uid://t3ytxqub3irh" path="res://resources/sound/sfx_ui_hover.tres" id="6_4jimw"]
 
 [node name="AudioManager" type="Node2D" unique_id=1257390383]
 script = ExtResource("1_dn1u1")
-sound_effects = Array[ExtResource("2_6hqem")]([ExtResource("3_aymke"), ExtResource("4_6hqem")])
+sound_effects = Array[ExtResource("2_6hqem")]([ExtResource("3_aymke"), ExtResource("4_6hqem"), ExtResource("6_4jimw"), ExtResource("5_r3nto")])

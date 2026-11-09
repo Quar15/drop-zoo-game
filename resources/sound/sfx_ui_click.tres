@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="SoundEffect" format=3 uid="uid://cyfd3rkanmuxm"]
+
+[ext_resource type="Script" uid="uid://bg8gbdrbdr7b3" path="res://scripts/globals/source_effect_resource.gd" id="1_h1qne"]
+[ext_resource type="AudioStream" uid="uid://blnhab6kuetdm" path="res://assets/sfx/ui_soundpack/Modern5.wav" id="2_h1qne"]
+
+[resource]
+script = ExtResource("1_h1qne")
+limit = 10
+sound_effect = ExtResource("2_h1qne")
+volume = -12.0
+pitch_randomness = 0.1
+metadata/_custom_type_script = "uid://bg8gbdrbdr7b3"

@@ -19,8 +19,6 @@ shader_parameter/rotation = -0.00018518358264962
 layer = -999
 follow_viewport_enabled = true
 
-[node name="MainMenuWorld" parent="BackgroundLayer" unique_id=475629287 instance=ExtResource("1_jyhfs")]
-
 [node name="ColorRect" type="ColorRect" parent="BackgroundLayer" unique_id=2144382732]
 material = SubResource("ShaderMaterial_sugp2")
 anchors_preset = 15
@@ -39,3 +37,10 @@ volume_db = -23.0
 autoplay = true
 bus = &"Music"
 parameters/looping = true
+
+[node name="MainMenuWorld" parent="." unique_id=475629287 instance=ExtResource("1_jyhfs")]
+
+[node name="MainMenuGUI" parent="MainMenuWorld/CanvasLayer" parent_id_path=PackedInt32Array(475629287, 1186826464) index="0" unique_id=1714735843 node_paths=PackedStringArray("game_world_parent")]
+game_world_parent = NodePath("../../..")
+
+[editable path="MainMenuWorld"]
