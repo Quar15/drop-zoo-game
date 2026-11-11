@@ -1,6 +1,7 @@
 extends Control
 
 @export var options_gui: OptionsGUI
+@export var credits_gui: CreditsGUI
 
 
 # Called when the node enters the scene tree for the first time.
@@ -17,7 +18,7 @@ func on_options_btn_clicked() -> void:
 
 
 func on_credits_btn_clicked() -> void:
-	pass
+	credits_gui.show_up()
 
 
 func on_quit_btn_clicked() -> void:

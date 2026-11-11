@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bx74j7ml4ewej" path="res://assets/logo/drop_zoo_logo.png" id="5_hf8dy"]
 [ext_resource type="Texture2D" uid="uid://itvqbedfcam0" path="res://assets/buttons/rounded_btn_300x96_yellow.png" id="7_ll81e"]
 [ext_resource type="Texture2D" uid="uid://dsmp051658yew" path="res://assets/buttons/rounded_btn_300x96_white.png" id="9_62e13"]
+[ext_resource type="PackedScene" uid="uid://bdctb3v1vhq5l" path="res://prefabs/GUI/credits_gui.tscn" id="9_c41oj"]
 [ext_resource type="PackedScene" uid="uid://b3assykeknia4" path="res://prefabs/GUI/options_gui.tscn" id="9_ll81e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lmwo4"]
@@ -331,7 +332,7 @@ autostart = true
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1186826464]
 layer = 999
 
-[node name="MainMenuGUI" type="Control" parent="CanvasLayer" unique_id=1714735843 node_paths=PackedStringArray("options_gui")]
+[node name="MainMenuGUI" type="Control" parent="CanvasLayer" unique_id=1714735843 node_paths=PackedStringArray("options_gui", "credits_gui")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -341,6 +342,7 @@ grow_vertical = 2
 theme = ExtResource("3_47nhc")
 script = ExtResource("4_hf8dy")
 options_gui = NodePath("../OptionsGUI")
+credits_gui = NodePath("CreditsGUI")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MainMenuGUI" unique_id=1860694941]
 layout_mode = 1
@@ -414,119 +416,9 @@ focus_neighbor_top = NodePath("../CreditsButton")
 focus_previous = NodePath("../CreditsButton")
 text = "Exit"
 
-[node name="CreditsContainer" type="PanelContainer" parent="CanvasLayer/MainMenuGUI" unique_id=182705878]
+[node name="CreditsGUI" parent="CanvasLayer/MainMenuGUI" unique_id=1022512031 instance=ExtResource("9_c41oj")]
 visible = false
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -197.0
-offset_top = -101.5
-offset_right = 197.0
-offset_bottom = 101.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/MainMenuGUI/CreditsContainer" unique_id=650927383]
-layout_mode = 2
-theme_override_constants/margin_left = 16
-theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 16
-theme_override_constants/margin_bottom = 16
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MainMenuGUI/CreditsContainer/MarginContainer" unique_id=548367337]
-layout_mode = 2
-theme_override_constants/separation = 8
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/MainMenuGUI/CreditsContainer/MarginContainer/VBoxContainer" unique_id=1022928512]
-layout_mode = 2
-text = "DEVELOPED BY:"
-fit_content = true
-scroll_active = false
-autowrap_mode = 0
-horizontal_alignment = 1
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/MainMenuGUI/CreditsContainer/MarginContainer/VBoxContainer" unique_id=233814485]
-layout_mode = 2
-bbcode_enabled = true
-text = "[url=https://quar15.itch.io/][u]Quar15[/u][/url] and [url=https://itch.io/profile/dotmrugacz][u].mrugacz[/u][/url]"
-fit_content = true
-autowrap_mode = 0
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HSeparator" type="HSeparator" parent="CanvasLayer/MainMenuGUI/CreditsContainer/MarginContainer/VBoxContainer" unique_id=1798940350]
-layout_mode = 2
-theme_override_constants/separation = 32
-
-[node name="RichTextLabel3" type="RichTextLabel" parent="CanvasLayer/MainMenuGUI/CreditsContainer/MarginContainer/VBoxContainer" unique_id=1883621730]
-layout_mode = 2
-bbcode_enabled = true
-text = "ASSETS:"
-fit_content = true
-autowrap_mode = 0
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="RichTextLabel4" type="RichTextLabel" parent="CanvasLayer/MainMenuGUI/CreditsContainer/MarginContainer/VBoxContainer" unique_id=2025675590]
-layout_mode = 2
-bbcode_enabled = true
-text = "Various - [url=https://kenney.nl/]Kenney[/url]"
-fit_content = true
-autowrap_mode = 0
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="RichTextLabel5" type="RichTextLabel" parent="CanvasLayer/MainMenuGUI/CreditsContainer/MarginContainer/VBoxContainer" unique_id=1461466200]
-layout_mode = 2
-bbcode_enabled = true
-text = "SFX - [url=https://cyrex-studios.itch.io/universal-ui-soundpack]Nathan Gibson[/url]"
-fit_content = true
-autowrap_mode = 0
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="RichTextLabel6" type="RichTextLabel" parent="CanvasLayer/MainMenuGUI/CreditsContainer/MarginContainer/VBoxContainer" unique_id=928306607]
-layout_mode = 2
-bbcode_enabled = true
-text = "Music - [url=https://opengameart.org/users/omfgdude]omfgdude[/url]"
-fit_content = true
-autowrap_mode = 0
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="RichTextLabel7" type="RichTextLabel" parent="CanvasLayer/MainMenuGUI/CreditsContainer/MarginContainer/VBoxContainer" unique_id=902444172]
-layout_mode = 2
-bbcode_enabled = true
-text = "Font - [url=https://ggbot.itch.io/scabber-font]ggbot[/url]"
-fit_content = true
-autowrap_mode = 0
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="RichTextLabel8" type="RichTextLabel" parent="CanvasLayer/MainMenuGUI/CreditsContainer/MarginContainer/VBoxContainer" unique_id=919493563]
-layout_mode = 2
-bbcode_enabled = true
-text = "Logo Font - [url=https://fonts.google.com/specimen/Modak]Ek Type[/url] (Google Fonts)"
-fit_content = true
-autowrap_mode = 0
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HSeparator2" type="HSeparator" parent="CanvasLayer/MainMenuGUI/CreditsContainer/MarginContainer/VBoxContainer" unique_id=609690220]
-layout_mode = 2
-theme_override_constants/separation = 32
-
-[node name="RichTextLabel9" type="RichTextLabel" parent="CanvasLayer/MainMenuGUI/CreditsContainer/MarginContainer/VBoxContainer" unique_id=402401418]
-layout_mode = 2
-bbcode_enabled = true
-text = "[url=https://github.com/Quar15/drop-zoo-game][u]Game Source Code[/u][/url]"
-fit_content = true
-autowrap_mode = 0
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="OptionsGUI" parent="CanvasLayer" unique_id=110807374 instance=ExtResource("9_ll81e")]
 visible = false

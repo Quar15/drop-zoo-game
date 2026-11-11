@@ -1,0 +1,142 @@
+[gd_scene format=3 uid="uid://bdctb3v1vhq5l"]
+
+[ext_resource type="Texture2D" uid="uid://02nkevcw6g0g" path="res://assets/buttons/panel.png" id="1_fg0g3"]
+[ext_resource type="Theme" uid="uid://qnmlbkfmpc3i" path="res://resources/theme/gui_theme.tres" id="1_xojrs"]
+[ext_resource type="Script" uid="uid://dsxig82t5e8kx" path="res://scripts/GUI/credits_gui.gd" id="2_7lnoi"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kovpq"]
+texture = ExtResource("1_fg0g3")
+texture_margin_left = 106.0
+texture_margin_top = 100.363655
+texture_margin_right = 108.60244
+texture_margin_bottom = 163.90388
+
+[node name="CreditsGUI" type="PanelContainer" unique_id=1022512031]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_xojrs")
+script = ExtResource("2_7lnoi")
+
+[node name="CreditsContainer" type="PanelContainer" parent="." unique_id=2143904178]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_kovpq")
+
+[node name="MarginContainer" type="MarginContainer" parent="CreditsContainer" unique_id=300894362]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CreditsContainer/MarginContainer" unique_id=2002657514]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CreditsContainer/MarginContainer/VBoxContainer" unique_id=1415052541]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 48
+text = "DEVELOPED BY:"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CreditsContainer/MarginContainer/VBoxContainer" unique_id=75950716]
+layout_mode = 2
+bbcode_enabled = true
+text = "[url=https://quar15.itch.io/][u]Quar15[/u][/url] and [url=https://itch.io/profile/dotmrugacz][u].mrugacz[/u][/url]"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="CreditsContainer/MarginContainer/VBoxContainer" unique_id=1353887538]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="CreditsContainer/MarginContainer/VBoxContainer" unique_id=72981558]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "ASSETS:"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="CreditsContainer/MarginContainer/VBoxContainer" unique_id=129491902]
+layout_mode = 2
+bbcode_enabled = true
+text = "Various - [url=https://kenney.nl/]Kenney[/url]"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="CreditsContainer/MarginContainer/VBoxContainer" unique_id=1762504519]
+layout_mode = 2
+bbcode_enabled = true
+text = "SFX - [url=https://cyrex-studios.itch.io/universal-ui-soundpack]Nathan Gibson[/url]"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="CreditsContainer/MarginContainer/VBoxContainer" unique_id=103733621]
+layout_mode = 2
+bbcode_enabled = true
+text = "Music - [url=https://opengameart.org/users/omfgdude]omfgdude[/url]"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel7" type="RichTextLabel" parent="CreditsContainer/MarginContainer/VBoxContainer" unique_id=1259536694]
+layout_mode = 2
+bbcode_enabled = true
+text = "Font - [url=https://ggbot.itch.io/scabber-font]ggbot[/url]"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel8" type="RichTextLabel" parent="CreditsContainer/MarginContainer/VBoxContainer" unique_id=227042174]
+layout_mode = 2
+bbcode_enabled = true
+text = "Logo Font - [url=https://fonts.google.com/specimen/Modak]Ek Type[/url] (Google Fonts)"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="CreditsContainer/MarginContainer/VBoxContainer" unique_id=2009781197]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="RichTextLabel9" type="RichTextLabel" parent="CreditsContainer/MarginContainer/VBoxContainer" unique_id=1085532736]
+layout_mode = 2
+bbcode_enabled = true
+text = "[url=https://github.com/Quar15/drop-zoo-game][u]Game Source Code[/u][/url] (GitHub)"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackButton" type="Button" parent="CreditsContainer" unique_id=1046593122]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+offset_transform_enabled = true
+offset_transform_position = Vector2(-96, 96)
+offset_transform_visual_only = false
+theme_override_font_sizes/font_size = 48
+text = "Back"
+
+[connection signal="mouse_entered" from="CreditsContainer/BackButton" to="." method="on_btn_hover"]
+[connection signal="pressed" from="CreditsContainer/BackButton" to="." method="on_btn_click"]
+[connection signal="pressed" from="CreditsContainer/BackButton" to="." method="on_back_btn_pressed"]
