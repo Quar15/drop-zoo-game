@@ -14,7 +14,8 @@ config/name="Drop Zoo"
 config/version="v0.0.1"
 run/main_scene="uid://dild5k2252yf1"
 config/features=PackedStringArray("4.7", "Forward Plus")
-boot_splash/show_image=false
+boot_splash/bg_color=Color(0.9647059, 0.8392157, 0.65882355, 1)
+boot_splash/image="uid://bx74j7ml4ewej"
 config/icon="uid://bx74j7ml4ewej"
 
 [autoload]
