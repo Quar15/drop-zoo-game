@@ -18,7 +18,7 @@
 [ext_resource type="Script" uid="uid://c8smg1nbyg07o" path="res://scripts/wall_body.gd" id="16_585ia"]
 [ext_resource type="PackedScene" uid="uid://ce85mafpjhxmt" path="res://prefabs/player.tscn" id="17_3bybq"]
 [ext_resource type="PackedScene" uid="uid://ckprvxwr73n6l" path="res://prefabs/death_area.tscn" id="18_4gen8"]
-[ext_resource type="Theme" uid="uid://qnmlbkfmpc3i" path="res://resources/gui_theme.tres" id="19_3mpf8"]
+[ext_resource type="Theme" uid="uid://qnmlbkfmpc3i" path="res://resources/theme/gui_theme.tres" id="19_3mpf8"]
 [ext_resource type="Script" uid="uid://ce1a5csed45ke" path="res://scripts/GUI/gui_manager.gd" id="20_ub8lf"]
 [ext_resource type="PackedScene" uid="uid://dj8nxj3ii5utt" path="res://prefabs/GUI/next_animal_gui.tscn" id="21_n52h7"]
 [ext_resource type="Texture2D" uid="uid://cdc8io60culw2" path="res://assets/kenney/input_prompts/flair_arrow_3_rotated_512.png" id="22_kt70w"]

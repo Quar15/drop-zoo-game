@@ -2,10 +2,12 @@
 
 [ext_resource type="Script" uid="uid://djijtspjttbyg" path="res://scripts/fake_animals_rain.gd" id="1_lmwo4"]
 [ext_resource type="PackedScene" uid="uid://dkf5r5kqsxa48" path="res://prefabs/fake_animal.tscn" id="2_qkk0i"]
-[ext_resource type="Theme" uid="uid://qnmlbkfmpc3i" path="res://resources/gui_theme.tres" id="3_47nhc"]
+[ext_resource type="Theme" uid="uid://qnmlbkfmpc3i" path="res://resources/theme/gui_theme.tres" id="3_47nhc"]
 [ext_resource type="Script" uid="uid://bcw20ulwfpfw3" path="res://scripts/GUI/main_menu_gui.gd" id="4_hf8dy"]
 [ext_resource type="Texture2D" uid="uid://chh2wkrdq7nhn" path="res://assets/logo/drop_zoo_logo_motion_lines.png" id="5_7akwi"]
 [ext_resource type="Texture2D" uid="uid://bx74j7ml4ewej" path="res://assets/logo/drop_zoo_logo.png" id="5_hf8dy"]
+[ext_resource type="Texture2D" uid="uid://civmkhgherwsc" path="res://assets/buttons/rounded_btn_384x64_outline_white.png" id="7_rm7ai"]
+[ext_resource type="Texture2D" uid="uid://c8we6j02l6nvw" path="res://assets/buttons/rounded_btn_384x64_white.png" id="8_ll81e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lmwo4"]
 size = Vector2(4000, 100)
@@ -13,12 +15,62 @@ size = Vector2(4000, 100)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mp4gh"]
 texture = ExtResource("5_7akwi")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_62e13"]
+texture = ExtResource("8_ll81e")
+texture_margin_left = 32.0
+texture_margin_top = 8.0
+texture_margin_right = 32.0
+texture_margin_bottom = 8.0
+expand_margin_top = 8.0
+expand_margin_bottom = 2.0
+modulate_color = Color(1, 0.8117647, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c41oj"]
+texture = ExtResource("8_ll81e")
+texture_margin_left = 32.0
+texture_margin_top = 8.0
+texture_margin_right = 32.0
+texture_margin_bottom = 8.0
+expand_margin_top = 8.0
+expand_margin_bottom = 2.0
+modulate_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3au07"]
+texture = ExtResource("8_ll81e")
+texture_margin_left = 32.0
+texture_margin_top = 8.0
+texture_margin_right = 32.0
+texture_margin_bottom = 8.0
+expand_margin_top = 8.0
+expand_margin_bottom = 2.0
+modulate_color = Color(0.48235294, 0.30588236, 0.22745098, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n6yus"]
+texture = ExtResource("7_rm7ai")
+texture_margin_left = 32.0
+texture_margin_top = 8.0
+texture_margin_right = 32.0
+texture_margin_bottom = 8.0
+expand_margin_top = 8.0
+expand_margin_bottom = 2.0
+modulate_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_etrbm"]
+texture = ExtResource("8_ll81e")
+texture_margin_left = 32.0
+texture_margin_top = 8.0
+texture_margin_right = 32.0
+texture_margin_bottom = 8.0
+expand_margin_top = 8.0
+expand_margin_bottom = 2.0
+modulate_color = Color(0, 0, 0, 1)
+
 [sub_resource type="Animation" id="Animation_7akwi"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/MainMenuGUI/VBoxContainer/PlayButton:disabled")
+tracks/0/path = NodePath("CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/PlayButton:disabled")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -30,7 +82,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CanvasLayer/MainMenuGUI/VBoxContainer/OptionsButton:disabled")
+tracks/1/path = NodePath("CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/OptionsButton:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -42,7 +94,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("CanvasLayer/MainMenuGUI/VBoxContainer/CreditsButton:disabled")
+tracks/2/path = NodePath("CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/CreditsButton:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -54,7 +106,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("CanvasLayer/MainMenuGUI/VBoxContainer/QuitButton:disabled")
+tracks/3/path = NodePath("CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/QuitButton:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -90,7 +142,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("CanvasLayer/MainMenuGUI/VBoxContainer/PlayButton:modulate")
+tracks/6/path = NodePath("CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/PlayButton:modulate")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -102,7 +154,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("CanvasLayer/MainMenuGUI/VBoxContainer/OptionsButton:modulate")
+tracks/7/path = NodePath("CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/OptionsButton:modulate")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -114,7 +166,7 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("CanvasLayer/MainMenuGUI/VBoxContainer/CreditsButton:modulate")
+tracks/8/path = NodePath("CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/CreditsButton:modulate")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -126,7 +178,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("CanvasLayer/MainMenuGUI/VBoxContainer/QuitButton:modulate")
+tracks/9/path = NodePath("CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/QuitButton:modulate")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -142,7 +194,7 @@ length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/MainMenuGUI/VBoxContainer/PlayButton:disabled")
+tracks/0/path = NodePath("CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/PlayButton:disabled")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -154,7 +206,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CanvasLayer/MainMenuGUI/VBoxContainer/OptionsButton:disabled")
+tracks/1/path = NodePath("CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/OptionsButton:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -166,7 +218,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("CanvasLayer/MainMenuGUI/VBoxContainer/CreditsButton:disabled")
+tracks/2/path = NodePath("CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/CreditsButton:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -178,7 +230,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("CanvasLayer/MainMenuGUI/VBoxContainer/QuitButton:disabled")
+tracks/3/path = NodePath("CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/QuitButton:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -214,7 +266,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("CanvasLayer/MainMenuGUI/VBoxContainer/PlayButton:modulate")
+tracks/6/path = NodePath("CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/PlayButton:modulate")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -226,7 +278,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("CanvasLayer/MainMenuGUI/VBoxContainer/OptionsButton:modulate")
+tracks/7/path = NodePath("CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/OptionsButton:modulate")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -238,7 +290,7 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("CanvasLayer/MainMenuGUI/VBoxContainer/CreditsButton:modulate")
+tracks/8/path = NodePath("CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/CreditsButton:modulate")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -250,7 +302,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("CanvasLayer/MainMenuGUI/VBoxContainer/QuitButton:modulate")
+tracks/9/path = NodePath("CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/QuitButton:modulate")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -333,20 +385,44 @@ stretch_mode = 3
 layout_mode = 2
 theme_override_constants/separation = 64
 
-[node name="PlayButton" type="Button" parent="CanvasLayer/MainMenuGUI/VBoxContainer" unique_id=1735696637]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MainMenuGUI/VBoxContainer" unique_id=1516950895]
 layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 16
+
+[node name="PlayButton" type="Button" parent="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer" unique_id=1735696637]
+custom_minimum_size = Vector2(300, 96)
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../OptionsButton")
+focus_next = NodePath("../OptionsButton")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_62e13")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_c41oj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_3au07")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_n6yus")
+theme_override_styles/focus = SubResource("StyleBoxTexture_etrbm")
 text = "Play"
 
-[node name="OptionsButton" type="Button" parent="CanvasLayer/MainMenuGUI/VBoxContainer" unique_id=1690782401]
+[node name="OptionsButton" type="Button" parent="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer" unique_id=1690782401]
 layout_mode = 2
+focus_neighbor_top = NodePath("../PlayButton")
+focus_neighbor_bottom = NodePath("../CreditsButton")
+focus_next = NodePath("../CreditsButton")
+focus_previous = NodePath("../PlayButton")
 text = "Options"
 
-[node name="CreditsButton" type="Button" parent="CanvasLayer/MainMenuGUI/VBoxContainer" unique_id=900201459]
+[node name="CreditsButton" type="Button" parent="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer" unique_id=900201459]
 layout_mode = 2
+focus_neighbor_top = NodePath("../OptionsButton")
+focus_neighbor_bottom = NodePath("../QuitButton")
+focus_next = NodePath("../QuitButton")
+focus_previous = NodePath("../OptionsButton")
 text = "Credits"
 
-[node name="QuitButton" type="Button" parent="CanvasLayer/MainMenuGUI/VBoxContainer" unique_id=2059465810]
+[node name="QuitButton" type="Button" parent="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer" unique_id=2059465810]
 layout_mode = 2
+focus_neighbor_top = NodePath("../CreditsButton")
+focus_previous = NodePath("../CreditsButton")
 text = "Exit"
 
 [node name="CreditsContainer" type="PanelContainer" parent="CanvasLayer/MainMenuGUI" unique_id=182705878]
@@ -470,15 +546,15 @@ autoplay = &"menu_entry"
 speed_scale = 0.8
 
 [connection signal="body_entered" from="FakeAnimalsRain/Area2D" to="FakeAnimalsRain" method="_on_deadzone_body_entered"]
-[connection signal="mouse_entered" from="CanvasLayer/MainMenuGUI/VBoxContainer/PlayButton" to="CanvasLayer/MainMenuGUI" method="on_btn_hover"]
-[connection signal="pressed" from="CanvasLayer/MainMenuGUI/VBoxContainer/PlayButton" to="CanvasLayer/MainMenuGUI" method="on_play_btn_clicked"]
-[connection signal="pressed" from="CanvasLayer/MainMenuGUI/VBoxContainer/PlayButton" to="CanvasLayer/MainMenuGUI" method="on_btn_click"]
-[connection signal="mouse_entered" from="CanvasLayer/MainMenuGUI/VBoxContainer/OptionsButton" to="CanvasLayer/MainMenuGUI" method="on_btn_hover"]
-[connection signal="pressed" from="CanvasLayer/MainMenuGUI/VBoxContainer/OptionsButton" to="CanvasLayer/MainMenuGUI" method="on_options_btn_clicked"]
-[connection signal="pressed" from="CanvasLayer/MainMenuGUI/VBoxContainer/OptionsButton" to="CanvasLayer/MainMenuGUI" method="on_btn_click"]
-[connection signal="mouse_entered" from="CanvasLayer/MainMenuGUI/VBoxContainer/CreditsButton" to="CanvasLayer/MainMenuGUI" method="on_btn_hover"]
-[connection signal="pressed" from="CanvasLayer/MainMenuGUI/VBoxContainer/CreditsButton" to="CanvasLayer/MainMenuGUI" method="on_credits_btn_clicked"]
-[connection signal="pressed" from="CanvasLayer/MainMenuGUI/VBoxContainer/CreditsButton" to="CanvasLayer/MainMenuGUI" method="on_btn_click"]
-[connection signal="mouse_entered" from="CanvasLayer/MainMenuGUI/VBoxContainer/QuitButton" to="CanvasLayer/MainMenuGUI" method="on_btn_hover"]
-[connection signal="pressed" from="CanvasLayer/MainMenuGUI/VBoxContainer/QuitButton" to="CanvasLayer/MainMenuGUI" method="on_quit_btn_clicked"]
-[connection signal="pressed" from="CanvasLayer/MainMenuGUI/VBoxContainer/QuitButton" to="CanvasLayer/MainMenuGUI" method="on_btn_click"]
+[connection signal="mouse_entered" from="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/PlayButton" to="CanvasLayer/MainMenuGUI" method="on_btn_hover"]
+[connection signal="pressed" from="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/PlayButton" to="CanvasLayer/MainMenuGUI" method="on_play_btn_clicked"]
+[connection signal="pressed" from="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/PlayButton" to="CanvasLayer/MainMenuGUI" method="on_btn_click"]
+[connection signal="mouse_entered" from="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/OptionsButton" to="CanvasLayer/MainMenuGUI" method="on_btn_hover"]
+[connection signal="pressed" from="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/OptionsButton" to="CanvasLayer/MainMenuGUI" method="on_options_btn_clicked"]
+[connection signal="pressed" from="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/OptionsButton" to="CanvasLayer/MainMenuGUI" method="on_btn_click"]
+[connection signal="mouse_entered" from="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/CreditsButton" to="CanvasLayer/MainMenuGUI" method="on_btn_hover"]
+[connection signal="pressed" from="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/CreditsButton" to="CanvasLayer/MainMenuGUI" method="on_credits_btn_clicked"]
+[connection signal="pressed" from="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/CreditsButton" to="CanvasLayer/MainMenuGUI" method="on_btn_click"]
+[connection signal="mouse_entered" from="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/QuitButton" to="CanvasLayer/MainMenuGUI" method="on_btn_hover"]
+[connection signal="pressed" from="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/QuitButton" to="CanvasLayer/MainMenuGUI" method="on_quit_btn_clicked"]
+[connection signal="pressed" from="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/QuitButton" to="CanvasLayer/MainMenuGUI" method="on_btn_click"]
