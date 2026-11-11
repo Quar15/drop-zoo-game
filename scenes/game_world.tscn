@@ -36,6 +36,7 @@
 [ext_resource type="Texture2D" uid="uid://b64ygjnqyskmj" path="res://assets/kenney/animals_remastered/icons/whale.png" id="34_t7dhd"]
 [ext_resource type="PackedScene" uid="uid://leu5vjwsnwoe" path="res://prefabs/GUI/score_gui.tscn" id="35_thaxu"]
 [ext_resource type="PackedScene" uid="uid://d0wqj0vefvggy" path="res://prefabs/GUI/control_hints.tscn" id="36_ba7d3"]
+[ext_resource type="PackedScene" uid="uid://dcetyxsl1t7m4" path="res://prefabs/GUI/pause_screen.tscn" id="37_vu5a2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0ld40"]
 size = Vector2(800, 20)
@@ -46,6 +47,7 @@ texture = ExtResource("22_kt70w")
 [node name="GameWorld" type="Node2D" unique_id=113656295]
 
 [node name="GameManager" type="Node" parent="." unique_id=1704987374 node_paths=PackedStringArray("score_manager", "gui_manager", "player", "death_area")]
+process_mode = 3
 script = ExtResource("1_2lekn")
 score_manager = NodePath("../ScoreManager")
 gui_manager = NodePath("../GUICanvasLayer/GUI")
@@ -178,7 +180,7 @@ position = Vector2(960, 160)
 [node name="GUICanvasLayer" type="CanvasLayer" parent="." unique_id=1891716643]
 follow_viewport_enabled = true
 
-[node name="GUI" type="Control" parent="GUICanvasLayer" unique_id=1695481976 node_paths=PackedStringArray("score_gui", "next_animal_gui")]
+[node name="GUI" type="Control" parent="GUICanvasLayer" unique_id=1695481976 node_paths=PackedStringArray("score_gui", "next_animal_gui", "pause_screen")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -189,6 +191,7 @@ theme = ExtResource("19_3mpf8")
 script = ExtResource("20_ub8lf")
 score_gui = NodePath("MarginContainer2/ScoreGUI")
 next_animal_gui = NodePath("MarginContainer/VBoxContainer/NextAnimalGUI")
+pause_screen = NodePath("PauseScreen")
 
 [node name="FlyingPointsParent" type="Control" parent="GUICanvasLayer/GUI" unique_id=1443576806]
 layout_mode = 1
@@ -371,3 +374,7 @@ theme_override_constants/margin_bottom = 32
 
 [node name="ControlHints" parent="GUICanvasLayer/GUI/MarginContainer3" unique_id=1308114495 instance=ExtResource("36_ba7d3")]
 layout_mode = 2
+
+[node name="PauseScreen" parent="GUICanvasLayer/GUI" unique_id=952844513 instance=ExtResource("37_vu5a2")]
+visible = false
+layout_mode = 1

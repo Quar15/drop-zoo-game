@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://civmkhgherwsc"
-path="res://.godot/imported/rounded_btn_384x64_outline_white.png-08af67af2a404df8cdfc42971d16b1be.ctex"
+uid="uid://02nkevcw6g0g"
+path="res://.godot/imported/panel.png-e80197c9408d8b1a067924c1661a68f7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/buttons/rounded_btn_384x64_outline_white.png"
-dest_files=["res://.godot/imported/rounded_btn_384x64_outline_white.png-08af67af2a404df8cdfc42971d16b1be.ctex"]
+source_file="res://assets/buttons/panel.png"
+dest_files=["res://.godot/imported/panel.png-e80197c9408d8b1a067924c1661a68f7.ctex"]
 
 [params]
 

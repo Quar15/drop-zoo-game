@@ -6,8 +6,9 @@
 [ext_resource type="Script" uid="uid://bcw20ulwfpfw3" path="res://scripts/GUI/main_menu_gui.gd" id="4_hf8dy"]
 [ext_resource type="Texture2D" uid="uid://chh2wkrdq7nhn" path="res://assets/logo/drop_zoo_logo_motion_lines.png" id="5_7akwi"]
 [ext_resource type="Texture2D" uid="uid://bx74j7ml4ewej" path="res://assets/logo/drop_zoo_logo.png" id="5_hf8dy"]
-[ext_resource type="Texture2D" uid="uid://civmkhgherwsc" path="res://assets/buttons/rounded_btn_384x64_outline_white.png" id="7_rm7ai"]
-[ext_resource type="Texture2D" uid="uid://c8we6j02l6nvw" path="res://assets/buttons/rounded_btn_384x64_white.png" id="8_ll81e"]
+[ext_resource type="Texture2D" uid="uid://itvqbedfcam0" path="res://assets/buttons/rounded_btn_300x96_yellow.png" id="7_ll81e"]
+[ext_resource type="Texture2D" uid="uid://dsmp051658yew" path="res://assets/buttons/rounded_btn_300x96_white.png" id="9_62e13"]
+[ext_resource type="PackedScene" uid="uid://b3assykeknia4" path="res://prefabs/GUI/options_gui.tscn" id="9_ll81e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lmwo4"]
 size = Vector2(4000, 100)
@@ -16,17 +17,16 @@ size = Vector2(4000, 100)
 texture = ExtResource("5_7akwi")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_62e13"]
-texture = ExtResource("8_ll81e")
+texture = ExtResource("7_ll81e")
 texture_margin_left = 32.0
 texture_margin_top = 8.0
 texture_margin_right = 32.0
 texture_margin_bottom = 8.0
 expand_margin_top = 8.0
 expand_margin_bottom = 2.0
-modulate_color = Color(1, 0.8117647, 0, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c41oj"]
-texture = ExtResource("8_ll81e")
+texture = ExtResource("9_62e13")
 texture_margin_left = 32.0
 texture_margin_top = 8.0
 texture_margin_right = 32.0
@@ -36,7 +36,7 @@ expand_margin_bottom = 2.0
 modulate_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3au07"]
-texture = ExtResource("8_ll81e")
+texture = ExtResource("9_62e13")
 texture_margin_left = 32.0
 texture_margin_top = 8.0
 texture_margin_right = 32.0
@@ -45,18 +45,8 @@ expand_margin_top = 8.0
 expand_margin_bottom = 2.0
 modulate_color = Color(0.48235294, 0.30588236, 0.22745098, 1)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n6yus"]
-texture = ExtResource("7_rm7ai")
-texture_margin_left = 32.0
-texture_margin_top = 8.0
-texture_margin_right = 32.0
-texture_margin_bottom = 8.0
-expand_margin_top = 8.0
-expand_margin_bottom = 2.0
-modulate_color = Color(0, 0, 0, 1)
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_etrbm"]
-texture = ExtResource("8_ll81e")
+texture = ExtResource("9_62e13")
 texture_margin_left = 32.0
 texture_margin_top = 8.0
 texture_margin_right = 32.0
@@ -341,7 +331,7 @@ autostart = true
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1186826464]
 layer = 999
 
-[node name="MainMenuGUI" type="Control" parent="CanvasLayer" unique_id=1714735843 node_paths=PackedStringArray("main_menu_parent")]
+[node name="MainMenuGUI" type="Control" parent="CanvasLayer" unique_id=1714735843 node_paths=PackedStringArray("main_menu_parent", "options_gui")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -351,6 +341,7 @@ grow_vertical = 2
 theme = ExtResource("3_47nhc")
 script = ExtResource("4_hf8dy")
 main_menu_parent = NodePath("../..")
+options_gui = NodePath("../OptionsGUI")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MainMenuGUI" unique_id=1860694941]
 layout_mode = 1
@@ -399,7 +390,6 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxTexture_62e13")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_c41oj")
 theme_override_styles/hover = SubResource("StyleBoxTexture_3au07")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_n6yus")
 theme_override_styles/focus = SubResource("StyleBoxTexture_etrbm")
 text = "Play"
 
@@ -539,6 +529,9 @@ autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="OptionsGUI" parent="CanvasLayer" unique_id=110807374 instance=ExtResource("9_ll81e")]
+visible = false
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1130758155]
 deterministic = true
 libraries/ = SubResource("AnimationLibrary_rm7ai")
@@ -547,14 +540,14 @@ speed_scale = 0.8
 
 [connection signal="body_entered" from="FakeAnimalsRain/Area2D" to="FakeAnimalsRain" method="_on_deadzone_body_entered"]
 [connection signal="mouse_entered" from="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/PlayButton" to="CanvasLayer/MainMenuGUI" method="on_btn_hover"]
-[connection signal="pressed" from="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/PlayButton" to="CanvasLayer/MainMenuGUI" method="on_play_btn_clicked"]
 [connection signal="pressed" from="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/PlayButton" to="CanvasLayer/MainMenuGUI" method="on_btn_click"]
+[connection signal="pressed" from="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/PlayButton" to="CanvasLayer/MainMenuGUI" method="on_play_btn_clicked"]
 [connection signal="mouse_entered" from="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/OptionsButton" to="CanvasLayer/MainMenuGUI" method="on_btn_hover"]
 [connection signal="pressed" from="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/OptionsButton" to="CanvasLayer/MainMenuGUI" method="on_options_btn_clicked"]
 [connection signal="pressed" from="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/OptionsButton" to="CanvasLayer/MainMenuGUI" method="on_btn_click"]
 [connection signal="mouse_entered" from="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/CreditsButton" to="CanvasLayer/MainMenuGUI" method="on_btn_hover"]
-[connection signal="pressed" from="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/CreditsButton" to="CanvasLayer/MainMenuGUI" method="on_credits_btn_clicked"]
 [connection signal="pressed" from="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/CreditsButton" to="CanvasLayer/MainMenuGUI" method="on_btn_click"]
+[connection signal="pressed" from="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/CreditsButton" to="CanvasLayer/MainMenuGUI" method="on_credits_btn_clicked"]
 [connection signal="mouse_entered" from="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/QuitButton" to="CanvasLayer/MainMenuGUI" method="on_btn_hover"]
-[connection signal="pressed" from="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/QuitButton" to="CanvasLayer/MainMenuGUI" method="on_quit_btn_clicked"]
 [connection signal="pressed" from="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/QuitButton" to="CanvasLayer/MainMenuGUI" method="on_btn_click"]
+[connection signal="pressed" from="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/QuitButton" to="CanvasLayer/MainMenuGUI" method="on_quit_btn_clicked"]

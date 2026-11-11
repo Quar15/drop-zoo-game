@@ -13,6 +13,7 @@ var move_direction: float = 0.0
 
 
 func _ready() -> void:
+	self.process_mode = Node.PROCESS_MODE_ALWAYS
 	Input.joy_connection_changed.connect(_on_joy_changed)
 
 

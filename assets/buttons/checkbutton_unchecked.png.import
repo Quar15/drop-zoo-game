@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8we6j02l6nvw"
-path="res://.godot/imported/rounded_btn_384x64_white.png-430799dda846d0f0d682f3bdb86aea67.ctex"
+uid="uid://doftgomeqr725"
+path="res://.godot/imported/checkbutton_unchecked.png-eb92ae96513635b8599d6ebc20c7c647.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/buttons/rounded_btn_384x64_white.png"
-dest_files=["res://.godot/imported/rounded_btn_384x64_white.png-430799dda846d0f0d682f3bdb86aea67.ctex"]
+source_file="res://assets/buttons/checkbutton_unchecked.png"
+dest_files=["res://.godot/imported/checkbutton_unchecked.png-eb92ae96513635b8599d6ebc20c7c647.ctex"]
 
 [params]
 

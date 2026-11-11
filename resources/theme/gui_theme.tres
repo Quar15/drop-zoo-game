@@ -3,8 +3,40 @@
 [ext_resource type="FontFile" uid="uid://8snqmjmd8cgg" path="res://assets/fonts/scabber/Scabber.otf" id="1_e5ftc"]
 [ext_resource type="StyleBox" uid="uid://b6c4cjifjaehb" path="res://resources/theme/btn_normal_style.tres" id="2_ksfde"]
 [ext_resource type="StyleBox" uid="uid://d1fwbvsv1eyoy" path="res://resources/theme/btn_hover_style.tres" id="3_e5ftc"]
+[ext_resource type="Texture2D" uid="uid://bmfd4nypjwcj4" path="res://assets/buttons/slider_grabber_area.png" id="4_oldg5"]
+[ext_resource type="Texture2D" uid="uid://brikvc8ffq5wv" path="res://assets/buttons/slider_knob.png" id="4_sfyyr"]
+[ext_resource type="Texture2D" uid="uid://vxfjlwugrflg" path="res://assets/buttons/slider.png" id="5_sfyyr"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ki234"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sleys"]
+texture = ExtResource("4_oldg5")
+texture_margin_left = 4.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+modulate_color = Color(1, 0.8119173, 0, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_sfyyr"]
+load_path = "res://.godot/imported/slider_grabber_area.png-ed753ff0f3dd11227ecd85455543d2a7.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wo4gh"]
+texture = SubResource("CompressedTexture2D_sfyyr")
+texture_margin_left = 4.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+modulate_color = Color(0.8913881, 0.7225321, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cuvy4"]
+texture = ExtResource("5_sfyyr")
+texture_margin_left = 8.0
+texture_margin_top = 4.0
+texture_margin_right = 8.0
+texture_margin_bottom = 12.0
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_bottom = 4.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v8rcm"]
 
@@ -17,12 +49,17 @@ Button/colors/font_hover_pressed_color = Color(0.41598046, 0.41598043, 0.4159804
 Button/colors/font_pressed_color = Color(0.41598046, 0.41598043, 0.4159804, 1)
 Button/font_sizes/font_size = 48
 Button/fonts/font = ExtResource("1_e5ftc")
-Button/styles/disabled = ExtResource("2_ksfde")
 Button/styles/focus = ExtResource("3_e5ftc")
 Button/styles/hover = ExtResource("3_e5ftc")
 Button/styles/normal = ExtResource("2_ksfde")
 Button/styles/pressed = ExtResource("3_e5ftc")
 HSeparator/styles/separator = SubResource("StyleBoxEmpty_ki234")
+HSlider/constants/center_grabber = 1
+HSlider/icons/grabber = ExtResource("4_sfyyr")
+HSlider/icons/grabber_highlight = ExtResource("4_sfyyr")
+HSlider/styles/grabber_area = SubResource("StyleBoxTexture_sleys")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxTexture_wo4gh")
+HSlider/styles/slider = SubResource("StyleBoxTexture_cuvy4")
 RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
 RichTextLabel/fonts/bold_font = ExtResource("1_e5ftc")
 RichTextLabel/fonts/normal_font = ExtResource("1_e5ftc")
