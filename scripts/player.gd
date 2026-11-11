@@ -21,6 +21,7 @@ var next_animal_resource: AnimalResource
 var current_animal_resource: AnimalResource
 
 var game_manager: GameManager
+var is_alive: bool = true
 
 
 # Called when the node enters the scene tree for the first time.
@@ -30,10 +31,14 @@ func _ready() -> void:
 	select_next_animal()
 	InputManager.action_pressed.connect(on_drop_action_pressed)
 	spawn_timer.timeout.connect(on_spawn_timer_timeout)
+	is_alive = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if not is_alive:
+		return
+
 	var move_speed = InputManager.move_direction * delta * speed
 	if (
 		global_position.x + move_speed >= limiter_left.global_position.x
@@ -53,7 +58,7 @@ func select_next_animal() -> void:
 
 
 func on_drop_action_pressed() -> void:
-	if not can_drop:
+	if not is_alive or not can_drop:
 		return
 	can_drop = false
 

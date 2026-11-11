@@ -4,6 +4,7 @@ extends Node
 @export var score_gui: ScoreGUI
 @export var next_animal_gui: NextAnimalGUI
 @export var pause_screen: PauseScreen
+@export var end_screen: EndScreenGUI
 
 
 func _ready() -> void:
@@ -19,4 +20,5 @@ func handle_score_change(score: int, high_score: int) -> void:
 
 
 func handle_menu_pressed() -> void:
-	pause_screen.toggle()
+	if not end_screen.visible:
+		pause_screen.toggle()

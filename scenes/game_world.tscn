@@ -37,6 +37,7 @@
 [ext_resource type="PackedScene" uid="uid://leu5vjwsnwoe" path="res://prefabs/GUI/score_gui.tscn" id="35_thaxu"]
 [ext_resource type="PackedScene" uid="uid://d0wqj0vefvggy" path="res://prefabs/GUI/control_hints.tscn" id="36_ba7d3"]
 [ext_resource type="PackedScene" uid="uid://dcetyxsl1t7m4" path="res://prefabs/GUI/pause_screen.tscn" id="37_vu5a2"]
+[ext_resource type="PackedScene" uid="uid://drnw3hpgak3tg" path="res://prefabs/GUI/end_screen_gui.tscn" id="38_4tgb6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0ld40"]
 size = Vector2(800, 20)
@@ -180,7 +181,8 @@ position = Vector2(960, 160)
 [node name="GUICanvasLayer" type="CanvasLayer" parent="." unique_id=1891716643]
 follow_viewport_enabled = true
 
-[node name="GUI" type="Control" parent="GUICanvasLayer" unique_id=1695481976 node_paths=PackedStringArray("score_gui", "next_animal_gui", "pause_screen")]
+[node name="GUI" type="Control" parent="GUICanvasLayer" unique_id=1695481976 node_paths=PackedStringArray("score_gui", "next_animal_gui", "pause_screen", "end_screen")]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -192,6 +194,7 @@ script = ExtResource("20_ub8lf")
 score_gui = NodePath("MarginContainer2/ScoreGUI")
 next_animal_gui = NodePath("MarginContainer/VBoxContainer/NextAnimalGUI")
 pause_screen = NodePath("PauseScreen")
+end_screen = NodePath("EndScreen")
 
 [node name="FlyingPointsParent" type="Control" parent="GUICanvasLayer/GUI" unique_id=1443576806]
 layout_mode = 1
@@ -378,3 +381,12 @@ layout_mode = 2
 [node name="PauseScreen" parent="GUICanvasLayer/GUI" unique_id=952844513 instance=ExtResource("37_vu5a2")]
 visible = false
 layout_mode = 1
+
+[node name="EndScreen" parent="GUICanvasLayer/GUI" unique_id=768889203 instance=ExtResource("38_4tgb6")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5

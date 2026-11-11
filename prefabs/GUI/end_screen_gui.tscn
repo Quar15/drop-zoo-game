@@ -1,0 +1,214 @@
+[gd_scene format=3 uid="uid://drnw3hpgak3tg"]
+
+[ext_resource type="Theme" uid="uid://qnmlbkfmpc3i" path="res://resources/theme/gui_theme.tres" id="1_kovpq"]
+[ext_resource type="Texture2D" uid="uid://02nkevcw6g0g" path="res://assets/buttons/panel.png" id="2_aycpw"]
+[ext_resource type="Script" uid="uid://ownegp1l1dly" path="res://scripts/GUI/end_screen_gui.gd" id="2_ddr5j"]
+[ext_resource type="Texture2D" uid="uid://b64ygjnqyskmj" path="res://assets/kenney/animals_remastered/icons/whale.png" id="3_8bd6a"]
+[ext_resource type="Texture2D" uid="uid://itvqbedfcam0" path="res://assets/buttons/rounded_btn_300x96_yellow.png" id="3_52usf"]
+[ext_resource type="Texture2D" uid="uid://dsmp051658yew" path="res://assets/buttons/rounded_btn_300x96_white.png" id="4_8bd6a"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kovpq"]
+texture = ExtResource("2_aycpw")
+texture_margin_left = 106.0
+texture_margin_top = 100.363655
+texture_margin_right = 108.60244
+texture_margin_bottom = 163.90388
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mp4gh"]
+bg_color = Color(0.48235294, 0.30588236, 0.22745098, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+expand_margin_top = 4.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_62e13"]
+texture = ExtResource("3_52usf")
+texture_margin_left = 32.0
+texture_margin_top = 8.0
+texture_margin_right = 32.0
+texture_margin_bottom = 8.0
+expand_margin_top = 8.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c41oj"]
+texture = ExtResource("4_8bd6a")
+texture_margin_left = 32.0
+texture_margin_top = 8.0
+texture_margin_right = 32.0
+texture_margin_bottom = 8.0
+expand_margin_top = 8.0
+expand_margin_bottom = 2.0
+modulate_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3au07"]
+texture = ExtResource("4_8bd6a")
+texture_margin_left = 32.0
+texture_margin_top = 8.0
+texture_margin_right = 32.0
+texture_margin_bottom = 8.0
+expand_margin_top = 8.0
+expand_margin_bottom = 2.0
+modulate_color = Color(0.48235294, 0.30588236, 0.22745098, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_etrbm"]
+texture = ExtResource("4_8bd6a")
+texture_margin_left = 32.0
+texture_margin_top = 8.0
+texture_margin_right = 32.0
+texture_margin_bottom = 8.0
+expand_margin_top = 8.0
+expand_margin_bottom = 2.0
+modulate_color = Color(0, 0, 0, 1)
+
+[node name="EndScreen" type="Control" unique_id=768889203 node_paths=PackedStringArray("final_score_label", "highscore_label", "highscore_text_label", "biggest_merge_icon", "biggest_merge_label")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_kovpq")
+script = ExtResource("2_ddr5j")
+final_score_label = NodePath("PanelContainer/VBoxContainer/FinalScoreLabel")
+highscore_label = NodePath("PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/HighscoreLabel")
+highscore_text_label = NodePath("PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/HighscoreTextLabel")
+biggest_merge_icon = NodePath("PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer/MergeIconRect")
+biggest_merge_label = NodePath("PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer/MergeNameLabel")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=292856645]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_kovpq")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1340015535]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/VBoxContainer" unique_id=1481692423]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.48235294, 0.30588236, 0.22745098, 1)
+text = "Final Score"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FinalScoreLabel" type="RichTextLabel" parent="PanelContainer/VBoxContainer" unique_id=416441357]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.48235294, 0.30588236, 0.22745098, 1)
+theme_override_font_sizes/normal_font_size = 128
+bbcode_enabled = true
+text = "[shake rate=5.0]99999[/shake]"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer" unique_id=386272878]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_right = 32
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/VBoxContainer/MarginContainer" unique_id=132918240]
+layout_mode = 2
+theme_override_constants/separation = 16
+theme_override_styles/separator = SubResource("StyleBoxFlat_mp4gh")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=1884361599]
+layout_mode = 2
+theme_override_constants/separation = 48
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HBoxContainer" unique_id=594637873]
+layout_mode = 2
+
+[node name="HighscoreTextLabel" type="RichTextLabel" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=188785488]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.48235294, 0.30588236, 0.22745098, 1)
+bbcode_enabled = true
+text = "[shake rate=5.0]NEW[/shake] Best"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HighscoreLabel" type="RichTextLabel" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1722020170]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.48235294, 0.30588236, 0.22745098, 1)
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "[shake rate=5.0]99999[/shake]
+"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HBoxContainer" unique_id=756661710]
+layout_mode = 2
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1736816240]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.48235294, 0.30588236, 0.22745098, 1)
+text = "Biggest Merge"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1891831447]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="MergeIconRect" type="TextureRect" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer" unique_id=1153019158]
+custom_maximum_size = Vector2(72, 72)
+layout_mode = 2
+texture = ExtResource("3_8bd6a")
+stretch_mode = 5
+
+[node name="MergeNameLabel" type="RichTextLabel" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer" unique_id=1677110023]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.48235294, 0.30588236, 0.22745098, 1)
+theme_override_font_sizes/normal_font_size = 32
+text = "Orca"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/VBoxContainer" unique_id=1610694958]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="PlayAgainButton" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1548818156]
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_62e13")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_c41oj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_3au07")
+theme_override_styles/focus = SubResource("StyleBoxTexture_etrbm")
+text = "Play Again"
+
+[node name="MainMenuButton" type="Button" parent="PanelContainer/VBoxContainer" unique_id=457288149]
+layout_mode = 2
+text = "Main Menu"
+
+[connection signal="mouse_entered" from="PanelContainer/VBoxContainer/PlayAgainButton" to="." method="on_btn_hover"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/PlayAgainButton" to="." method="on_play_again_btn_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/PlayAgainButton" to="." method="on_btn_click"]
+[connection signal="mouse_entered" from="PanelContainer/VBoxContainer/MainMenuButton" to="." method="on_btn_hover"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/MainMenuButton" to="." method="on_main_menu_btn_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/MainMenuButton" to="." method="on_btn_click"]

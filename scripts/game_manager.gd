@@ -9,6 +9,7 @@ extends Node
 @export var player: Player
 
 @export var death_area: DeathArea
+var best_merge: AnimalResource = preload("uid://2hxr67giinsj")
 
 
 # Called when the node enters the scene tree for the first time.
@@ -26,6 +27,7 @@ func _ready() -> void:
 	player.game_manager = self
 
 	death_area.body_entered.connect(on_death_area_entered)
+	get_tree().paused = false
 
 
 func on_animal_merging(a: Animal, b: Animal) -> void:
@@ -39,8 +41,12 @@ func on_animal_merging(a: Animal, b: Animal) -> void:
 	score_manager.add_score(b.data.score)
 	printt("@DEBUG: Score added:", b.data.score)
 	gui_manager.score_gui.animate_flying_points(b.global_position, b.data.score)
+
 	b.setup(animal_resources[int(b.data.type) + 1])
+	if int(b.data.type) > int(best_merge.type):
+		best_merge = b.data
 	b.hit_flash.play_hit_flash()
+
 	a.queue_free()
 	b.retrigger_check()
 	death_area.retrigger_check()
@@ -63,4 +69,6 @@ func on_death_area_entered(body: Node2D) -> void:
 
 func end_game() -> void:
 	get_tree().paused = true
+	player.is_alive = false
+	gui_manager.end_screen.setup(score_manager.score, score_manager.high_score, best_merge)
 	print("@INFO: finished game")
