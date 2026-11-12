@@ -27,4 +27,5 @@ stream = ExtResource("27_vxglm")
 volume_db = -23.0
 autoplay = true
 bus = &"Music"
+playback_type = 1
 parameters/looping = true

@@ -58,7 +58,7 @@ func select_next_animal() -> void:
 
 
 func on_drop_action_pressed() -> void:
-	if not is_alive or not can_drop:
+	if not is_alive or not can_drop or get_tree().paused:
 		return
 	can_drop = false
 

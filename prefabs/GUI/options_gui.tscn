@@ -107,8 +107,11 @@ theme_override_constants/margin_right = 32
 
 [node name="MusicSlider" type="HSlider" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer2" unique_id=2074106278]
 layout_mode = 2
+focus_neighbor_right = NodePath("../../../VBoxContainer2/MarginContainer/SFXSlider")
+focus_neighbor_bottom = NodePath("../../../../../BackButton")
+focus_next = NodePath("../../../VBoxContainer2/MarginContainer/SFXSlider")
 max_value = 1.0
-step = 0.001
+step = 0.01
 value = 1.0
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer" unique_id=829145600]
@@ -133,8 +136,13 @@ theme_override_constants/margin_right = 32
 
 [node name="SFXSlider" type="HSlider" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer" unique_id=356966364]
 layout_mode = 2
+focus_neighbor_left = NodePath("../../../VBoxContainer/MarginContainer2/MusicSlider")
+focus_neighbor_right = NodePath("../../../VBoxContainer3/FullscreenCheckbutton")
+focus_neighbor_bottom = NodePath("../../../../../BackButton")
+focus_next = NodePath("../../../VBoxContainer3/FullscreenCheckbutton")
+focus_previous = NodePath("../../../VBoxContainer/MarginContainer2/MusicSlider")
 max_value = 1.0
-step = 0.001
+step = 0.01
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer" unique_id=315257461]
 custom_minimum_size = Vector2(256, 300)
@@ -155,6 +163,9 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 size_flags_horizontal = 4
+focus_neighbor_left = NodePath("../../VBoxContainer2/MarginContainer/SFXSlider")
+focus_neighbor_bottom = NodePath("../../../../BackButton")
+focus_previous = NodePath("../../VBoxContainer2/MarginContainer/SFXSlider")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_ll81e")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_62e13")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_c41oj")
@@ -172,5 +183,6 @@ size_flags_vertical = 8
 offset_transform_enabled = true
 offset_transform_position = Vector2(-16, 16)
 offset_transform_visual_only = false
+focus_neighbor_top = NodePath("../MarginContainer/HBoxContainer/VBoxContainer/MarginContainer2/MusicSlider")
 theme_override_font_sizes/font_size = 48
 text = "Back"

@@ -1,6 +1,6 @@
 extends Node
 
-const GAME_ACTIONS := ["left", "right", "action", "menu"]
+const GAME_ACTIONS := ["left", "right", "action", "menu", "ui_left", "ui_right", "ui_up", "ui_down"]
 
 enum DeviceType { KEYBOARD_MOUSE, GENERIC_PAD, XBOX, PLAYSTATION, NINTENDO, STEAM }
 signal device_changed(device: DeviceType)
@@ -8,6 +8,7 @@ var current_device := DeviceType.KEYBOARD_MOUSE
 
 signal action_pressed
 signal menu_pressed
+signal back_pressed
 
 var move_direction: float = 0.0
 
@@ -30,6 +31,16 @@ func _unhandled_input(event):
 		action_pressed.emit()
 	elif event.is_action_pressed("menu"):
 		menu_pressed.emit()
+	elif event.is_action_pressed("ui_close_dialog"):
+		back_pressed.emit()
+
+
+func unfocus() -> void:
+	get_viewport().gui_release_focus()
+
+
+func is_controller() -> bool:
+	return current_device != DeviceType.KEYBOARD_MOUSE
 
 
 func _on_joy_changed(device: int, connected: bool) -> void:
@@ -39,7 +50,7 @@ func _on_joy_changed(device: int, connected: bool) -> void:
 
 
 func _detect_device_change(event: InputEvent) -> void:
-	if not _is_bound_action_event(event):
+	if not event is InputEventMouseButton and not _is_bound_action_event(event):
 		return
 
 	var new_device := current_device

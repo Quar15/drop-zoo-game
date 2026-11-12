@@ -62,7 +62,7 @@ expand_margin_top = 8.0
 expand_margin_bottom = 2.0
 modulate_color = Color(0, 0, 0, 1)
 
-[node name="EndScreen" type="Control" unique_id=768889203 node_paths=PackedStringArray("final_score_label", "highscore_label", "highscore_text_label", "biggest_merge_icon", "biggest_merge_label")]
+[node name="EndScreen" type="Control" unique_id=768889203 node_paths=PackedStringArray("final_score_label", "highscore_label", "highscore_text_label", "biggest_merge_icon", "biggest_merge_label", "play_again_btn")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -76,6 +76,7 @@ highscore_label = NodePath("PanelContainer/VBoxContainer/HBoxContainer/VBoxConta
 highscore_text_label = NodePath("PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/HighscoreTextLabel")
 biggest_merge_icon = NodePath("PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer/MergeIconRect")
 biggest_merge_label = NodePath("PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer/MergeNameLabel")
+play_again_btn = NodePath("PanelContainer/VBoxContainer/PlayAgainButton")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=292856645]
 layout_mode = 1
@@ -196,6 +197,8 @@ theme_override_constants/separation = 16
 [node name="PlayAgainButton" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1548818156]
 custom_minimum_size = Vector2(0, 96)
 layout_mode = 2
+focus_neighbor_bottom = NodePath("../MainMenuButton")
+focus_next = NodePath("../MainMenuButton")
 theme_override_styles/normal = SubResource("StyleBoxTexture_62e13")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_c41oj")
 theme_override_styles/hover = SubResource("StyleBoxTexture_3au07")
@@ -204,11 +207,13 @@ text = "Play Again"
 
 [node name="MainMenuButton" type="Button" parent="PanelContainer/VBoxContainer" unique_id=457288149]
 layout_mode = 2
+focus_neighbor_top = NodePath("../PlayAgainButton")
+focus_previous = NodePath("../PlayAgainButton")
 text = "Main Menu"
 
+[connection signal="focus_entered" from="PanelContainer/VBoxContainer/PlayAgainButton" to="." method="on_btn_hover"]
 [connection signal="mouse_entered" from="PanelContainer/VBoxContainer/PlayAgainButton" to="." method="on_btn_hover"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/PlayAgainButton" to="." method="on_play_again_btn_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/PlayAgainButton" to="." method="on_btn_click"]
+[connection signal="focus_entered" from="PanelContainer/VBoxContainer/MainMenuButton" to="." method="on_btn_hover"]
 [connection signal="mouse_entered" from="PanelContainer/VBoxContainer/MainMenuButton" to="." method="on_btn_hover"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/MainMenuButton" to="." method="on_main_menu_btn_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/MainMenuButton" to="." method="on_btn_click"]

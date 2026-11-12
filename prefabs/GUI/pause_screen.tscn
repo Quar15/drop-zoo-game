@@ -120,7 +120,7 @@ modulate_color = Color(0, 0, 0, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mp4gh"]
 bg_color = Color(0.48235294, 0.30588236, 0.22745098, 1)
 
-[node name="PauseScreen" type="Control" unique_id=952844513 node_paths=PackedStringArray("options_gui", "keyboard_hint", "controller_hint")]
+[node name="PauseScreen" type="Control" unique_id=952844513 node_paths=PackedStringArray("options_gui", "resume_btn", "keyboard_hint", "controller_hint")]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -131,6 +131,7 @@ grow_vertical = 2
 theme = ExtResource("5_cnn6c")
 script = ExtResource("1_qjjb3")
 options_gui = NodePath("OptionsGUI")
+resume_btn = NodePath("MarginContainer2/PanelContainer/MarginContainer2/HBoxContainer/ResumeButton")
 keyboard_hint = NodePath("MarginContainer2/PanelContainer/MarginContainer2/HBoxContainer/KeyboardHint")
 controller_hint = NodePath("MarginContainer2/PanelContainer/MarginContainer2/HBoxContainer/ControllerHint")
 
@@ -240,6 +241,8 @@ texture = ExtResource("6_4dtpd")
 [node name="ResumeButton" type="Button" parent="MarginContainer2/PanelContainer/MarginContainer2/HBoxContainer" unique_id=1599365362]
 custom_minimum_size = Vector2(356, 96)
 layout_mode = 2
+focus_neighbor_right = NodePath("../OptionsButton")
+focus_next = NodePath("../OptionsButton")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxTexture_62e13")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_c41oj")
@@ -250,16 +253,26 @@ text = "Resume"
 [node name="OptionsButton" type="Button" parent="MarginContainer2/PanelContainer/MarginContainer2/HBoxContainer" unique_id=741893022]
 layout_mode = 2
 size_flags_vertical = 4
+focus_neighbor_left = NodePath("../ResumeButton")
+focus_neighbor_right = NodePath("../RestartButton")
+focus_next = NodePath("../RestartButton")
+focus_previous = NodePath("../ResumeButton")
 text = "Options"
 
 [node name="RestartButton" type="Button" parent="MarginContainer2/PanelContainer/MarginContainer2/HBoxContainer" unique_id=1446759387]
 layout_mode = 2
 size_flags_vertical = 4
+focus_neighbor_left = NodePath("../OptionsButton")
+focus_neighbor_right = NodePath("../MainMenuButton")
+focus_next = NodePath("../MainMenuButton")
+focus_previous = NodePath(".")
 text = "Restart"
 
 [node name="MainMenuButton" type="Button" parent="MarginContainer2/PanelContainer/MarginContainer2/HBoxContainer" unique_id=341072582]
 layout_mode = 2
 size_flags_vertical = 4
+focus_neighbor_left = NodePath("../RestartButton")
+focus_previous = NodePath("../RestartButton")
 text = "Main Menu"
 
 [node name="Panel" type="Panel" parent="MarginContainer2/PanelContainer" unique_id=2144080433]
@@ -272,15 +285,15 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_mp4gh")
 visible = false
 layout_mode = 1
 
+[connection signal="focus_entered" from="MarginContainer2/PanelContainer/MarginContainer2/HBoxContainer/ResumeButton" to="." method="on_btn_hover"]
 [connection signal="mouse_entered" from="MarginContainer2/PanelContainer/MarginContainer2/HBoxContainer/ResumeButton" to="." method="on_btn_hover"]
 [connection signal="pressed" from="MarginContainer2/PanelContainer/MarginContainer2/HBoxContainer/ResumeButton" to="." method="on_resume_btn_pressed"]
-[connection signal="pressed" from="MarginContainer2/PanelContainer/MarginContainer2/HBoxContainer/ResumeButton" to="." method="on_btn_click"]
+[connection signal="focus_entered" from="MarginContainer2/PanelContainer/MarginContainer2/HBoxContainer/OptionsButton" to="." method="on_btn_hover"]
 [connection signal="mouse_entered" from="MarginContainer2/PanelContainer/MarginContainer2/HBoxContainer/OptionsButton" to="." method="on_btn_hover"]
 [connection signal="pressed" from="MarginContainer2/PanelContainer/MarginContainer2/HBoxContainer/OptionsButton" to="." method="on_options_btn_pressed"]
-[connection signal="pressed" from="MarginContainer2/PanelContainer/MarginContainer2/HBoxContainer/OptionsButton" to="." method="on_btn_click"]
+[connection signal="focus_entered" from="MarginContainer2/PanelContainer/MarginContainer2/HBoxContainer/RestartButton" to="." method="on_btn_hover"]
 [connection signal="mouse_entered" from="MarginContainer2/PanelContainer/MarginContainer2/HBoxContainer/RestartButton" to="." method="on_btn_hover"]
 [connection signal="pressed" from="MarginContainer2/PanelContainer/MarginContainer2/HBoxContainer/RestartButton" to="." method="on_restart_btn_pressed"]
-[connection signal="pressed" from="MarginContainer2/PanelContainer/MarginContainer2/HBoxContainer/RestartButton" to="." method="on_btn_click"]
+[connection signal="focus_entered" from="MarginContainer2/PanelContainer/MarginContainer2/HBoxContainer/MainMenuButton" to="." method="on_btn_hover"]
 [connection signal="mouse_entered" from="MarginContainer2/PanelContainer/MarginContainer2/HBoxContainer/MainMenuButton" to="." method="on_btn_hover"]
 [connection signal="pressed" from="MarginContainer2/PanelContainer/MarginContainer2/HBoxContainer/MainMenuButton" to="." method="on_main_menu_btn_pressed"]
-[connection signal="pressed" from="MarginContainer2/PanelContainer/MarginContainer2/HBoxContainer/MainMenuButton" to="." method="on_btn_click"]

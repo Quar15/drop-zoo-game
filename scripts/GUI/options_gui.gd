@@ -1,6 +1,8 @@
 class_name OptionsGUI
 extends Control
 
+signal exited
+
 @export var back_btn: Button
 @export var music_slider: Slider
 @export var sfx_slider: Slider
@@ -32,6 +34,8 @@ func _ready() -> void:
 	sfx_slider.value_changed.connect(on_sfx_value_changed)
 	fullscreen_checkbtn.toggled.connect(on_fullscreen_button_toggled)
 
+	InputManager.back_pressed.connect(back)
+
 
 func show_up() -> void:
 	music_slider.value = db_to_linear(AudioServer.get_bus_volume_db(music_bus_index))
@@ -41,11 +45,14 @@ func show_up() -> void:
 	)
 	self.visible = true
 	self.mouse_filter = Control.MOUSE_FILTER_STOP
+	if InputManager.is_controller():
+		music_slider.grab_focus()
 
 
 func back() -> void:
 	self.visible = false
 	self.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	exited.emit()
 
 
 func on_music_value_changed(value: float) -> void:

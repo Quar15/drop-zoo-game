@@ -7,6 +7,12 @@ extends Control
 @export var biggest_merge_icon: TextureRect
 @export var biggest_merge_label: RichTextLabel
 
+@export var play_again_btn: Button
+
+
+func _ready() -> void:
+	InputManager.device_changed.connect(on_device_changed)
+
 
 func setup(score: int, highscore: int, biggest_merge: AnimalResource) -> void:
 	final_score_label.text = "[shake rate=5.0]%d[/shake]" % score
@@ -21,6 +27,8 @@ func setup(score: int, highscore: int, biggest_merge: AnimalResource) -> void:
 	biggest_merge_label.text = biggest_merge.name.capitalize()
 
 	self.visible = true
+	if InputManager.is_controller():
+		play_again_btn.grab_focus()
 
 
 func on_play_again_btn_pressed() -> void:
@@ -37,3 +45,11 @@ func on_btn_hover() -> void:
 
 func on_btn_click() -> void:
 	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.UI_CLICK)
+
+
+func on_device_changed(_device: InputManager.DeviceType) -> void:
+	if not self.visible:
+		return
+
+	if InputManager.is_controller():
+		play_again_btn.grab_focus()

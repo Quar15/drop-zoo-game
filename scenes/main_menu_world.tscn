@@ -332,7 +332,7 @@ autostart = true
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1186826464]
 layer = 999
 
-[node name="MainMenuGUI" type="Control" parent="CanvasLayer" unique_id=1714735843 node_paths=PackedStringArray("options_gui", "credits_gui")]
+[node name="MainMenuGUI" type="Control" parent="CanvasLayer" unique_id=1714735843 node_paths=PackedStringArray("options_gui", "credits_gui", "play_btn")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -343,6 +343,7 @@ theme = ExtResource("3_47nhc")
 script = ExtResource("4_hf8dy")
 options_gui = NodePath("../OptionsGUI")
 credits_gui = NodePath("CreditsGUI")
+play_btn = NodePath("VBoxContainer/VBoxContainer/PlayButton")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MainMenuGUI" unique_id=1860694941]
 layout_mode = 1
@@ -430,15 +431,15 @@ autoplay = &"menu_entry"
 speed_scale = 0.8
 
 [connection signal="body_entered" from="FakeAnimalsRain/Area2D" to="FakeAnimalsRain" method="_on_deadzone_body_entered"]
+[connection signal="focus_entered" from="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/PlayButton" to="CanvasLayer/MainMenuGUI" method="on_btn_hover"]
 [connection signal="mouse_entered" from="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/PlayButton" to="CanvasLayer/MainMenuGUI" method="on_btn_hover"]
-[connection signal="pressed" from="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/PlayButton" to="CanvasLayer/MainMenuGUI" method="on_btn_click"]
 [connection signal="pressed" from="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/PlayButton" to="CanvasLayer/MainMenuGUI" method="on_play_btn_clicked"]
+[connection signal="focus_entered" from="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/OptionsButton" to="CanvasLayer/MainMenuGUI" method="on_btn_hover"]
 [connection signal="mouse_entered" from="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/OptionsButton" to="CanvasLayer/MainMenuGUI" method="on_btn_hover"]
 [connection signal="pressed" from="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/OptionsButton" to="CanvasLayer/MainMenuGUI" method="on_options_btn_clicked"]
-[connection signal="pressed" from="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/OptionsButton" to="CanvasLayer/MainMenuGUI" method="on_btn_click"]
+[connection signal="focus_entered" from="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/CreditsButton" to="CanvasLayer/MainMenuGUI" method="on_btn_hover"]
 [connection signal="mouse_entered" from="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/CreditsButton" to="CanvasLayer/MainMenuGUI" method="on_btn_hover"]
-[connection signal="pressed" from="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/CreditsButton" to="CanvasLayer/MainMenuGUI" method="on_btn_click"]
 [connection signal="pressed" from="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/CreditsButton" to="CanvasLayer/MainMenuGUI" method="on_credits_btn_clicked"]
+[connection signal="focus_entered" from="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/QuitButton" to="CanvasLayer/MainMenuGUI" method="on_btn_hover"]
 [connection signal="mouse_entered" from="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/QuitButton" to="CanvasLayer/MainMenuGUI" method="on_btn_hover"]
-[connection signal="pressed" from="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/QuitButton" to="CanvasLayer/MainMenuGUI" method="on_btn_click"]
 [connection signal="pressed" from="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/QuitButton" to="CanvasLayer/MainMenuGUI" method="on_quit_btn_clicked"]

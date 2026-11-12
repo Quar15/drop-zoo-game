@@ -13,6 +13,7 @@ var sound_effect_dict: Dictionary = {}  ## Loads all registered SoundEffects on 
 
 
 func _ready() -> void:
+	self.process_mode = Node.PROCESS_MODE_ALWAYS
 	for sound_effect: SoundEffect in sound_effects:
 		sound_effect_dict[sound_effect.type] = sound_effect
 

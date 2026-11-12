@@ -7,6 +7,7 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	InputManager.device_changed.connect(change_hints)
+	change_hints(InputManager.current_device)
 
 
 func change_hints(device: InputManager.DeviceType) -> void:

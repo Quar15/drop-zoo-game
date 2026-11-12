@@ -11,7 +11,7 @@ texture_margin_top = 100.363655
 texture_margin_right = 108.60244
 texture_margin_bottom = 163.90388
 
-[node name="CreditsGUI" type="PanelContainer" unique_id=1022512031]
+[node name="CreditsGUI" type="PanelContainer" unique_id=1022512031 node_paths=PackedStringArray("back_btn")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -19,6 +19,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_xojrs")
 script = ExtResource("2_7lnoi")
+back_btn = NodePath("CreditsContainer/BackButton")
 
 [node name="CreditsContainer" type="PanelContainer" parent="." unique_id=2143904178]
 layout_mode = 2
@@ -138,5 +139,5 @@ theme_override_font_sizes/font_size = 48
 text = "Back"
 
 [connection signal="mouse_entered" from="CreditsContainer/BackButton" to="." method="on_btn_hover"]
-[connection signal="pressed" from="CreditsContainer/BackButton" to="." method="on_btn_click"]
 [connection signal="pressed" from="CreditsContainer/BackButton" to="." method="on_back_btn_pressed"]
+[connection signal="pressed" from="CreditsContainer/BackButton" to="." method="on_btn_click"]
