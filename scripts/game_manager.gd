@@ -14,11 +14,10 @@ var best_merge: AnimalResource = preload("uid://2hxr67giinsj")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var high_score: int = 1000  # @TODO: Load highscore
-	score_manager.setup(high_score)
+	score_manager.setup()
 	score_manager.score_changed.connect(gui_manager.handle_score_change)
 
-	gui_manager.setup(high_score)
+	gui_manager.setup(score_manager.high_score)
 	player.next_animal_selected.connect(gui_manager.next_animal_gui.setup)
 
 	for a in animals:
@@ -70,5 +69,6 @@ func on_death_area_entered(body: Node2D) -> void:
 func end_game() -> void:
 	get_tree().paused = true
 	player.is_alive = false
+	score_manager.save_highscore()
 	gui_manager.end_screen.setup(score_manager.score, score_manager.high_score, best_merge)
 	print("@INFO: finished game")
