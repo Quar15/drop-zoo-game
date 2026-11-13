@@ -66,7 +66,7 @@ expand_margin_top = 8.0
 expand_margin_bottom = 2.0
 modulate_color = Color(0, 0, 0, 1)
 
-[node name="EndScreen" type="Control" unique_id=768889203 node_paths=PackedStringArray("final_score_label", "highscore_label", "highscore_text_label", "biggest_merge_icon", "biggest_merge_label", "play_again_btn")]
+[node name="EndScreen" type="Control" unique_id=768889203 node_paths=PackedStringArray("final_score_label", "highscore_label", "highscore_text_label", "biggest_merge_icon", "biggest_merge_label", "play_again_btn", "control_tween")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -81,6 +81,7 @@ highscore_text_label = NodePath("PanelContainer2/PanelContainer/VBoxContainer/HB
 biggest_merge_icon = NodePath("PanelContainer2/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer/MergeIconRect")
 biggest_merge_label = NodePath("PanelContainer2/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer/MergeNameLabel")
 play_again_btn = NodePath("PanelContainer2/PanelContainer/VBoxContainer/PlayAgainButton")
+control_tween = NodePath("PanelContainer2/ControlTween")
 
 [node name="PanelContainer2" type="PanelContainer" parent="." unique_id=1913798440]
 layout_mode = 1
