@@ -7,9 +7,11 @@
 [ext_resource type="Theme" uid="uid://qnmlbkfmpc3i" path="res://resources/theme/gui_theme.tres" id="5_cnn6c"]
 [ext_resource type="Texture2D" uid="uid://xl666uju27lu" path="res://assets/kenney/input_prompts/xbox/xbox_button_menu.png" id="6_4dtpd"]
 [ext_resource type="Texture2D" uid="uid://itvqbedfcam0" path="res://assets/buttons/rounded_btn_300x96_yellow.png" id="6_lnjcg"]
+[ext_resource type="Script" uid="uid://c7mh5q1ovk5r6" path="res://scripts/gui/container_tween.gd" id="7_fvcae"]
 [ext_resource type="PackedScene" uid="uid://b3assykeknia4" path="res://prefabs/gui/options_gui.tscn" id="8_lnjcg"]
 [ext_resource type="Texture2D" uid="uid://dsmp051658yew" path="res://assets/buttons/rounded_btn_300x96_white.png" id="9_4dtpd"]
 [ext_resource type="Script" uid="uid://bpvpq5g78lr5s" path="res://scripts/gui/animated_button.gd" id="9_rvam1"]
+[ext_resource type="Script" uid="uid://dlcjwpgwregcp" path="res://scripts/gui/control_tween.gd" id="11_kyu4u"]
 
 [sub_resource type="Shader" id="Shader_qjjb3"]
 code = "shader_type canvas_item;
@@ -121,7 +123,7 @@ modulate_color = Color(0, 0, 0, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mp4gh"]
 bg_color = Color(0.48235294, 0.30588236, 0.22745098, 1)
 
-[node name="PauseScreen" type="Control" unique_id=952844513 node_paths=PackedStringArray("options_gui", "resume_btn", "keyboard_hint", "controller_hint")]
+[node name="PauseScreen" type="Control" unique_id=952844513 node_paths=PackedStringArray("options_gui", "buttons_parent", "resume_btn", "top_control_tween", "bottom_control_tween", "keyboard_hint", "controller_hint")]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -132,7 +134,10 @@ grow_vertical = 2
 theme = ExtResource("5_cnn6c")
 script = ExtResource("1_qjjb3")
 options_gui = NodePath("OptionsGUI")
-resume_btn = NodePath("MarginContainer2/PanelContainer/MarginContainer2/HBoxContainer/ResumeButton")
+buttons_parent = NodePath("MarginContainer2/PanelContainer/MarginContainer2/HBoxContainer/HBoxContainer")
+resume_btn = NodePath("MarginContainer2/PanelContainer/MarginContainer2/HBoxContainer/HBoxContainer/ResumeButton")
+top_control_tween = NodePath("MarginContainer/ControlTween")
+bottom_control_tween = NodePath("MarginContainer2/ControlTween")
 keyboard_hint = NodePath("MarginContainer2/PanelContainer/MarginContainer2/HBoxContainer/KeyboardHint")
 controller_hint = NodePath("MarginContainer2/PanelContainer/MarginContainer2/HBoxContainer/ControllerHint")
 
@@ -190,6 +195,10 @@ autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="ControlTween" type="Node" parent="MarginContainer" unique_id=1736744098]
+script = ExtResource("11_kyu4u")
+metadata/_custom_type_script = "uid://dlcjwpgwregcp"
+
 [node name="MarginContainer2" type="MarginContainer" parent="." unique_id=687037568]
 layout_mode = 1
 anchors_preset = 12
@@ -199,6 +208,7 @@ anchor_bottom = 1.0
 offset_top = -168.0
 grow_horizontal = 2
 grow_vertical = 0
+offset_transform_enabled = true
 
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer2" unique_id=116741333]
 layout_mode = 2
@@ -239,7 +249,13 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("6_4dtpd")
 
-[node name="ResumeButton" type="Button" parent="MarginContainer2/PanelContainer/MarginContainer2/HBoxContainer" unique_id=1599365362]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2/PanelContainer/MarginContainer2/HBoxContainer" unique_id=859547631]
+layout_mode = 2
+theme_override_constants/separation = 32
+script = ExtResource("7_fvcae")
+delay_appear = 0.3
+
+[node name="ResumeButton" type="Button" parent="MarginContainer2/PanelContainer/MarginContainer2/HBoxContainer/HBoxContainer" unique_id=1599365362]
 custom_minimum_size = Vector2(356, 96)
 layout_mode = 2
 focus_neighbor_left = NodePath(".")
@@ -256,7 +272,7 @@ theme_override_styles/focus = SubResource("StyleBoxTexture_etrbm")
 text = "Resume"
 script = ExtResource("9_rvam1")
 
-[node name="OptionsButton" type="Button" parent="MarginContainer2/PanelContainer/MarginContainer2/HBoxContainer" unique_id=741893022]
+[node name="OptionsButton" type="Button" parent="MarginContainer2/PanelContainer/MarginContainer2/HBoxContainer/HBoxContainer" unique_id=741893022]
 layout_mode = 2
 size_flags_vertical = 4
 focus_neighbor_left = NodePath("../ResumeButton")
@@ -268,7 +284,7 @@ focus_previous = NodePath("../ResumeButton")
 text = "Options"
 script = ExtResource("9_rvam1")
 
-[node name="RestartButton" type="Button" parent="MarginContainer2/PanelContainer/MarginContainer2/HBoxContainer" unique_id=1446759387]
+[node name="RestartButton" type="Button" parent="MarginContainer2/PanelContainer/MarginContainer2/HBoxContainer/HBoxContainer" unique_id=1446759387]
 layout_mode = 2
 size_flags_vertical = 4
 focus_neighbor_left = NodePath("../OptionsButton")
@@ -280,7 +296,7 @@ focus_previous = NodePath(".")
 text = "Restart"
 script = ExtResource("9_rvam1")
 
-[node name="MainMenuButton" type="Button" parent="MarginContainer2/PanelContainer/MarginContainer2/HBoxContainer" unique_id=341072582]
+[node name="MainMenuButton" type="Button" parent="MarginContainer2/PanelContainer/MarginContainer2/HBoxContainer/HBoxContainer" unique_id=341072582]
 layout_mode = 2
 size_flags_vertical = 4
 focus_neighbor_left = NodePath("../RestartButton")
@@ -298,11 +314,16 @@ layout_mode = 2
 size_flags_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_mp4gh")
 
+[node name="ControlTween" type="Node" parent="MarginContainer2" unique_id=280421775]
+script = ExtResource("11_kyu4u")
+direction = 1
+metadata/_custom_type_script = "uid://dlcjwpgwregcp"
+
 [node name="OptionsGUI" parent="." unique_id=110807374 instance=ExtResource("8_lnjcg")]
 visible = false
 layout_mode = 1
 
-[connection signal="pressed" from="MarginContainer2/PanelContainer/MarginContainer2/HBoxContainer/ResumeButton" to="." method="on_resume_btn_pressed"]
-[connection signal="pressed" from="MarginContainer2/PanelContainer/MarginContainer2/HBoxContainer/OptionsButton" to="." method="on_options_btn_pressed"]
-[connection signal="pressed" from="MarginContainer2/PanelContainer/MarginContainer2/HBoxContainer/RestartButton" to="." method="on_restart_btn_pressed"]
-[connection signal="pressed" from="MarginContainer2/PanelContainer/MarginContainer2/HBoxContainer/MainMenuButton" to="." method="on_main_menu_btn_pressed"]
+[connection signal="pressed" from="MarginContainer2/PanelContainer/MarginContainer2/HBoxContainer/HBoxContainer/ResumeButton" to="." method="on_resume_btn_pressed"]
+[connection signal="pressed" from="MarginContainer2/PanelContainer/MarginContainer2/HBoxContainer/HBoxContainer/OptionsButton" to="." method="on_options_btn_pressed"]
+[connection signal="pressed" from="MarginContainer2/PanelContainer/MarginContainer2/HBoxContainer/HBoxContainer/RestartButton" to="." method="on_restart_btn_pressed"]
+[connection signal="pressed" from="MarginContainer2/PanelContainer/MarginContainer2/HBoxContainer/HBoxContainer/MainMenuButton" to="." method="on_main_menu_btn_pressed"]

@@ -9,6 +9,9 @@ signal exited
 @export var sfx_slider: Slider
 @export var fullscreen_checkbtn: CheckButton
 
+@export var control_tween: ControlTween
+@export var options_container: ContainerTween
+
 @export var music_bus_name: String
 @export var sfx_bus_name: String
 
@@ -47,11 +50,21 @@ func show_up() -> void:
 	if InputManager.is_controller():
 		music_slider_focus_button.grab_focus()
 
+	control_tween.animate()
+	options_container.animate()
+
 
 func back() -> void:
-	self.visible = false
-	self.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	exited.emit()
+	if not self.visible:
+		return
+
+	var exit: Callable = func() -> void:
+		self.visible = false
+		self.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		exited.emit()
+
+	options_container.animate_reverse()
+	control_tween.animate_reverse().finished.connect(exit)
 
 
 func on_music_value_changed(value: float) -> void:

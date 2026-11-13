@@ -388,6 +388,7 @@ theme_override_constants/separation = 16
 [node name="PlayButton" type="Button" parent="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer" unique_id=1735696637]
 custom_minimum_size = Vector2(300, 96)
 layout_mode = 2
+offset_transform_enabled = true
 focus_neighbor_bottom = NodePath("../OptionsButton")
 focus_next = NodePath("../OptionsButton")
 theme_override_colors/font_color = Color(0, 0, 0, 1)

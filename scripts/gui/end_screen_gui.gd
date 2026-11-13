@@ -8,6 +8,7 @@ extends Control
 @export var biggest_merge_label: RichTextLabel
 
 @export var play_again_btn: Button
+@export var control_tween: ControlTween
 
 
 func _ready() -> void:
@@ -29,6 +30,8 @@ func setup(score: int, highscore: int, biggest_merge: AnimalResource) -> void:
 	self.visible = true
 	if InputManager.is_controller():
 		play_again_btn.grab_focus()
+
+	control_tween.animate()
 
 
 func on_play_again_btn_pressed() -> void:

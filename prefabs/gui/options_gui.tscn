@@ -3,14 +3,18 @@
 [ext_resource type="Theme" uid="uid://qnmlbkfmpc3i" path="res://resources/theme/gui_theme.tres" id="1_pk3pa"]
 [ext_resource type="Script" uid="uid://cxsy7t2duhr4c" path="res://scripts/gui/options_gui.gd" id="2_ae5dl"]
 [ext_resource type="Texture2D" uid="uid://02nkevcw6g0g" path="res://assets/buttons/panel.png" id="2_su8yf"]
+[ext_resource type="Script" uid="uid://c7mh5q1ovk5r6" path="res://scripts/gui/container_tween.gd" id="4_3cbum"]
 [ext_resource type="Texture2D" uid="uid://u300rfwea3pt" path="res://assets/kenney/game_icons/up.png" id="4_64i3u"]
 [ext_resource type="Script" uid="uid://bawf7wc0wdcd5" path="res://scripts/gui/focus_button.gd" id="5_fhi68"]
 [ext_resource type="Texture2D" uid="uid://dmvjxxf00cgjb" path="res://assets/buttons/checkbutton_checked.png" id="5_lhdl3"]
 [ext_resource type="Texture2D" uid="uid://doftgomeqr725" path="res://assets/buttons/checkbutton_unchecked.png" id="6_go7oe"]
 [ext_resource type="Script" uid="uid://bpvpq5g78lr5s" path="res://scripts/gui/animated_button.gd" id="8_gkpsd"]
+[ext_resource type="Script" uid="uid://dlcjwpgwregcp" path="res://scripts/gui/control_tween.gd" id="9_qev2n"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ae5dl"]
 bg_color = Color(0, 0, 0, 0.2509804)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_drv1q"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lo878"]
 texture = ExtResource("2_su8yf")
@@ -40,7 +44,7 @@ texture = ExtResource("4_64i3u")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_etrbm"]
 
-[node name="OptionsGUI" type="Control" unique_id=110807374 node_paths=PackedStringArray("music_slider_focus_button", "back_btn", "music_slider", "sfx_slider", "fullscreen_checkbtn")]
+[node name="OptionsGUI" type="Control" unique_id=110807374 node_paths=PackedStringArray("music_slider_focus_button", "back_btn", "music_slider", "sfx_slider", "fullscreen_checkbtn", "control_tween", "options_container")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -49,11 +53,13 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_pk3pa")
 script = ExtResource("2_ae5dl")
-music_slider_focus_button = NodePath("PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/FocusButton")
-back_btn = NodePath("PanelContainer/BackButton")
-music_slider = NodePath("PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer2/MusicSlider")
-sfx_slider = NodePath("PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/MarginContainer/SFXSlider")
-fullscreen_checkbtn = NodePath("PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/FullscreenCheckbutton")
+music_slider_focus_button = NodePath("PanelContainer2/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/FocusButton")
+back_btn = NodePath("PanelContainer2/PanelContainer/BackButton")
+music_slider = NodePath("PanelContainer2/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer2/MusicSlider")
+sfx_slider = NodePath("PanelContainer2/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/MarginContainer/SFXSlider")
+fullscreen_checkbtn = NodePath("PanelContainer2/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/FullscreenCheckbutton")
+control_tween = NodePath("PanelContainer2/ControlTween")
+options_container = NodePath("PanelContainer2/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer")
 music_bus_name = "Music"
 sfx_bus_name = "SFX"
 
@@ -66,55 +72,56 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ae5dl")
 
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1063750133]
+[node name="PanelContainer2" type="PanelContainer" parent="." unique_id=790730452]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -420.0
-offset_top = -182.0
-offset_right = 420.0
-offset_bottom = 182.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_drv1q")
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer2" unique_id=1063750133]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxTexture_lo878")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=163347259]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer2/PanelContainer" unique_id=163347259]
 layout_mode = 2
 theme_override_constants/margin_left = 32
 theme_override_constants/margin_top = 48
 theme_override_constants/margin_right = 32
 theme_override_constants/margin_bottom = 16
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=488619417]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer2/PanelContainer/MarginContainer" unique_id=488619417]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=148133698]
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer2/PanelContainer/MarginContainer/VBoxContainer" unique_id=148133698]
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 64
 text = "Options"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1230871999]
+[node name="HSeparator" type="HSeparator" parent="PanelContainer2/PanelContainer/MarginContainer/VBoxContainer" unique_id=1230871999]
 layout_mode = 2
 theme_override_constants/separation = 32
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=229550193]
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer2/PanelContainer/MarginContainer/VBoxContainer" unique_id=229550193]
 layout_mode = 2
 alignment = 1
+script = ExtResource("4_3cbum")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=712839873]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer2/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=712839873]
 custom_minimum_size = Vector2(256, 0)
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_constants/separation = 16
 alignment = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1927047324]
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer2/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1927047324]
 layout_mode = 2
 theme_override_colors/default_color = Color(0.48235294, 0.30588236, 0.22745098, 1)
 text = "Music"
@@ -123,12 +130,12 @@ autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=820214060]
+[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer2/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=820214060]
 layout_mode = 2
 theme_override_constants/margin_left = 32
 theme_override_constants/margin_right = 32
 
-[node name="MusicSlider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer2" unique_id=2074106278]
+[node name="MusicSlider" type="HSlider" parent="PanelContainer2/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer2" unique_id=2074106278]
 layout_mode = 2
 focus_neighbor_top = NodePath(".")
 focus_neighbor_bottom = NodePath("../../FocusButton")
@@ -137,7 +144,7 @@ max_value = 1.0
 step = 0.01
 value = 1.0
 
-[node name="FocusButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1243678190 node_paths=PackedStringArray("node_to_focus")]
+[node name="FocusButton" type="Button" parent="PanelContainer2/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1243678190 node_paths=PackedStringArray("node_to_focus")]
 self_modulate = Color(0.48235294, 0.30588236, 0.22745098, 1)
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
@@ -156,13 +163,13 @@ theme_override_styles/focus = SubResource("StyleBoxTexture_rq1m7")
 script = ExtResource("5_fhi68")
 node_to_focus = NodePath("../MarginContainer2/MusicSlider")
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=829145600]
+[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer2/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=829145600]
 custom_minimum_size = Vector2(256, 0)
 layout_mode = 2
 theme_override_constants/separation = 16
 alignment = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1968899934]
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer2/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1968899934]
 layout_mode = 2
 theme_override_colors/default_color = Color(0.48235294, 0.30588236, 0.22745098, 1)
 text = "SFX"
@@ -171,12 +178,12 @@ autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1556718295]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer2/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1556718295]
 layout_mode = 2
 theme_override_constants/margin_left = 32
 theme_override_constants/margin_right = 32
 
-[node name="SFXSlider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/MarginContainer" unique_id=356966364]
+[node name="SFXSlider" type="HSlider" parent="PanelContainer2/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/MarginContainer" unique_id=356966364]
 layout_mode = 2
 focus_neighbor_left = NodePath(".")
 focus_neighbor_top = NodePath(".")
@@ -187,7 +194,7 @@ focus_previous = NodePath(".")
 max_value = 1.0
 step = 0.01
 
-[node name="FocusButton2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1661017106 node_paths=PackedStringArray("node_to_focus")]
+[node name="FocusButton2" type="Button" parent="PanelContainer2/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1661017106 node_paths=PackedStringArray("node_to_focus")]
 self_modulate = Color(0.48235294, 0.30588236, 0.22745098, 1)
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
@@ -206,13 +213,13 @@ theme_override_styles/focus = SubResource("StyleBoxTexture_rq1m7")
 script = ExtResource("5_fhi68")
 node_to_focus = NodePath("../MarginContainer/SFXSlider")
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=315257461]
+[node name="VBoxContainer3" type="VBoxContainer" parent="PanelContainer2/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=315257461]
 custom_minimum_size = Vector2(256, 0)
 layout_mode = 2
 theme_override_constants/separation = 16
 alignment = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3" unique_id=1172496435]
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer2/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3" unique_id=1172496435]
 layout_mode = 2
 theme_override_colors/default_color = Color(0.48235294, 0.30588236, 0.22745098, 1)
 text = "Fullscreen"
@@ -221,7 +228,7 @@ autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="FullscreenCheckbutton" type="CheckButton" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3" unique_id=145836870]
+[node name="FullscreenCheckbutton" type="CheckButton" parent="PanelContainer2/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3" unique_id=145836870]
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -241,7 +248,7 @@ theme_override_icons/checked = ExtResource("5_lhdl3")
 theme_override_icons/unchecked = ExtResource("6_go7oe")
 flat = true
 
-[node name="FocusButton3" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3" unique_id=1602793980 node_paths=PackedStringArray("node_to_focus")]
+[node name="FocusButton3" type="Button" parent="PanelContainer2/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3" unique_id=1602793980 node_paths=PackedStringArray("node_to_focus")]
 self_modulate = Color(0.48235294, 0.30588236, 0.22745098, 1)
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
@@ -261,7 +268,11 @@ script = ExtResource("5_fhi68")
 node_to_focus = NodePath("../FullscreenCheckbutton")
 action = 2
 
-[node name="BackButton" type="Button" parent="PanelContainer" unique_id=621598415]
+[node name="HSeparator2" type="HSeparator" parent="PanelContainer2/PanelContainer/MarginContainer/VBoxContainer" unique_id=970259773]
+layout_mode = 2
+theme_override_constants/separation = 64
+
+[node name="BackButton" type="Button" parent="PanelContainer2/PanelContainer" unique_id=621598415]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
@@ -277,3 +288,8 @@ focus_previous = NodePath("../MarginContainer/VBoxContainer/HBoxContainer/VBoxCo
 theme_override_font_sizes/font_size = 48
 text = "Back"
 script = ExtResource("8_gkpsd")
+
+[node name="ControlTween" type="Node" parent="PanelContainer2" unique_id=1727119713]
+script = ExtResource("9_qev2n")
+exit_duration = 0.2
+metadata/_custom_type_script = "uid://dlcjwpgwregcp"

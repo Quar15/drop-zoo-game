@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://itvqbedfcam0" path="res://assets/buttons/rounded_btn_300x96_yellow.png" id="3_52usf"]
 [ext_resource type="Texture2D" uid="uid://dsmp051658yew" path="res://assets/buttons/rounded_btn_300x96_white.png" id="4_8bd6a"]
 [ext_resource type="Script" uid="uid://bpvpq5g78lr5s" path="res://scripts/gui/animated_button.gd" id="7_h42d1"]
+[ext_resource type="Script" uid="uid://dlcjwpgwregcp" path="res://scripts/gui/control_tween.gd" id="8_eh36v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mp4gh"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kovpq"]
 texture = ExtResource("2_aycpw")
@@ -72,33 +75,33 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_kovpq")
 script = ExtResource("2_ddr5j")
-final_score_label = NodePath("PanelContainer/VBoxContainer/FinalScoreLabel")
-highscore_label = NodePath("PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/HighscoreLabel")
-highscore_text_label = NodePath("PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/HighscoreTextLabel")
-biggest_merge_icon = NodePath("PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer/MergeIconRect")
-biggest_merge_label = NodePath("PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer/MergeNameLabel")
-play_again_btn = NodePath("PanelContainer/VBoxContainer/PlayAgainButton")
+final_score_label = NodePath("PanelContainer2/PanelContainer/VBoxContainer/FinalScoreLabel")
+highscore_label = NodePath("PanelContainer2/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/HighscoreLabel")
+highscore_text_label = NodePath("PanelContainer2/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/HighscoreTextLabel")
+biggest_merge_icon = NodePath("PanelContainer2/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer/MergeIconRect")
+biggest_merge_label = NodePath("PanelContainer2/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer/MergeNameLabel")
+play_again_btn = NodePath("PanelContainer2/PanelContainer/VBoxContainer/PlayAgainButton")
 
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=292856645]
+[node name="PanelContainer2" type="PanelContainer" parent="." unique_id=1913798440]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_mp4gh")
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer2" unique_id=292856645]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxTexture_kovpq")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1340015535]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer2/PanelContainer" unique_id=1340015535]
 layout_mode = 2
 theme_override_constants/separation = 24
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/VBoxContainer" unique_id=1481692423]
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer2/PanelContainer/VBoxContainer" unique_id=1481692423]
 layout_mode = 2
 theme_override_colors/default_color = Color(0.48235294, 0.30588236, 0.22745098, 1)
 text = "Final Score"
@@ -107,7 +110,7 @@ autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="FinalScoreLabel" type="RichTextLabel" parent="PanelContainer/VBoxContainer" unique_id=416441357]
+[node name="FinalScoreLabel" type="RichTextLabel" parent="PanelContainer2/PanelContainer/VBoxContainer" unique_id=416441357]
 layout_mode = 2
 theme_override_colors/default_color = Color(0.48235294, 0.30588236, 0.22745098, 1)
 theme_override_font_sizes/normal_font_size = 128
@@ -118,24 +121,24 @@ autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer" unique_id=386272878]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer2/PanelContainer/VBoxContainer" unique_id=386272878]
 layout_mode = 2
 theme_override_constants/margin_left = 32
 theme_override_constants/margin_right = 32
 
-[node name="HSeparator" type="HSeparator" parent="PanelContainer/VBoxContainer/MarginContainer" unique_id=132918240]
+[node name="HSeparator" type="HSeparator" parent="PanelContainer2/PanelContainer/VBoxContainer/MarginContainer" unique_id=132918240]
 layout_mode = 2
 theme_override_constants/separation = 16
 theme_override_styles/separator = SubResource("StyleBoxFlat_mp4gh")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=1884361599]
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer2/PanelContainer/VBoxContainer" unique_id=1884361599]
 layout_mode = 2
 theme_override_constants/separation = 48
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HBoxContainer" unique_id=594637873]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer2/PanelContainer/VBoxContainer/HBoxContainer" unique_id=594637873]
 layout_mode = 2
 
-[node name="HighscoreTextLabel" type="RichTextLabel" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=188785488]
+[node name="HighscoreTextLabel" type="RichTextLabel" parent="PanelContainer2/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=188785488]
 layout_mode = 2
 theme_override_colors/default_color = Color(0.48235294, 0.30588236, 0.22745098, 1)
 bbcode_enabled = true
@@ -145,7 +148,7 @@ autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HighscoreLabel" type="RichTextLabel" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1722020170]
+[node name="HighscoreLabel" type="RichTextLabel" parent="PanelContainer2/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1722020170]
 layout_mode = 2
 theme_override_colors/default_color = Color(0.48235294, 0.30588236, 0.22745098, 1)
 theme_override_font_sizes/normal_font_size = 64
@@ -157,10 +160,10 @@ autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HBoxContainer" unique_id=756661710]
+[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer2/PanelContainer/VBoxContainer/HBoxContainer" unique_id=756661710]
 layout_mode = 2
 
-[node name="RichTextLabel3" type="RichTextLabel" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1736816240]
+[node name="RichTextLabel3" type="RichTextLabel" parent="PanelContainer2/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1736816240]
 layout_mode = 2
 theme_override_colors/default_color = Color(0.48235294, 0.30588236, 0.22745098, 1)
 text = "Biggest Merge"
@@ -169,19 +172,19 @@ autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1891831447]
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer2/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1891831447]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 8
 alignment = 1
 
-[node name="MergeIconRect" type="TextureRect" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer" unique_id=1153019158]
+[node name="MergeIconRect" type="TextureRect" parent="PanelContainer2/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer" unique_id=1153019158]
 custom_maximum_size = Vector2(72, 72)
 layout_mode = 2
 texture = ExtResource("3_8bd6a")
 stretch_mode = 5
 
-[node name="MergeNameLabel" type="RichTextLabel" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer" unique_id=1677110023]
+[node name="MergeNameLabel" type="RichTextLabel" parent="PanelContainer2/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer" unique_id=1677110023]
 layout_mode = 2
 theme_override_colors/default_color = Color(0.48235294, 0.30588236, 0.22745098, 1)
 theme_override_font_sizes/normal_font_size = 32
@@ -191,11 +194,11 @@ autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HSeparator" type="HSeparator" parent="PanelContainer/VBoxContainer" unique_id=1610694958]
+[node name="HSeparator" type="HSeparator" parent="PanelContainer2/PanelContainer/VBoxContainer" unique_id=1610694958]
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="PlayAgainButton" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1548818156]
+[node name="PlayAgainButton" type="Button" parent="PanelContainer2/PanelContainer/VBoxContainer" unique_id=1548818156]
 custom_minimum_size = Vector2(0, 96)
 layout_mode = 2
 focus_neighbor_bottom = NodePath("../MainMenuButton")
@@ -207,12 +210,16 @@ theme_override_styles/focus = SubResource("StyleBoxTexture_etrbm")
 text = "Play Again"
 script = ExtResource("7_h42d1")
 
-[node name="MainMenuButton" type="Button" parent="PanelContainer/VBoxContainer" unique_id=457288149]
+[node name="MainMenuButton" type="Button" parent="PanelContainer2/PanelContainer/VBoxContainer" unique_id=457288149]
 layout_mode = 2
 focus_neighbor_top = NodePath("../PlayAgainButton")
 focus_previous = NodePath("../PlayAgainButton")
 text = "Main Menu"
 script = ExtResource("7_h42d1")
 
-[connection signal="pressed" from="PanelContainer/VBoxContainer/PlayAgainButton" to="." method="on_play_again_btn_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/MainMenuButton" to="." method="on_main_menu_btn_pressed"]
+[node name="ControlTween" type="Node" parent="PanelContainer2" unique_id=1635102742]
+script = ExtResource("8_eh36v")
+metadata/_custom_type_script = "uid://dlcjwpgwregcp"
+
+[connection signal="pressed" from="PanelContainer2/PanelContainer/VBoxContainer/PlayAgainButton" to="." method="on_play_again_btn_pressed"]
+[connection signal="pressed" from="PanelContainer2/PanelContainer/VBoxContainer/MainMenuButton" to="." method="on_main_menu_btn_pressed"]

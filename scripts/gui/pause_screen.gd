@@ -3,7 +3,11 @@ extends Control
 
 @export var options_gui: OptionsGUI
 
+@export var buttons_parent: ContainerTween
 @export var resume_btn: Button
+
+@export var top_control_tween: ControlTween
+@export var bottom_control_tween: ControlTween
 
 @export var keyboard_hint: Control
 @export var controller_hint: Control
@@ -36,11 +40,20 @@ func toggle() -> void:
 		return
 
 	if not self.visible:
-		options_gui.back()
-		if InputManager.is_controller():
-			resume_btn.grab_focus()
-	self.visible = not self.visible
-	get_tree().paused = not get_tree().paused
+		open()
+	else:
+		back()
+
+
+func open() -> void:
+	options_gui.back()
+	if InputManager.is_controller():
+		resume_btn.grab_focus()
+	buttons_parent.animate()
+	top_control_tween.animate()
+	bottom_control_tween.animate()
+	self.visible = true
+	get_tree().paused = true
 
 
 func back() -> void:
@@ -50,7 +63,10 @@ func back() -> void:
 	if options_gui.visible:
 		return
 
-	self.visible = false
+	InputManager.unfocus()
+	buttons_parent.animate_reverse()
+	top_control_tween.animate_reverse()
+	bottom_control_tween.animate_reverse().finished.connect(func() -> void: self.visible = false)
 	get_tree().paused = false
 
 
