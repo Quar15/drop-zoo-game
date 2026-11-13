@@ -40,11 +40,11 @@ func on_main_menu_btn_pressed() -> void:
 
 
 func on_btn_hover() -> void:
-	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.UI_HOVER)
+	AudioManager.create_audio(SoundEffect.Type.UI_HOVER)
 
 
 func on_btn_click() -> void:
-	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.UI_CLICK)
+	AudioManager.create_audio(SoundEffect.Type.UI_CLICK)
 
 
 func on_device_changed(_device: InputManager.DeviceType) -> void:

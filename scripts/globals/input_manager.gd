@@ -1,16 +1,18 @@
 extends Node
 
-const GAME_ACTIONS := ["left", "right", "action", "menu", "ui_left", "ui_right", "ui_up", "ui_down"]
-
-enum DeviceType { KEYBOARD_MOUSE, GENERIC_PAD, XBOX, PLAYSTATION, NINTENDO, STEAM }
-signal device_changed(device: DeviceType)
-var current_device := DeviceType.KEYBOARD_MOUSE
-
 signal action_pressed
 signal menu_pressed
 signal back_pressed
 
+signal device_changed(device: DeviceType)
+enum DeviceType { KEYBOARD_MOUSE, GENERIC_PAD, XBOX, PLAYSTATION, NINTENDO, STEAM }
+
+const GAME_ACTIONS: Array[String] = [
+	"left", "right", "action", "menu", "ui_left", "ui_right", "ui_up", "ui_down"
+]
+
 var move_direction: float = 0.0
+var current_device: DeviceType = DeviceType.KEYBOARD_MOUSE
 
 
 func _ready() -> void:
@@ -26,7 +28,7 @@ func _input(event: InputEvent) -> void:
 	_detect_device_change(event)
 
 
-func _unhandled_input(event):
+func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("action"):
 		action_pressed.emit()
 	elif event.is_action_pressed("menu"):
@@ -53,7 +55,7 @@ func _detect_device_change(event: InputEvent) -> void:
 	if not event is InputEventMouseButton and not _is_bound_action_event(event):
 		return
 
-	var new_device := current_device
+	var new_device: DeviceType = current_device
 
 	if event is InputEventKey or event is InputEventMouseButton:
 		new_device = DeviceType.KEYBOARD_MOUSE
@@ -68,7 +70,7 @@ func _detect_device_change(event: InputEvent) -> void:
 
 
 func _detect_pad_type(device: int) -> DeviceType:
-	var info := Input.get_joy_info(device)
+	var info: Dictionary = Input.get_joy_info(device)
 	match int(info.get("vendor_id", 0)):
 		0x045E:
 			return DeviceType.XBOX
@@ -80,7 +82,7 @@ func _detect_pad_type(device: int) -> DeviceType:
 			return DeviceType.STEAM
 
 	# Fallback: match on the name
-	var device_name := Input.get_joy_name(device).to_lower()
+	var device_name: String = Input.get_joy_name(device).to_lower()
 	if "xbox" in device_name or "xinput" in device_name:
 		return DeviceType.XBOX
 	if (
@@ -100,7 +102,7 @@ func _detect_pad_type(device: int) -> DeviceType:
 
 
 func _is_bound_action_event(event: InputEvent) -> bool:
-	for action in GAME_ACTIONS:
+	for action: String in GAME_ACTIONS:
 		if event.is_action(action):
 			return true
 	return false

@@ -1,8 +1,8 @@
 class_name Animal
 extends RigidBody2D
 
-signal animal_is_merging(a: Animal, b: Animal)
-signal animal_touched_ground()
+signal touched_animal(a: Animal, b: Animal)
+signal touched_ground
 
 @export_category("References")
 @export var sprite: Sprite2D
@@ -13,7 +13,7 @@ signal animal_touched_ground()
 
 var is_dirty: bool = false
 var is_alive: bool = false
-var touched_ground: bool = false
+var has_touched_ground: bool = false
 
 var position_dirty: bool = false
 var new_position: Vector2:
@@ -22,10 +22,10 @@ var new_position: Vector2:
 		position_dirty = true
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	hitbox.body_entered.connect(on_hitbox_entered)
-	setup(data)  # @TODO: consider removing later
+	hitbox.body_entered.connect(_on_hitbox_entered)
+	if data:
+		setup(data)
 
 
 func setup(new_data: AnimalResource) -> void:
@@ -38,11 +38,12 @@ func setup(new_data: AnimalResource) -> void:
 	sprite.texture = new_data.texture
 	data = new_data
 	is_dirty = false
-	touched_ground = false
-	printt("@INFO:", self.name, "changed into", data.name)
+	has_touched_ground = false
+	if OS.is_debug_build():
+		printt("@INFO:", self.name, "changed into", data.name)
 
 
-func on_hitbox_entered(body: Node2D) -> void:
+func _on_hitbox_entered(body: Node2D) -> void:
 	if body == self:
 		return
 
@@ -55,9 +56,9 @@ func on_hitbox_entered(body: Node2D) -> void:
 	if body is WallBody:
 		return
 
-	if not self.touched_ground:
-		self.touched_ground = true
-		animal_touched_ground.emit()
+	if not self.has_touched_ground:
+		self.has_touched_ground = true
+		touched_ground.emit()
 
 	if not body is Animal:
 		return
@@ -71,19 +72,20 @@ func on_hitbox_entered(body: Node2D) -> void:
 	self.is_dirty = true
 	body.is_dirty = true
 
-	animal_is_merging.emit(self, body)
-	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.ANIMAL_MERGE)
+	touched_animal.emit(self, body)
+	AudioManager.create_audio(SoundEffect.Type.ANIMAL_MERGE)
 
-	printt(self.name, "touched", body.name)
+	if OS.is_debug_build():
+		printt(self.name, "touched", body.name)
 
 
-func retrigger_check():
+func retrigger_check() -> void:
 	hitbox.monitoring = false
 	await get_tree().process_frame  # Wait one frame
 	hitbox.monitoring = true
 
 
-func _integrate_forces(state: PhysicsDirectBodyState2D):
+func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	if position_dirty:
 		state.transform.origin = new_position
 		position_dirty = false

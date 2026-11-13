@@ -2,6 +2,7 @@ class_name Player
 extends Node2D
 
 signal next_animal_selected(animal_resource: AnimalResource)
+signal new_animal_spawned(animal: Animal)
 
 @export var spawn_point: Marker2D
 @export var animal_sprite: Sprite2D
@@ -14,17 +15,15 @@ signal next_animal_selected(animal_resource: AnimalResource)
 @export var speed: float = 500
 
 @export var spawn_timer: Timer
-var can_drop: bool = true
-
 @export var spawnable_animal_resources: Array[AnimalResource]
+
 var next_animal_resource: AnimalResource
 var current_animal_resource: AnimalResource
 
-var game_manager: GameManager
+var can_drop: bool = true
 var is_alive: bool = true
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	next_animal_resource = spawnable_animal_resources[0]
 
@@ -34,17 +33,16 @@ func _ready() -> void:
 	is_alive = true
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if not is_alive:
 		return
 
-	var move_speed = InputManager.move_direction * delta * speed
-	if (
-		global_position.x + move_speed >= limiter_left.global_position.x
-		and global_position.x + move_speed <= limiter_right.global_position.x
-	):
-		position.x += move_speed
+	var move_speed: float = InputManager.move_direction * delta * speed
+	global_position.x = clampf(
+		global_position.x + move_speed,
+		limiter_left.global_position.x,
+		limiter_right.global_position.x
+	)
 
 
 func select_next_animal() -> void:
@@ -64,8 +62,7 @@ func on_drop_action_pressed() -> void:
 
 	var new_animal: Animal = animal_prefab.instantiate()
 
-	new_animal.animal_is_merging.connect(game_manager.on_animal_merging)
-	new_animal.animal_touched_ground.connect(game_manager.on_animal_touched_ground)
+	new_animal_spawned.emit(new_animal)
 	animals_parent.add_child(new_animal)
 
 	new_animal.new_position = spawn_point.global_position

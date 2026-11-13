@@ -13,12 +13,14 @@ func animate(start_pos: Vector2, end_pos: Vector2, duration: float, delay: float
 	hide()
 	self.position = start_pos
 
-	var scatter_pos := start_pos + Vector2(randf_range(-50.0, 50.0), randf_range(-50.0, 50.0))
-	var control_pos := (scatter_pos + end_pos) * 0.5 + Vector2(0.0, -80.0)
+	var scatter_pos: Vector2 = (
+		start_pos + Vector2(randf_range(-50.0, 50.0), randf_range(-50.0, 50.0))
+	)
+	var control_pos: Vector2 = (scatter_pos + end_pos) * 0.5 + Vector2(0.0, -80.0)
 
-	var move_along_arc := func(t: float) -> void:
-		var a := scatter_pos.lerp(control_pos, t)
-		var b := control_pos.lerp(end_pos, t)
+	var move_along_arc: Callable = func(t: float) -> void:
+		var a: Vector2 = scatter_pos.lerp(control_pos, t)
+		var b: Vector2 = control_pos.lerp(end_pos, t)
 		self.position = a.lerp(b, t)
 
 	tween = create_tween()

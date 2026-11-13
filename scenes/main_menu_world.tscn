@@ -3,13 +3,14 @@
 [ext_resource type="Script" uid="uid://djijtspjttbyg" path="res://scripts/fake_animals_rain.gd" id="1_lmwo4"]
 [ext_resource type="PackedScene" uid="uid://dkf5r5kqsxa48" path="res://prefabs/fake_animal.tscn" id="2_qkk0i"]
 [ext_resource type="Theme" uid="uid://qnmlbkfmpc3i" path="res://resources/theme/gui_theme.tres" id="3_47nhc"]
-[ext_resource type="Script" uid="uid://bcw20ulwfpfw3" path="res://scripts/GUI/main_menu_gui.gd" id="4_hf8dy"]
+[ext_resource type="Script" uid="uid://bcw20ulwfpfw3" path="res://scripts/gui/main_menu_gui.gd" id="4_hf8dy"]
 [ext_resource type="Texture2D" uid="uid://chh2wkrdq7nhn" path="res://assets/logo/drop_zoo_logo_motion_lines.png" id="5_7akwi"]
 [ext_resource type="Texture2D" uid="uid://bx74j7ml4ewej" path="res://assets/logo/drop_zoo_logo.png" id="5_hf8dy"]
 [ext_resource type="Texture2D" uid="uid://itvqbedfcam0" path="res://assets/buttons/rounded_btn_300x96_yellow.png" id="7_ll81e"]
+[ext_resource type="Script" uid="uid://bpvpq5g78lr5s" path="res://scripts/gui/animated_button.gd" id="9_3au07"]
 [ext_resource type="Texture2D" uid="uid://dsmp051658yew" path="res://assets/buttons/rounded_btn_300x96_white.png" id="9_62e13"]
-[ext_resource type="PackedScene" uid="uid://bdctb3v1vhq5l" path="res://prefabs/GUI/credits_gui.tscn" id="9_c41oj"]
-[ext_resource type="PackedScene" uid="uid://b3assykeknia4" path="res://prefabs/GUI/options_gui.tscn" id="9_ll81e"]
+[ext_resource type="PackedScene" uid="uid://bdctb3v1vhq5l" path="res://prefabs/gui/credits_gui.tscn" id="9_c41oj"]
+[ext_resource type="PackedScene" uid="uid://b3assykeknia4" path="res://prefabs/gui/options_gui.tscn" id="9_ll81e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lmwo4"]
 size = Vector2(4000, 100)
@@ -332,7 +333,7 @@ autostart = true
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1186826464]
 layer = 999
 
-[node name="MainMenuGUI" type="Control" parent="CanvasLayer" unique_id=1714735843 node_paths=PackedStringArray("options_gui", "credits_gui", "play_btn")]
+[node name="MainMenuGUI" type="Control" parent="CanvasLayer" unique_id=1714735843 node_paths=PackedStringArray("options_gui", "credits_gui", "version_text", "play_btn")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -343,6 +344,7 @@ theme = ExtResource("3_47nhc")
 script = ExtResource("4_hf8dy")
 options_gui = NodePath("../OptionsGUI")
 credits_gui = NodePath("CreditsGUI")
+version_text = NodePath("MarginContainer/VersionLabel")
 play_btn = NodePath("VBoxContainer/VBoxContainer/PlayButton")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MainMenuGUI" unique_id=1860694941]
@@ -394,6 +396,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_c41oj")
 theme_override_styles/hover = SubResource("StyleBoxTexture_3au07")
 theme_override_styles/focus = SubResource("StyleBoxTexture_etrbm")
 text = "Play"
+script = ExtResource("9_3au07")
 
 [node name="OptionsButton" type="Button" parent="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer" unique_id=1690782401]
 layout_mode = 2
@@ -402,6 +405,7 @@ focus_neighbor_bottom = NodePath("../CreditsButton")
 focus_next = NodePath("../CreditsButton")
 focus_previous = NodePath("../PlayButton")
 text = "Options"
+script = ExtResource("9_3au07")
 
 [node name="CreditsButton" type="Button" parent="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer" unique_id=900201459]
 layout_mode = 2
@@ -410,16 +414,38 @@ focus_neighbor_bottom = NodePath("../QuitButton")
 focus_next = NodePath("../QuitButton")
 focus_previous = NodePath("../OptionsButton")
 text = "Credits"
+script = ExtResource("9_3au07")
 
 [node name="QuitButton" type="Button" parent="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer" unique_id=2059465810]
 layout_mode = 2
 focus_neighbor_top = NodePath("../CreditsButton")
 focus_previous = NodePath("../CreditsButton")
 text = "Exit"
+script = ExtResource("9_3au07")
 
 [node name="CreditsGUI" parent="CanvasLayer/MainMenuGUI" unique_id=1022512031 instance=ExtResource("9_c41oj")]
 visible = false
 layout_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/MainMenuGUI" unique_id=2053428341]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -53.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 16
+
+[node name="VersionLabel" type="RichTextLabel" parent="CanvasLayer/MainMenuGUI/MarginContainer" unique_id=589552099]
+layout_mode = 2
+text = "v0.0"
+fit_content = true
+autowrap_mode = 0
 
 [node name="OptionsGUI" parent="CanvasLayer" unique_id=110807374 instance=ExtResource("9_ll81e")]
 visible = false
@@ -431,15 +457,7 @@ autoplay = &"menu_entry"
 speed_scale = 0.8
 
 [connection signal="body_entered" from="FakeAnimalsRain/Area2D" to="FakeAnimalsRain" method="_on_deadzone_body_entered"]
-[connection signal="focus_entered" from="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/PlayButton" to="CanvasLayer/MainMenuGUI" method="on_btn_hover"]
-[connection signal="mouse_entered" from="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/PlayButton" to="CanvasLayer/MainMenuGUI" method="on_btn_hover"]
 [connection signal="pressed" from="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/PlayButton" to="CanvasLayer/MainMenuGUI" method="on_play_btn_clicked"]
-[connection signal="focus_entered" from="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/OptionsButton" to="CanvasLayer/MainMenuGUI" method="on_btn_hover"]
-[connection signal="mouse_entered" from="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/OptionsButton" to="CanvasLayer/MainMenuGUI" method="on_btn_hover"]
 [connection signal="pressed" from="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/OptionsButton" to="CanvasLayer/MainMenuGUI" method="on_options_btn_clicked"]
-[connection signal="focus_entered" from="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/CreditsButton" to="CanvasLayer/MainMenuGUI" method="on_btn_hover"]
-[connection signal="mouse_entered" from="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/CreditsButton" to="CanvasLayer/MainMenuGUI" method="on_btn_hover"]
 [connection signal="pressed" from="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/CreditsButton" to="CanvasLayer/MainMenuGUI" method="on_credits_btn_clicked"]
-[connection signal="focus_entered" from="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/QuitButton" to="CanvasLayer/MainMenuGUI" method="on_btn_hover"]
-[connection signal="mouse_entered" from="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/QuitButton" to="CanvasLayer/MainMenuGUI" method="on_btn_hover"]
 [connection signal="pressed" from="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/QuitButton" to="CanvasLayer/MainMenuGUI" method="on_quit_btn_clicked"]

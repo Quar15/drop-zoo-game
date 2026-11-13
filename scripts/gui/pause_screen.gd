@@ -8,6 +8,8 @@ extends Control
 @export var keyboard_hint: Control
 @export var controller_hint: Control
 
+var can_toggle: bool = true
+
 
 func _ready() -> void:
 	InputManager.device_changed.connect(change_hints)
@@ -30,15 +32,21 @@ func change_hints(device: InputManager.DeviceType) -> void:
 
 
 func toggle() -> void:
+	if not can_toggle:
+		return
+
 	if not self.visible:
 		options_gui.back()
 		if InputManager.is_controller():
 			resume_btn.grab_focus()
-	self.visible = !self.visible
-	get_tree().paused = !get_tree().paused
+	self.visible = not self.visible
+	get_tree().paused = not get_tree().paused
 
 
 func back() -> void:
+	if not can_toggle:
+		return
+
 	if options_gui.visible:
 		return
 
@@ -65,11 +73,3 @@ func on_restart_btn_pressed() -> void:
 
 func on_main_menu_btn_pressed() -> void:
 	SceneManager.load_main_menu()
-
-
-func on_btn_hover() -> void:
-	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.UI_HOVER)
-
-
-func on_btn_click() -> void:
-	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.UI_CLICK)

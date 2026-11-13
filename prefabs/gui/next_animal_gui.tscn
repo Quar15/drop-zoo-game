@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dj8nxj3ii5utt"]
 
-[ext_resource type="Script" uid="uid://dm4bhdgjwueha" path="res://scripts/GUI/next_animal_gui.gd" id="1_vyy35"]
+[ext_resource type="Script" uid="uid://dm4bhdgjwueha" path="res://scripts/gui/next_animal_gui.gd" id="1_vyy35"]
 [ext_resource type="Texture2D" uid="uid://283pghaapde7" path="res://assets/kenney/animals_remastered/upscaled/chick.png" id="2_vyy35"]
 
 [node name="NextAnimalGUI" type="VBoxContainer" unique_id=1016991445 node_paths=PackedStringArray("texture_rect")]

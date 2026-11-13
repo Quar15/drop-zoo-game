@@ -25,6 +25,11 @@ AudioManager="*uid://cj1q5e14o2psi"
 InputManager="*uid://b51swomofbkvr"
 SceneManager="*uid://dd2m5uvbatsrn"
 
+[debug]
+
+gdscript/warnings/untyped_declaration=1
+gdscript/warnings/inferred_declaration=1
+
 [display]
 
 window/size/viewport_width=1920
@@ -37,7 +42,7 @@ mouse_cursor/custom_image="uid://bbc7ttcvcknfl"
 folder_colors={
 "res://assets/": "gray",
 "res://prefabs/": "yellow",
-"res://prefabs/GUI/": "green",
+"res://prefabs/gui/": "green",
 "res://resources/": "orange",
 "res://scripts/": "blue"
 }

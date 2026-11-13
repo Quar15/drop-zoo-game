@@ -2,7 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://02nkevcw6g0g" path="res://assets/buttons/panel.png" id="1_fg0g3"]
 [ext_resource type="Theme" uid="uid://qnmlbkfmpc3i" path="res://resources/theme/gui_theme.tres" id="1_xojrs"]
-[ext_resource type="Script" uid="uid://dsxig82t5e8kx" path="res://scripts/GUI/credits_gui.gd" id="2_7lnoi"]
+[ext_resource type="Script" uid="uid://dsxig82t5e8kx" path="res://scripts/gui/credits_gui.gd" id="2_7lnoi"]
+[ext_resource type="Script" uid="uid://bpvpq5g78lr5s" path="res://scripts/gui/animated_button.gd" id="4_q4jue"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kovpq"]
 texture = ExtResource("1_fg0g3")
@@ -135,9 +136,14 @@ size_flags_vertical = 8
 offset_transform_enabled = true
 offset_transform_position = Vector2(-96, 96)
 offset_transform_visual_only = false
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath(".")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
 theme_override_font_sizes/font_size = 48
 text = "Back"
+script = ExtResource("4_q4jue")
 
-[connection signal="mouse_entered" from="CreditsContainer/BackButton" to="." method="on_btn_hover"]
 [connection signal="pressed" from="CreditsContainer/BackButton" to="." method="on_back_btn_pressed"]
-[connection signal="pressed" from="CreditsContainer/BackButton" to="." method="on_btn_click"]

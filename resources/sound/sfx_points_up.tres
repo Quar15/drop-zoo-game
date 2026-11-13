@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="SoundEffect" format=3 uid="uid://bao2cbgrg8lkx"]
 
-[ext_resource type="Script" uid="uid://bg8gbdrbdr7b3" path="res://scripts/globals/source_effect_resource.gd" id="1_3e3ba"]
+[ext_resource type="Script" uid="uid://bg8gbdrbdr7b3" path="res://scripts/globals/sound_effect.gd" id="1_3e3ba"]
 [ext_resource type="AudioStream" uid="uid://tw3a8j8xa4kf" path="res://assets/sfx/ui_soundpack/Coffee1.wav" id="2_3e3ba"]
 
 [resource]

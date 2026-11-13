@@ -1,14 +1,15 @@
 [gd_scene format=3 uid="uid://dcetyxsl1t7m4"]
 
-[ext_resource type="Script" uid="uid://refvy3uwclkl" path="res://scripts/GUI/pause_screen.gd" id="1_qjjb3"]
+[ext_resource type="Script" uid="uid://refvy3uwclkl" path="res://scripts/gui/pause_screen.gd" id="1_qjjb3"]
 [ext_resource type="Texture2D" uid="uid://ci1feabyx65r" path="res://assets/kenney/game_icons/pause.png" id="3_cnn6c"]
 [ext_resource type="Texture2D" uid="uid://db7kag0tmp8gq" path="res://assets/buttons/rounded_btn_300x96_border.png" id="3_lnjcg"]
 [ext_resource type="Texture2D" uid="uid://clw3tk7aeeqjv" path="res://assets/kenney/input_prompts/keyboard/keyboard_escape.png" id="4_lnjcg"]
 [ext_resource type="Theme" uid="uid://qnmlbkfmpc3i" path="res://resources/theme/gui_theme.tres" id="5_cnn6c"]
 [ext_resource type="Texture2D" uid="uid://xl666uju27lu" path="res://assets/kenney/input_prompts/xbox/xbox_button_menu.png" id="6_4dtpd"]
 [ext_resource type="Texture2D" uid="uid://itvqbedfcam0" path="res://assets/buttons/rounded_btn_300x96_yellow.png" id="6_lnjcg"]
-[ext_resource type="PackedScene" uid="uid://b3assykeknia4" path="res://prefabs/GUI/options_gui.tscn" id="8_lnjcg"]
+[ext_resource type="PackedScene" uid="uid://b3assykeknia4" path="res://prefabs/gui/options_gui.tscn" id="8_lnjcg"]
 [ext_resource type="Texture2D" uid="uid://dsmp051658yew" path="res://assets/buttons/rounded_btn_300x96_white.png" id="9_4dtpd"]
+[ext_resource type="Script" uid="uid://bpvpq5g78lr5s" path="res://scripts/gui/animated_button.gd" id="9_rvam1"]
 
 [sub_resource type="Shader" id="Shader_qjjb3"]
 code = "shader_type canvas_item;
@@ -241,39 +242,55 @@ texture = ExtResource("6_4dtpd")
 [node name="ResumeButton" type="Button" parent="MarginContainer2/PanelContainer/MarginContainer2/HBoxContainer" unique_id=1599365362]
 custom_minimum_size = Vector2(356, 96)
 layout_mode = 2
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath(".")
 focus_neighbor_right = NodePath("../OptionsButton")
+focus_neighbor_bottom = NodePath(".")
 focus_next = NodePath("../OptionsButton")
+focus_previous = NodePath(".")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxTexture_62e13")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_c41oj")
 theme_override_styles/hover = SubResource("StyleBoxTexture_3au07")
 theme_override_styles/focus = SubResource("StyleBoxTexture_etrbm")
 text = "Resume"
+script = ExtResource("9_rvam1")
 
 [node name="OptionsButton" type="Button" parent="MarginContainer2/PanelContainer/MarginContainer2/HBoxContainer" unique_id=741893022]
 layout_mode = 2
 size_flags_vertical = 4
 focus_neighbor_left = NodePath("../ResumeButton")
+focus_neighbor_top = NodePath(".")
 focus_neighbor_right = NodePath("../RestartButton")
+focus_neighbor_bottom = NodePath(".")
 focus_next = NodePath("../RestartButton")
 focus_previous = NodePath("../ResumeButton")
 text = "Options"
+script = ExtResource("9_rvam1")
 
 [node name="RestartButton" type="Button" parent="MarginContainer2/PanelContainer/MarginContainer2/HBoxContainer" unique_id=1446759387]
 layout_mode = 2
 size_flags_vertical = 4
 focus_neighbor_left = NodePath("../OptionsButton")
+focus_neighbor_top = NodePath(".")
 focus_neighbor_right = NodePath("../MainMenuButton")
+focus_neighbor_bottom = NodePath(".")
 focus_next = NodePath("../MainMenuButton")
 focus_previous = NodePath(".")
 text = "Restart"
+script = ExtResource("9_rvam1")
 
 [node name="MainMenuButton" type="Button" parent="MarginContainer2/PanelContainer/MarginContainer2/HBoxContainer" unique_id=341072582]
 layout_mode = 2
 size_flags_vertical = 4
 focus_neighbor_left = NodePath("../RestartButton")
+focus_neighbor_top = NodePath(".")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath(".")
+focus_next = NodePath(".")
 focus_previous = NodePath("../RestartButton")
 text = "Main Menu"
+script = ExtResource("9_rvam1")
 
 [node name="Panel" type="Panel" parent="MarginContainer2/PanelContainer" unique_id=2144080433]
 custom_minimum_size = Vector2(0, 8)
@@ -285,15 +302,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_mp4gh")
 visible = false
 layout_mode = 1
 
-[connection signal="focus_entered" from="MarginContainer2/PanelContainer/MarginContainer2/HBoxContainer/ResumeButton" to="." method="on_btn_hover"]
-[connection signal="mouse_entered" from="MarginContainer2/PanelContainer/MarginContainer2/HBoxContainer/ResumeButton" to="." method="on_btn_hover"]
 [connection signal="pressed" from="MarginContainer2/PanelContainer/MarginContainer2/HBoxContainer/ResumeButton" to="." method="on_resume_btn_pressed"]
-[connection signal="focus_entered" from="MarginContainer2/PanelContainer/MarginContainer2/HBoxContainer/OptionsButton" to="." method="on_btn_hover"]
-[connection signal="mouse_entered" from="MarginContainer2/PanelContainer/MarginContainer2/HBoxContainer/OptionsButton" to="." method="on_btn_hover"]
 [connection signal="pressed" from="MarginContainer2/PanelContainer/MarginContainer2/HBoxContainer/OptionsButton" to="." method="on_options_btn_pressed"]
-[connection signal="focus_entered" from="MarginContainer2/PanelContainer/MarginContainer2/HBoxContainer/RestartButton" to="." method="on_btn_hover"]
-[connection signal="mouse_entered" from="MarginContainer2/PanelContainer/MarginContainer2/HBoxContainer/RestartButton" to="." method="on_btn_hover"]
 [connection signal="pressed" from="MarginContainer2/PanelContainer/MarginContainer2/HBoxContainer/RestartButton" to="." method="on_restart_btn_pressed"]
-[connection signal="focus_entered" from="MarginContainer2/PanelContainer/MarginContainer2/HBoxContainer/MainMenuButton" to="." method="on_btn_hover"]
-[connection signal="mouse_entered" from="MarginContainer2/PanelContainer/MarginContainer2/HBoxContainer/MainMenuButton" to="." method="on_btn_hover"]
 [connection signal="pressed" from="MarginContainer2/PanelContainer/MarginContainer2/HBoxContainer/MainMenuButton" to="." method="on_main_menu_btn_pressed"]

@@ -3,15 +3,16 @@ extends Control
 
 signal exited
 
+@export var music_slider_focus_button: FocusButton
 @export var back_btn: Button
 @export var music_slider: Slider
 @export var sfx_slider: Slider
 @export var fullscreen_checkbtn: CheckButton
 
 @export var music_bus_name: String
-var music_bus_index: int
-
 @export var sfx_bus_name: String
+
+var music_bus_index: int
 var sfx_bus_index: int
 
 
@@ -19,12 +20,10 @@ func _ready() -> void:
 	music_bus_index = AudioServer.get_bus_index(music_bus_name)
 	sfx_bus_index = AudioServer.get_bus_index(sfx_bus_name)
 
-	back_btn.mouse_entered.connect(on_btn_hover)
 	music_slider.mouse_entered.connect(on_btn_hover)
 	sfx_slider.mouse_entered.connect(on_btn_hover)
 	fullscreen_checkbtn.mouse_entered.connect(on_btn_hover)
 
-	back_btn.pressed.connect(on_btn_click)
 	music_slider.drag_started.connect(on_btn_click)
 	sfx_slider.drag_started.connect(on_btn_click)
 	fullscreen_checkbtn.pressed.connect(on_btn_click)
@@ -46,7 +45,7 @@ func show_up() -> void:
 	self.visible = true
 	self.mouse_filter = Control.MOUSE_FILTER_STOP
 	if InputManager.is_controller():
-		music_slider.grab_focus()
+		music_slider_focus_button.grab_focus()
 
 
 func back() -> void:
@@ -64,15 +63,15 @@ func on_sfx_value_changed(value: float) -> void:
 
 
 func on_fullscreen_button_toggled(status: bool) -> void:
-	if status == true:
+	if status:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 
 
 func on_btn_hover() -> void:
-	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.UI_HOVER)
+	AudioManager.create_audio(SoundEffect.Type.UI_HOVER)
 
 
 func on_btn_click() -> void:
-	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.UI_CLICK)
+	AudioManager.create_audio(SoundEffect.Type.UI_CLICK)

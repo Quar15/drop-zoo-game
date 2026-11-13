@@ -6,7 +6,7 @@ signal score_changed(score: int, high_score: int)
 var score: int = 0
 var high_score: int = 0
 
-var save_path = "user://highscore.save"
+const SAVE_PATH: String = "user://highscore.save"
 
 
 func setup() -> void:
@@ -24,21 +24,21 @@ func add_score(value: int) -> void:
 
 
 func save_highscore() -> void:
-	var file = FileAccess.open(save_path, FileAccess.WRITE)
+	var file: FileAccess = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 	if file:
-		file.store_64(high_score)
+		file.store_32(high_score)
 		file.close()
 
 
 func load_highscore() -> int:
-	if not FileAccess.file_exists(save_path):
+	if not FileAccess.file_exists(SAVE_PATH):
 		return 0
 
-	var file = FileAccess.open(save_path, FileAccess.READ)
+	var file: FileAccess = FileAccess.open(SAVE_PATH, FileAccess.READ)
 	if file == null:
 		return 0
 
-	var n_score = file.get_64()
+	var n_score: int = file.get_32()
 	file.close()
 
 	return n_score

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="SoundEffect" format=3 uid="uid://cyfd3rkanmuxm"]
 
-[ext_resource type="Script" uid="uid://bg8gbdrbdr7b3" path="res://scripts/globals/source_effect_resource.gd" id="1_h1qne"]
+[ext_resource type="Script" uid="uid://bg8gbdrbdr7b3" path="res://scripts/globals/sound_effect.gd" id="1_h1qne"]
 [ext_resource type="AudioStream" uid="uid://blnhab6kuetdm" path="res://assets/sfx/ui_soundpack/Modern5.wav" id="2_h1qne"]
 
 [resource]

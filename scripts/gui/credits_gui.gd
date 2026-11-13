@@ -25,11 +25,3 @@ func on_back_btn_pressed() -> void:
 	self.visible = false
 	self.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	exited.emit()
-
-
-func on_btn_hover() -> void:
-	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.UI_HOVER)
-
-
-func on_btn_click() -> void:
-	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.UI_CLICK)

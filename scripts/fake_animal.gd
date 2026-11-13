@@ -3,7 +3,6 @@ extends RigidBody2D
 
 @export var min_rotation_velocity: float = -60
 @export var max_rotation_velocity: float = 60
-var rotation_speed: float = 0
 
 @export var sizes: Array[float] = []
 @export var sprites: Array[Texture2D] = []
@@ -11,6 +10,8 @@ var rotation_speed: float = 0
 @export_category("References")
 @export var sprite: Sprite2D
 @export var collision_shape: CollisionShape2D
+
+var rotation_speed: float = 0
 
 var is_active: bool = false
 var last_rng: int = -1
@@ -48,7 +49,7 @@ func _process(delta: float) -> void:
 	sprite.rotation += deg_to_rad(rotation_speed) * delta
 
 
-func _integrate_forces(state: PhysicsDirectBodyState2D):
+func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	if position_dirty:
 		state.transform.origin = new_position
 		position_dirty = false

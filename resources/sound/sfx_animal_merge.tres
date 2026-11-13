@@ -1,10 +1,11 @@
 [gd_resource type="Resource" script_class="SoundEffect" format=3 uid="uid://ebcx7cwhn8si"]
 
-[ext_resource type="Script" uid="uid://bg8gbdrbdr7b3" path="res://scripts/globals/source_effect_resource.gd" id="1_ss1t2"]
+[ext_resource type="Script" uid="uid://bg8gbdrbdr7b3" path="res://scripts/globals/sound_effect.gd" id="1_nkgru"]
 [ext_resource type="AudioStream" uid="uid://cbu7jsr73s836" path="res://assets/sfx/ui_soundpack/African3.wav" id="2_nkgru"]
 
 [resource]
-script = ExtResource("1_ss1t2")
+script = ExtResource("1_nkgru")
+bus = "SFX"
 type = 2
 sound_effect = ExtResource("2_nkgru")
 volume = -12.0

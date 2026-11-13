@@ -6,10 +6,10 @@ extends Node
 @export var anim_duration: float = 0.1
 @export var target_color: Color = Color(20, 20, 20)
 
-@onready var sprite: Node2D = get_parent()
-
 var tween: Tween
 var original_color: Color
+
+@onready var sprite: Node2D = get_parent()
 
 
 func _ready() -> void:
@@ -19,11 +19,11 @@ func _ready() -> void:
 func play_hit_flash() -> void:
 	reset_tween()
 	tween.tween_property(sprite, "self_modulate", target_color, anim_duration).from(original_color)
-	tween.tween_property(sprite, "self_modulate", original_color, anim_duration).from(target_color)
+	tween.tween_property(sprite, "self_modulate", original_color, anim_duration)
 
 
 func reset_tween() -> void:
 	if tween:
 		tween.kill()
 
-	tween = create_tween().set_ease(ease_type).set_trans(trans_type).set_parallel(true)
+	tween = create_tween().set_ease(ease_type).set_trans(trans_type)

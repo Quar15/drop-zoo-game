@@ -6,6 +6,8 @@ extends Node
 @export var pause_screen: PauseScreen
 @export var end_screen: EndScreenGUI
 
+var _game_ended: bool = false
+
 
 func _ready() -> void:
 	InputManager.menu_pressed.connect(handle_menu_pressed)
@@ -13,6 +15,7 @@ func _ready() -> void:
 
 func setup(high_score: int) -> void:
 	score_gui.setup(high_score)
+	_game_ended = false
 
 
 func handle_score_change(score: int, high_score: int) -> void:
@@ -20,5 +23,11 @@ func handle_score_change(score: int, high_score: int) -> void:
 
 
 func handle_menu_pressed() -> void:
-	if not end_screen.visible:
-		pause_screen.toggle()
+	if _game_ended:
+		return
+
+	pause_screen.toggle()
+
+
+func on_death() -> void:
+	pause_screen.can_toggle = false

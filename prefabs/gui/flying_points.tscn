@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://jv3df7rso5br"]
 
 [ext_resource type="Texture2D" uid="uid://ckt56ka0qvgeg" path="res://assets/kenney/pattern_extra/paw.png" id="1_abvhk"]
-[ext_resource type="Script" uid="uid://cjtog6kann8tj" path="res://scripts/GUI/flying_points.gd" id="2_frg4o"]
+[ext_resource type="Script" uid="uid://cjtog6kann8tj" path="res://scripts/gui/flying_points.gd" id="2_frg4o"]
 
 [node name="FlyingPoints" type="TextureRect" unique_id=2020558737]
 self_modulate = Color(0, 0, 0, 1)

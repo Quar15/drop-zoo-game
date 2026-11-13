@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cu33xynaskk4n"]
 
-[ext_resource type="Script" uid="uid://lfcjmgidufa6" path="res://scripts/GUI/loading_screen.gd" id="1_epp15"]
+[ext_resource type="Script" uid="uid://lfcjmgidufa6" path="res://scripts/gui/loading_screen.gd" id="1_epp15"]
 [ext_resource type="Theme" uid="uid://qnmlbkfmpc3i" path="res://resources/theme/gui_theme.tres" id="3_21go7"]
 [ext_resource type="Texture2D" uid="uid://chh2wkrdq7nhn" path="res://assets/logo/drop_zoo_logo_motion_lines.png" id="4_t1l7u"]
 [ext_resource type="Texture2D" uid="uid://bx74j7ml4ewej" path="res://assets/logo/drop_zoo_logo.png" id="5_auel0"]

@@ -2,10 +2,11 @@
 
 [ext_resource type="Theme" uid="uid://qnmlbkfmpc3i" path="res://resources/theme/gui_theme.tres" id="1_kovpq"]
 [ext_resource type="Texture2D" uid="uid://02nkevcw6g0g" path="res://assets/buttons/panel.png" id="2_aycpw"]
-[ext_resource type="Script" uid="uid://ownegp1l1dly" path="res://scripts/GUI/end_screen_gui.gd" id="2_ddr5j"]
+[ext_resource type="Script" uid="uid://ownegp1l1dly" path="res://scripts/gui/end_screen_gui.gd" id="2_ddr5j"]
 [ext_resource type="Texture2D" uid="uid://b64ygjnqyskmj" path="res://assets/kenney/animals_remastered/icons/whale.png" id="3_8bd6a"]
 [ext_resource type="Texture2D" uid="uid://itvqbedfcam0" path="res://assets/buttons/rounded_btn_300x96_yellow.png" id="3_52usf"]
 [ext_resource type="Texture2D" uid="uid://dsmp051658yew" path="res://assets/buttons/rounded_btn_300x96_white.png" id="4_8bd6a"]
+[ext_resource type="Script" uid="uid://bpvpq5g78lr5s" path="res://scripts/gui/animated_button.gd" id="7_h42d1"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kovpq"]
 texture = ExtResource("2_aycpw")
@@ -204,16 +205,14 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_c41oj")
 theme_override_styles/hover = SubResource("StyleBoxTexture_3au07")
 theme_override_styles/focus = SubResource("StyleBoxTexture_etrbm")
 text = "Play Again"
+script = ExtResource("7_h42d1")
 
 [node name="MainMenuButton" type="Button" parent="PanelContainer/VBoxContainer" unique_id=457288149]
 layout_mode = 2
 focus_neighbor_top = NodePath("../PlayAgainButton")
 focus_previous = NodePath("../PlayAgainButton")
 text = "Main Menu"
+script = ExtResource("7_h42d1")
 
-[connection signal="focus_entered" from="PanelContainer/VBoxContainer/PlayAgainButton" to="." method="on_btn_hover"]
-[connection signal="mouse_entered" from="PanelContainer/VBoxContainer/PlayAgainButton" to="." method="on_btn_hover"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/PlayAgainButton" to="." method="on_play_again_btn_pressed"]
-[connection signal="focus_entered" from="PanelContainer/VBoxContainer/MainMenuButton" to="." method="on_btn_hover"]
-[connection signal="mouse_entered" from="PanelContainer/VBoxContainer/MainMenuButton" to="." method="on_btn_hover"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/MainMenuButton" to="." method="on_main_menu_btn_pressed"]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d0wqj0vefvggy"]
 
-[ext_resource type="Script" uid="uid://b1kakvpt5vvvg" path="res://scripts/GUI/control_hints.gd" id="1_2dh3j"]
+[ext_resource type="Script" uid="uid://b1kakvpt5vvvg" path="res://scripts/gui/control_hints.gd" id="1_2dh3j"]
 [ext_resource type="Texture2D" uid="uid://ww4l0xcbuq5d" path="res://assets/kenney/input_prompts/xbox/xbox_stick_l_horizontal.png" id="1_sdkbs"]
 [ext_resource type="Texture2D" uid="uid://jxapeg8eokwy" path="res://assets/kenney/input_prompts/xbox/xbox_button_a.png" id="2_2dh3j"]
 [ext_resource type="Texture2D" uid="uid://xl666uju27lu" path="res://assets/kenney/input_prompts/xbox/xbox_button_menu.png" id="3_qwork"]
