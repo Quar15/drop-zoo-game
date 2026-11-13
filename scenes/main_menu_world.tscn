@@ -454,7 +454,7 @@ visible = false
 deterministic = true
 libraries/ = SubResource("AnimationLibrary_rm7ai")
 autoplay = &"menu_entry"
-speed_scale = 0.8
+speed_scale = 0.5
 
 [connection signal="body_entered" from="FakeAnimalsRain/Area2D" to="FakeAnimalsRain" method="_on_deadzone_body_entered"]
 [connection signal="pressed" from="CanvasLayer/MainMenuGUI/VBoxContainer/VBoxContainer/PlayButton" to="CanvasLayer/MainMenuGUI" method="on_play_btn_clicked"]
