@@ -402,7 +402,7 @@ theme_override_constants/margin_bottom = 32
 [node name="ControlHints" parent="GUICanvasLayer/GUI/MarginContainer3" unique_id=1308114495 instance=ExtResource("36_ba7d3")]
 layout_mode = 2
 
-[node name="TouchControls" type="Control" parent="GUICanvasLayer/GUI" unique_id=2132699506 node_paths=PackedStringArray("touch_hints")]
+[node name="TouchControls" type="Control" parent="GUICanvasLayer/GUI" unique_id=2132699506 node_paths=PackedStringArray("left_btn", "right_btn", "drop_btn", "touch_hints")]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -412,6 +412,9 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("37_48nki")
+left_btn = NodePath("MarginContainer2/VBoxContainer/HBoxContainer/Button")
+right_btn = NodePath("MarginContainer2/VBoxContainer/HBoxContainer/Button2")
+drop_btn = NodePath("MarginContainer2/VBoxContainer/Button2")
 touch_hints = [NodePath("MarginContainer2/VBoxContainer/HBoxContainer/Button/Panel"), NodePath("MarginContainer2/VBoxContainer/HBoxContainer/Button2/Panel2"), NodePath("MarginContainer2/VBoxContainer/Button2/Panel3")]
 
 [node name="MarginContainer2" type="MarginContainer" parent="GUICanvasLayer/GUI/TouchControls" unique_id=853088546]
@@ -448,6 +451,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="GUICanvasLayer/GUI/TouchControls/MarginContainer2/VBoxContainer/HBoxContainer/Button/Panel" unique_id=1890217109]
 layout_mode = 1
@@ -484,6 +488,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="GUICanvasLayer/GUI/TouchControls/MarginContainer2/VBoxContainer/HBoxContainer/Button2/Panel2" unique_id=2038164816]
 layout_mode = 1
@@ -521,6 +526,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="GUICanvasLayer/GUI/TouchControls/MarginContainer2/VBoxContainer/Button2/Panel3" unique_id=515837809]
 layout_mode = 1

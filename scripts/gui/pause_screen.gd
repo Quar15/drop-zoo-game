@@ -24,13 +24,16 @@ func _ready() -> void:
 
 
 func change_hints(device: InputManager.DeviceType) -> void:
-	if device == InputManager.DeviceType.KEYBOARD_MOUSE:
+	if InputManager.is_mobile:
+		keyboard_hint.visible = false
+		controller_hint.visible = false
+	elif device == InputManager.DeviceType.KEYBOARD_MOUSE:
 		keyboard_hint.visible = true
 		controller_hint.visible = false
 		InputManager.unfocus()
 	else:
-		controller_hint.visible = true
 		keyboard_hint.visible = false
+		controller_hint.visible = true
 		if self.visible:
 			resume_btn.grab_focus()
 

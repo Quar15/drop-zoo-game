@@ -14,13 +14,19 @@ const GAME_ACTIONS: Array[String] = [
 var move_direction: float = 0.0
 var current_device: DeviceType = DeviceType.KEYBOARD_MOUSE
 
+var is_mobile: bool = false
+
 
 func _ready() -> void:
 	self.process_mode = Node.PROCESS_MODE_ALWAYS
 	Input.joy_connection_changed.connect(_on_joy_changed)
+	is_mobile = Global.is_mobile()
 
 
 func _process(_delta: float) -> void:
+	if is_mobile:
+		# Handle move_direction via buttons on mobile
+		return
 	move_direction = Input.get_axis("left", "right")
 
 
