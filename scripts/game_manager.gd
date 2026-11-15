@@ -13,10 +13,14 @@ signal game_ended
 @export var death_area: DeathArea
 var best_merge: AnimalResource = preload("uid://2hxr67giinsj")
 
+var camera: Camera2D
+
 
 func _ready() -> void:
 	for i: int in range(0, animal_resources.size() - 2):
 		assert(int(animal_resources[i + 1].type) > int(animal_resources[i].type))
+
+	camera = get_viewport().get_camera_2d()
 
 	score_manager.setup()
 	score_manager.score_changed.connect(gui_manager.handle_score_change)
@@ -41,7 +45,8 @@ func _on_new_animal_spawned(animal: Animal) -> void:
 
 
 func _animate_animal_merge(animal: Animal) -> void:
-	gui_manager.score_gui.animate_flying_points(animal.global_position, animal.data.score)
+	var screen_position: Vector2 = camera.get_screen_transform() * animal.global_position
+	gui_manager.score_gui.animate_flying_points(screen_position, animal.data.score)
 	if int(animal.data.type) > int(best_merge.type):
 		best_merge = animal.data
 
