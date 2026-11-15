@@ -36,6 +36,7 @@
 [ext_resource type="Texture2D" uid="uid://b64ygjnqyskmj" path="res://assets/kenney/animals_remastered/icons/whale.png" id="34_t7dhd"]
 [ext_resource type="PackedScene" uid="uid://leu5vjwsnwoe" path="res://prefabs/gui/score_gui.tscn" id="35_thaxu"]
 [ext_resource type="PackedScene" uid="uid://d0wqj0vefvggy" path="res://prefabs/gui/control_hints.tscn" id="36_ba7d3"]
+[ext_resource type="Script" uid="uid://bgflqldp8qqym" path="res://scripts/gui/touch_controls.gd" id="37_48nki"]
 [ext_resource type="PackedScene" uid="uid://dcetyxsl1t7m4" path="res://prefabs/gui/pause_screen.tscn" id="37_vu5a2"]
 [ext_resource type="PackedScene" uid="uid://drnw3hpgak3tg" path="res://prefabs/gui/end_screen_gui.tscn" id="38_4tgb6"]
 
@@ -44,6 +45,28 @@ size = Vector2(800, 20)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gqmmt"]
 texture = ExtResource("22_kt70w")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m5g6r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6n4fx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l0w7t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w7yxk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kwlng"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mp4gh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lo878"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_drv1q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b8bn0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rq1m7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h75q3"]
 
 [node name="GameWorld" type="Node2D" unique_id=113656295]
 
@@ -62,6 +85,7 @@ script = ExtResource("14_bccc0")
 metadata/_custom_type_script = "uid://dqnv6ce64nb77"
 
 [node name="World2D" type="Node2D" parent="." unique_id=222382600]
+position = Vector2(-960, -540)
 
 [node name="Zone" type="Node2D" parent="World2D" unique_id=1105392809]
 position = Vector2(960, 939)
@@ -179,9 +203,8 @@ position = Vector2(-10000, -10000)
 position = Vector2(960, 160)
 
 [node name="GUICanvasLayer" type="CanvasLayer" parent="." unique_id=1891716643]
-follow_viewport_enabled = true
 
-[node name="GUI" type="Control" parent="GUICanvasLayer" unique_id=1695481976 node_paths=PackedStringArray("score_gui", "next_animal_gui", "pause_screen", "end_screen")]
+[node name="GUI" type="Control" parent="GUICanvasLayer" unique_id=1695481976 node_paths=PackedStringArray("score_gui", "next_animal_gui", "pause_screen", "end_screen", "touch_screen_pause_button")]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -195,6 +218,7 @@ score_gui = NodePath("MarginContainer2/ScoreGUI")
 next_animal_gui = NodePath("MarginContainer/VBoxContainer/NextAnimalGUI")
 pause_screen = NodePath("PauseScreen")
 end_screen = NodePath("EndScreen")
+touch_screen_pause_button = NodePath("TouchControls/MarginContainer/Button")
 
 [node name="FlyingPointsParent" type="Control" parent="GUICanvasLayer/GUI" unique_id=1443576806]
 layout_mode = 1
@@ -377,6 +401,160 @@ theme_override_constants/margin_bottom = 32
 
 [node name="ControlHints" parent="GUICanvasLayer/GUI/MarginContainer3" unique_id=1308114495 instance=ExtResource("36_ba7d3")]
 layout_mode = 2
+
+[node name="TouchControls" type="Control" parent="GUICanvasLayer/GUI" unique_id=2132699506 node_paths=PackedStringArray("touch_hints")]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("37_48nki")
+touch_hints = [NodePath("MarginContainer2/VBoxContainer/HBoxContainer/Button/Panel"), NodePath("MarginContainer2/VBoxContainer/HBoxContainer/Button2/Panel2"), NodePath("MarginContainer2/VBoxContainer/Button2/Panel3")]
+
+[node name="MarginContainer2" type="MarginContainer" parent="GUICanvasLayer/GUI/TouchControls" unique_id=853088546]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GUICanvasLayer/GUI/TouchControls/MarginContainer2" unique_id=589159341]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GUICanvasLayer/GUI/TouchControls/MarginContainer2/VBoxContainer" unique_id=2073022110]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="GUICanvasLayer/GUI/TouchControls/MarginContainer2/VBoxContainer/HBoxContainer" unique_id=883706953]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxEmpty_m5g6r")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_6n4fx")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_l0w7t")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_w7yxk")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_kwlng")
+
+[node name="Panel" type="Panel" parent="GUICanvasLayer/GUI/TouchControls/MarginContainer2/VBoxContainer/HBoxContainer/Button" unique_id=1377604580]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GUICanvasLayer/GUI/TouchControls/MarginContainer2/VBoxContainer/HBoxContainer/Button/Panel" unique_id=1890217109]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 128
+text = "Left"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Button2" type="Button" parent="GUICanvasLayer/GUI/TouchControls/MarginContainer2/VBoxContainer/HBoxContainer" unique_id=74521014]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxEmpty_m5g6r")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_6n4fx")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_l0w7t")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_w7yxk")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_kwlng")
+
+[node name="Panel2" type="Panel" parent="GUICanvasLayer/GUI/TouchControls/MarginContainer2/VBoxContainer/HBoxContainer/Button2" unique_id=644228376]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="GUICanvasLayer/GUI/TouchControls/MarginContainer2/VBoxContainer/HBoxContainer/Button2/Panel2" unique_id=2038164816]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -184.0
+offset_top = -64.5
+offset_right = 184.0
+offset_bottom = 64.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 128
+text = "Right"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Button2" type="Button" parent="GUICanvasLayer/GUI/TouchControls/MarginContainer2/VBoxContainer" unique_id=769432246]
+custom_minimum_size = Vector2(0, 256)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mp4gh")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_lo878")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_drv1q")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_b8bn0")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_rq1m7")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_h75q3")
+
+[node name="Panel3" type="Panel" parent="GUICanvasLayer/GUI/TouchControls/MarginContainer2/VBoxContainer/Button2" unique_id=1358019126]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="GUICanvasLayer/GUI/TouchControls/MarginContainer2/VBoxContainer/Button2/Panel3" unique_id=515837809]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -184.0
+offset_top = -64.5
+offset_right = 184.0
+offset_bottom = 64.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 128
+text = "Drop"
+fit_content = true
+autowrap_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="GUICanvasLayer/GUI/TouchControls" unique_id=724290063]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -217.0
+offset_bottom = 81.0
+grow_horizontal = 0
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+
+[node name="Button" type="Button" parent="GUICanvasLayer/GUI/TouchControls/MarginContainer" unique_id=1517782021]
+layout_mode = 2
+text = "Pause"
 
 [node name="PauseScreen" parent="GUICanvasLayer/GUI" unique_id=952844513 instance=ExtResource("37_vu5a2")]
 visible = false

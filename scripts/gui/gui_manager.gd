@@ -6,11 +6,14 @@ extends Node
 @export var pause_screen: PauseScreen
 @export var end_screen: EndScreenGUI
 
+@export var touch_screen_pause_button: Button
+
 var _game_ended: bool = false
 
 
 func _ready() -> void:
 	InputManager.menu_pressed.connect(handle_menu_pressed)
+	touch_screen_pause_button.pressed.connect(handle_menu_pressed)
 
 
 func setup(high_score: int) -> void:

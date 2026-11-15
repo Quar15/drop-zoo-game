@@ -7,7 +7,6 @@
 
 [node name="BackgroundLayer" type="CanvasLayer" parent="." unique_id=261849312]
 layer = -999
-follow_viewport_enabled = true
 
 [node name="ColorRect" type="ColorRect" parent="BackgroundLayer" unique_id=2144382732]
 material = ExtResource("1_tbgi4")
@@ -16,10 +15,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 color = Color(0.9529412, 0.7882353, 0.5568628, 1)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=278432615]
-anchor_mode = 0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=646039094]
 process_mode = 3
